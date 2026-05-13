@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Website design, WordPress development, redesigns, landing pages, portfolio websites, and monthly maintenance for local businesses." />
+  <title>Services | Northline Digital Studio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #fbfaf7;
+      --surface: #ffffff;
+      --surface-soft: #f4efe8;
+      --dark: #111827;
+      --muted: #6b7280;
+      --border: #e8dfd4;
+      --accent: #9a6a43;
+      --accent-dark: #6f482c;
+      --accent-soft: #efe2d3;
+      --green: #273c36;
+      --shadow: 0 24px 80px rgba(17, 24, 39, 0.10);
+      --radius: 24px;
+      --max: 1180px;
+    }
+
+    *,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: var(--bg);
+  color: var(--dark);
+  line-height: 1.6;
+  overflow-x: hidden;
+  max-width: 100%;
+}
+    a { color: inherit; text-decoration: none; }
+    img { width: 100%; display: block; }
+    .container { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
+
+    .announcement {
+      background: var(--green);
+      color: #fff;
+      font-size: 14px;
+      text-align: center;
+      padding: 10px 16px;
+    }
+
+    .announcement a { font-weight: 700; border-bottom: 1px solid rgba(255,255,255,0.6); }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(251, 250, 247, 0.86);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(232, 223, 212, 0.8);
+    }
+
+    .navbar {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      font-size: 20px;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--green), var(--accent));
+      display: grid;
+      place-items: center;
+      color: #fff;
+      font-weight: 800;
+      box-shadow: 0 12px 30px rgba(39, 60, 54, 0.25);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      font-size: 14px;
+      font-weight: 600;
+      color: #374151;
+    }
+
+    .nav-links a { position: relative; }
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 2px;
+      left: 0;
+      bottom: -8px;
+      background: var(--accent);
+      transition: width 0.25s ease;
+    }
+    .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+
+    .nav-actions { display: flex; align-items: center; gap: 12px; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      border: 1px solid transparent;
+      padding: 13px 19px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 14px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary { background: var(--dark); color: #fff; box-shadow: 0 16px 40px rgba(17, 24, 39, 0.18); }
+    .btn-primary:hover { background: #000; }
+    .btn-secondary { background: var(--surface); color: var(--dark); border-color: var(--border); }
+    .btn-accent { background: var(--accent); color: #fff; box-shadow: 0 16px 38px rgba(154, 106, 67, 0.22); }
+
+    .mobile-toggle {
+      display: none;
+      width: 46px;
+      height: 46px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: #fff;
+      cursor: pointer;
+    }
+
+    .mobile-toggle span {
+      display: block;
+      width: 19px;
+      height: 2px;
+      background: var(--dark);
+      margin: 5px auto;
+      border-radius: 99px;
+    }
+
+    .mobile-menu {
+  display: none;
+}
+
+    .hero {
+      padding: 86px 0 68px;
+      position: relative;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 560px;
+      height: 560px;
+      background: radial-gradient(circle, rgba(154,106,67,0.18), transparent 65%);
+      top: -40px;
+      right: -190px;
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 54px;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 8px 12px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.7);
+      border-radius: 999px;
+      color: var(--accent-dark);
+      font-size: 13px;
+      font-weight: 800;
+      margin-bottom: 22px;
+    }
+
+    .eyebrow-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
+
+    h1, h2, h3 { letter-spacing: -0.055em; line-height: 1.05; }
+   h1 { font-size: clamp(38px, 7vw, 76px); max-width: 850px; }
+    h2 { font-size: clamp(34px, 5vw, 56px); max-width: 760px; }
+    h3 { font-size: 25px; }
+    .serif { font-family: "Playfair Display", serif; font-weight: 700; color: var(--accent-dark); }
+
+    .hero-copy {
+      font-size: 19px;
+      color: var(--muted);
+      max-width: 650px;
+      margin: 24px 0 32px;
+    }
+
+    .hero-buttons { display: flex; flex-wrap: wrap; gap: 14px; }
+
+    .hero-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 32px;
+      padding: 28px;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      width: 240px;
+      height: 240px;
+      right: -100px;
+      top: -90px;
+      border-radius: 50%;
+      background: var(--accent-soft);
+    }
+
+    .hero-card-inner { position: relative; z-index: 2; }
+
+    .service-preview-list {
+      display: grid;
+      gap: 14px;
+      margin-top: 22px;
+    }
+
+    .preview-item {
+      display: grid;
+      grid-template-columns: 48px 1fr;
+      gap: 14px;
+      align-items: center;
+      background: var(--surface-soft);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 14px;
+    }
+
+    .preview-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 15px;
+      background: #fff;
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      color: var(--accent-dark);
+    }
+
+    .preview-item strong { display: block; line-height: 1.2; }
+    .preview-item span { color: var(--muted); font-size: 13px; }
+
+    section { padding: 88px 0; }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 32px;
+      align-items: end;
+      margin-bottom: 42px;
+    }
+
+    .section-kicker {
+      color: var(--accent-dark);
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-weight: 900;
+      margin-bottom: 12px;
+    }
+
+    .section-header p {
+      max-width: 430px;
+      color: var(--muted);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .service-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: 0 14px 50px rgba(17,24,39,0.05);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow);
+    }
+
+    .icon {
+      width: 54px;
+      height: 54px;
+      border-radius: 18px;
+      background: var(--accent-soft);
+      color: var(--accent-dark);
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      font-size: 22px;
+      margin-bottom: 24px;
+    }
+
+    .service-card h3 { margin-bottom: 12px; }
+    .service-card p { color: var(--muted); margin-bottom: 20px; }
+
+    .check-list {
+      list-style: none;
+      display: grid;
+      gap: 10px;
+      color: #374151;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .check-list li::before {
+      content: "✓";
+      color: var(--accent-dark);
+      font-weight: 900;
+      margin-right: 9px;
+    }
+
+.dark-section {
+  background: var(--green);
+  color: #fff;
+  border-radius: 38px;
+  margin: 0;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .audience-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .audience-card {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 24px;
+      padding: 24px;
+      min-height: 190px;
+    }
+
+    .audience-card h3 {
+      font-size: 21px;
+      margin-bottom: 10px;
+    }
+
+    .audience-card p {
+      color: rgba(255,255,255,0.72);
+      font-size: 15px;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 44px;
+      align-items: center;
+    }
+
+    .feature-image {
+      height: 560px;
+      border-radius: 34px;
+      background: linear-gradient(180deg, rgba(39,60,54,.05), rgba(154,106,67,.18)), url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1000&q=80') center/cover;
+      box-shadow: var(--shadow);
+    }
+
+    .feature-list {
+      display: grid;
+      gap: 18px;
+      margin-top: 30px;
+    }
+
+    .feature-item {
+      display: grid;
+      grid-template-columns: 52px 1fr;
+      gap: 16px;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 18px;
+    }
+
+    .feature-item strong { display: block; margin-bottom: 5px; }
+    .feature-item p { color: var(--muted); font-size: 14px; }
+
+    .mini-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 16px;
+      background: var(--surface-soft);
+      display: grid;
+      place-items: center;
+      color: var(--accent-dark);
+      font-weight: 900;
+    }
+
+    .comparison {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+    }
+
+    .comparison-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      padding: 30px;
+      box-shadow: 0 14px 50px rgba(17,24,39,0.05);
+    }
+
+    .comparison-card.highlight {
+      background: var(--dark);
+      color: #fff;
+    }
+
+    .comparison-card h3 { margin-bottom: 18px; }
+    .comparison-card.highlight .check-list { color: rgba(255,255,255,0.76); }
+    .comparison-card .muted-list { color: var(--muted); }
+
+    .cta { padding: 0 0 88px; }
+
+    .cta-card {
+      background: linear-gradient(135deg, var(--green), #15231f);
+      color: #fff;
+      border-radius: 38px;
+      padding: 54px;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 34px;
+      align-items: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .cta-card::after {
+      content: "";
+      position: absolute;
+      width: 420px;
+      height: 420px;
+      right: -160px;
+      bottom: -180px;
+      background: radial-gradient(circle, rgba(232,199,164,0.23), transparent 64%);
+    }
+
+    .cta-card p {
+      margin-top: 18px;
+      color: rgba(255,255,255,0.72);
+      max-width: 620px;
+    }
+
+    .contact-box {
+      position: relative;
+      z-index: 2;
+      background: rgba(255,255,255,0.09);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 28px;
+      padding: 26px;
+    }
+
+    .contact-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.13);
+    }
+
+    .contact-row:last-child { border-bottom: 0; }
+    .contact-row span { color: rgba(255,255,255,0.62); font-size: 14px; }
+    .contact-row strong { text-align: right; }
+
+    footer {
+      background: #101714;
+      color: #fff;
+      padding: 58px 0 28px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.3fr repeat(3, 1fr);
+      gap: 36px;
+      margin-bottom: 44px;
+    }
+
+    .footer-brand p {
+      color: rgba(255,255,255,0.62);
+      max-width: 360px;
+      margin-top: 16px;
+    }
+
+    .footer-col h4 { margin-bottom: 16px; font-size: 15px; }
+    .footer-col a { display: block; color: rgba(255,255,255,0.62); margin-bottom: 10px; font-size: 14px; }
+    .footer-col a:hover { color: #fff; }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 22px;
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      color: rgba(255,255,255,0.54);
+      font-size: 14px;
+    }
+
+  @media (max-width: 980px) {
+  .nav-links,
+  .nav-actions {
+    display: none;
+  }
+
+  .mobile-toggle {
+    display: block;
+  }
+
+  .hero-grid,
+  .split,
+  .cta-card {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    padding-top: 58px;
+  }
+
+  .services-grid,
+  .audience-grid,
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .section-header {
+    display: block;
+  }
+
+  .section-header p {
+    margin-top: 18px;
+  }
+
+  .mobile-menu {
+    display: none;
+    padding: 18px 20px 24px;
+    background: #fbfaf7;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .mobile-menu.open {
+    display: grid;
+    gap: 14px;
+  }
+
+  .mobile-menu a {
+    font-weight: 700;
+    padding: 12px 0;
+  }
+}
+
+ @media (max-width: 680px) {
+  .container {
+    width: calc(100% - 28px);
+    max-width: 100%;
+  }
+
+  .announcement {
+    font-size: 12px;
+  }
+
+  .services-grid,
+  .audience-grid,
+  .footer-grid,
+  .comparison {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .feature-image {
+    height: 360px;
+  }
+
+  .cta-card {
+    padding: 34px 24px;
+    border-radius: 28px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+  }
+
+  section {
+    padding: 66px 0;
+  }
+
+  .hero::before,
+  .cta-card::after {
+    display: none;
+  }
+
+  h1 {
+    font-size: 42px;
+  }
+
+  h2 {
+    font-size: 34px;
+  }
+
+  .contact-row {
+    display: block;
+  }
+
+  .contact-row strong {
+    display: block;
+    text-align: left;
+    margin-top: 6px;
+  }
+}
+  </style>
+</head>
+<body>
+  <div class="announcement">
+    Need a website that looks professional and brings in inquiries? <a href="#contact">Start with a free project review</a>
+  </div>
+
+  <header>
+    <div class="container navbar">
+      <a href="index.html" class="brand" aria-label="Northline Digital Studio home">
+        <span class="brand-mark">N</span>
+        <span>Northline Digital</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Main navigation">
+        <a class="active" href="services.html">Services</a>
+        <a href="work.html">Work</a>
+        <a href="index.html#process">Process</a>
+        <a href="packages.html">Packages</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a class="btn btn-secondary" href="tel:+14165550192">Call Us</a>
+        <a class="btn btn-primary" href="contact.html">Start Project</a>
+      </div>
+
+      <button class="mobile-toggle" aria-label="Open mobile menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+ </div>
+
+<nav class="mobile-menu" id="mobileMenu">
+  <a href="services.html">Services</a>
+  <a href="work.html">Work</a>
+  <a href="index.html#process">Process</a>
+  <a href="packages.html">Packages</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+</header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow"><span class="eyebrow-dot"></span>Website services for local businesses</div>
+          <h1>Everything your business needs to look <span class="serif">credible, modern, and easy to contact.</span></h1>
+          <p class="hero-copy">From simple brochure websites to WordPress builds, redesigns, landing pages, and monthly website care, we help small businesses create a stronger online presence without overcomplicating the process.</p>
+          <div class="hero-buttons">
+            <a class="btn btn-primary" href="#services-list">Explore Services</a>
+            <a class="btn btn-secondary" href="contact.html">Get a Website Plan</a>
+          </div>
+        </div>
+
+        <aside class="hero-card" aria-label="Service highlights">
+          <div class="hero-card-inner">
+            <div class="section-kicker">Most requested</div>
+            <h3>Popular website solutions</h3>
+            <div class="service-preview-list">
+              <div class="preview-item">
+                <div class="preview-icon">01</div>
+                <div>
+                  <strong>5-page business website</strong>
+                  <span>Home, About, Services, Gallery, Contact</span>
+                </div>
+              </div>
+              <div class="preview-item">
+                <div class="preview-icon">02</div>
+                <div>
+                  <strong>WordPress redesign</strong>
+                  <span>Modern layout with editable content</span>
+                </div>
+              </div>
+              <div class="preview-item">
+                <div class="preview-icon">03</div>
+                <div>
+                  <strong>Landing page</strong>
+                  <span>Built for bookings, leads, or promotions</span>
+                </div>
+              </div>
+              <div class="preview-item">
+                <div class="preview-icon">04</div>
+                <div>
+                  <strong>Monthly website care</strong>
+                  <span>Updates, backups, small edits, support</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="services-list">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <div class="section-kicker">Core services</div>
+            <h2>Choose the website service that fits your next stage.</h2>
+          </div>
+          <p>Each service can be customized based on your business, content, budget, timeline, and whether you need WordPress, custom code, or a simpler static site.</p>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card">
+            <div class="icon">01</div>
+            <h3>Business Websites</h3>
+            <p>Complete websites for local companies that need to explain what they do, build trust, and convert visitors into inquiries.</p>
+            <ul class="check-list">
+              <li>Home, About, Services, Contact</li>
+              <li>Mobile responsive design</li>
+              <li>Google Maps and business info</li>
+              <li>Clear calls-to-action</li>
+            </ul>
+          </article>
+
+          <article class="service-card">
+            <div class="icon">02</div>
+            <h3>WordPress Websites</h3>
+            <p>Flexible websites for businesses that want to manage pages, update content, publish blogs, and grow over time.</p>
+            <ul class="check-list">
+              <li>WordPress setup and configuration</li>
+              <li>Elementor or custom theme build</li>
+              <li>Plugin setup and basic training</li>
+              <li>Editable pages and content areas</li>
+            </ul>
+          </article>
+
+          <article class="service-card">
+            <div class="icon">03</div>
+            <h3>Website Redesigns</h3>
+            <p>A modern refresh for outdated websites that need better spacing, clearer messaging, stronger visuals, and improved mobile usability.</p>
+            <ul class="check-list">
+              <li>Modern visual direction</li>
+              <li>Improved page structure</li>
+              <li>Mobile layout fixes</li>
+              <li>Updated copy and imagery</li>
+            </ul>
+          </article>
+
+          <article class="service-card">
+            <div class="icon">04</div>
+            <h3>Landing Pages</h3>
+            <p>Focused single pages designed for campaigns, promotions, seasonal offers, consultations, or product/service launches.</p>
+            <ul class="check-list">
+              <li>Conversion-focused layout</li>
+              <li>Lead capture forms</li>
+              <li>Offer positioning</li>
+              <li>Fast launch timeline</li>
+            </ul>
+          </article>
+
+          <article class="service-card">
+            <div class="icon">05</div>
+            <h3>Portfolio Websites</h3>
+            <p>Image-driven websites for photographers, decorators, event vendors, artists, stylists, and creative professionals.</p>
+            <ul class="check-list">
+              <li>Portfolio and gallery sections</li>
+              <li>Inquiry and booking flow</li>
+              <li>Service package sections</li>
+              <li>Testimonials and social proof</li>
+            </ul>
+          </article>
+
+          <article class="service-card">
+            <div class="icon">06</div>
+            <h3>Website Maintenance</h3>
+            <p>Ongoing care for businesses that want their website protected, updated, backed up, and supported after launch.</p>
+            <ul class="check-list">
+              <li>Monthly updates and small edits</li>
+              <li>Backups and monitoring</li>
+              <li>Plugin and theme checks</li>
+              <li>Priority support</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="dark-section">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <div class="section-kicker" style="color:#e8c7a4;">Who we help</div>
+            <h2>Built for business owners who need practical, polished websites.</h2>
+          </div>
+          <p style="color:rgba(255,255,255,0.72);">The goal is simple: help customers understand your value quickly and make it easy for them to take the next step.</p>
+        </div>
+
+        <div class="audience-grid">
+          <article class="audience-card">
+            <h3>Bakeries & Cake Shops</h3>
+            <p>Custom cake galleries, order inquiry forms, seasonal promotions, menus, reviews, and location details.</p>
+          </article>
+          <article class="audience-card">
+            <h3>Photographers</h3>
+            <p>Premium portfolios, service packages, booking inquiries, testimonials, and emotional visual storytelling.</p>
+          </article>
+          <article class="audience-card">
+            <h3>Contractors & Trades</h3>
+            <p>Service area pages, project galleries, quote request forms, trust signals, and clear contact options.</p>
+          </article>
+          <article class="audience-card">
+            <h3>Coaches & Studios</h3>
+            <p>Programs, memberships, consultation booking, transformation stories, pricing, and lead capture pages.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container split">
+        <div class="feature-image" aria-label="Website planning workspace"></div>
+        <div>
+          <div class="section-kicker">What is included</div>
+          <h2>A proper website needs more than just good-looking sections.</h2>
+          <p style="color:var(--muted); margin-top:18px; font-size:17px;">We focus on the full customer experience: design, messaging, mobile behavior, forms, navigation, trust, and launch readiness.</p>
+
+          <div class="feature-list">
+            <div class="feature-item">
+              <div class="mini-icon">UX</div>
+              <div>
+                <strong>Mobile-first layout</strong>
+                <p>Pages are structured to work cleanly on phones, tablets, and desktops.</p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="mini-icon">SEO</div>
+              <div>
+                <strong>Basic SEO foundation</strong>
+                <p>Page titles, descriptions, headings, image alt text, and clear content structure.</p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="mini-icon">CTA</div>
+              <div>
+                <strong>Conversion-focused sections</strong>
+                <p>Each page guides visitors toward calling, booking, ordering, or submitting a form.</p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="mini-icon">QA</div>
+              <div>
+                <strong>Testing before launch</strong>
+                <p>We review links, forms, mobile spacing, responsiveness, browser behavior, and page flow.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <div class="section-kicker">Build options</div>
+            <h2>WordPress or custom build? We recommend based on the client’s needs.</h2>
+          </div>
+          <p>Different businesses need different approaches. A simple local business may not need an advanced custom stack. A growing brand may need more flexibility.</p>
+        </div>
+
+        <div class="comparison">
+          <article class="comparison-card">
+            <h3>WordPress Build</h3>
+            <ul class="check-list muted-list">
+              <li>Great for clients who want to edit content</li>
+              <li>Useful for blogs, service pages, and CMS control</li>
+              <li>Works well with plugins and integrations</li>
+              <li>Common choice for local business websites</li>
+              <li>Good for long-term content updates</li>
+            </ul>
+          </article>
+
+          <article class="comparison-card highlight">
+            <h3>Custom Build</h3>
+            <ul class="check-list">
+              <li>Great for highly polished, fast websites</li>
+              <li>More control over design and performance</li>
+              <li>Good for landing pages and premium brand sites</li>
+              <li>Less plugin dependency</li>
+              <li>Strong option for modern, lightweight websites</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" id="contact">
+      <div class="container">
+        <div class="cta-card">
+          <div>
+            <div class="section-kicker" style="color:#e8c7a4;">Next step</div>
+            <h2>Tell us what type of website you want to build.</h2>
+            <p>We will help you choose the right service, page structure, platform, and launch plan based on your business goals.</p>
+            <div class="hero-buttons" style="margin-top:28px; margin-bottom:0;">
+              <a class="btn btn-accent" href="mailto:hello@northlinedigital.ca?subject=Website Service Inquiry">Request a Website Plan</a>
+              <a class="btn btn-secondary" href="packages.html">View Packages</a>
+            </div>
+          </div>
+
+          <div class="contact-box">
+            <div class="contact-row">
+              <span>Best starter option</span>
+              <strong>5-page business website</strong>
+            </div>
+            <div class="contact-row">
+              <span>Most flexible option</span>
+              <strong>WordPress build</strong>
+            </div>
+            <div class="contact-row">
+              <span>Fastest option</span>
+              <strong>Landing page</strong>
+            </div>
+            <div class="contact-row">
+              <span>After launch</span>
+              <strong>Monthly maintenance</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand">
+            <span class="brand-mark">N</span>
+            <span>Northline Digital</span>
+          </a>
+          <p>Premium website design and development for local businesses that want to look credible, modern, and ready to grow.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Services</h4>
+          <a href="services.html">Business Websites</a>
+          <a href="services.html">WordPress Builds</a>
+          <a href="services.html">Landing Pages</a>
+          <a href="services.html">Website Redesigns</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="work.html">Sample Work</a>
+          <a href="index.html#process">Process</a>
+          <a href="packages.html">Packages</a>
+          <a href="contact.html">Contact</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <a href="mailto:hello@northlinedigital.ca">Email</a>
+          <a href="tel:+14165550192">Phone</a>
+          <a href="#">Instagram</a>
+          <a href="#">LinkedIn</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 Northline Digital Studio. All rights reserved.</span>
+        <span>Privacy Policy · Terms · Accessibility</span>
+      </div>
+    </div>
+  </footer>
+  <script>
+  const toggle = document.querySelector('.mobile-toggle');
+  const menu = document.querySelector('#mobileMenu');
+
+  toggle.addEventListener('click', () => {
+    menu.classList.toggle('open');
+  });
+</script>
+</body>
+</html>

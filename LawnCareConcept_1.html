@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Evergreen Yard Co. | Lawn Care & Property Maintenance</title>
+  <meta name="description" content="Modern lawn care website proposal with services, before and after gallery, seasonal packages, local service areas, and quote request sections." />
+  <style>
+    :root {
+      --bg: #f5f7ef;
+      --ink: #14231a;
+      --muted: #647166;
+      --green: #23613d;
+      --deep: #0e3322;
+      --lime: #c7f46b;
+      --sage: #dfe9d8;
+      --cream: #fffaf0;
+      --white: #ffffff;
+      --clay: #b56f45;
+      --line: rgba(20, 35, 26, 0.12);
+      --shadow: 0 28px 80px rgba(14, 51, 34, 0.16);
+      --radius: 28px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { width: 100%; display: block; object-fit: cover; }
+
+    .container {
+      width: min(1160px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      padding: 13px 22px;
+      font-weight: 900;
+      cursor: pointer;
+      background: var(--deep);
+      color: var(--white);
+      box-shadow: 0 16px 32px rgba(14, 51, 34, 0.22);
+      transition: 0.2s ease;
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+
+    .btn.light {
+      background: var(--white);
+      color: var(--deep);
+      border-color: var(--line);
+      box-shadow: none;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 8px 13px;
+      background: rgba(255, 255, 255, 0.82);
+      font-weight: 800;
+      color: var(--deep);
+      font-size: 0.88rem;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(245, 247, 239, 0.88);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 900;
+      color: var(--deep);
+      letter-spacing: -0.04em;
+      font-size: 1.2rem;
+    }
+
+    .brand-mark {
+      width: 44px;
+      height: 44px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, var(--deep), var(--green));
+      box-shadow: 0 18px 38px rgba(14, 51, 34, 0.22);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .brand-mark::before {
+      content: "";
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: var(--lime);
+      left: 8px;
+      top: 8px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      color: var(--muted);
+      font-weight: 800;
+      font-size: 0.94rem;
+    }
+
+    .nav-links a:hover { color: var(--deep); }
+
+    .menu-btn {
+      display: none;
+      border: 1px solid var(--line);
+      background: var(--white);
+      border-radius: 14px;
+      padding: 10px 12px;
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
+
+    .hero {
+      padding: 78px 0 60px;
+      background:
+        radial-gradient(circle at 15% 15%, rgba(199, 244, 107, 0.28), transparent 24%),
+        linear-gradient(180deg, #f8fbf3, var(--bg));
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 0.92fr 1.08fr;
+      gap: 42px;
+      align-items: center;
+    }
+
+    h1 {
+      font-size: clamp(3rem, 7vw, 6.6rem);
+      line-height: 0.9;
+      letter-spacing: -0.095em;
+      color: var(--deep);
+      margin: 18px 0 22px;
+      max-width: 780px;
+    }
+
+    .lead {
+      color: var(--muted);
+      font-size: clamp(1.05rem, 2vw, 1.25rem);
+      max-width: 640px;
+      margin-bottom: 30px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 30px;
+    }
+
+    .hero-points {
+      display: grid;
+      gap: 12px;
+      max-width: 610px;
+    }
+
+    .hero-point {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      color: var(--deep);
+      font-weight: 800;
+    }
+
+    .hero-point span {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--lime);
+      color: var(--deep);
+      flex: 0 0 auto;
+    }
+
+    .hero-photo-grid {
+      display: grid;
+      grid-template-columns: 1fr 0.78fr;
+      gap: 16px;
+      min-height: 620px;
+    }
+
+    .hero-photo-main,
+    .hero-photo-small {
+      position: relative;
+      overflow: hidden;
+      border-radius: 36px;
+      box-shadow: var(--shadow);
+      background: var(--sage);
+    }
+
+    .hero-photo-main img,
+    .hero-photo-small img { height: 100%; }
+
+    .hero-photo-stack {
+      display: grid;
+      gap: 16px;
+    }
+
+    .photo-badge {
+      position: absolute;
+      left: 22px;
+      right: 22px;
+      bottom: 22px;
+      border-radius: 22px;
+      padding: 18px;
+      background: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(16px);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.14);
+    }
+
+    .photo-badge strong {
+      display: block;
+      color: var(--deep);
+      font-size: 1.28rem;
+      line-height: 1.1;
+      letter-spacing: -0.04em;
+    }
+
+    .photo-badge span {
+      color: var(--muted);
+      font-weight: 700;
+      font-size: 0.92rem;
+    }
+
+    section { padding: 84px 0; }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: 0.8fr 1fr;
+      gap: 26px;
+      align-items: end;
+      margin-bottom: 36px;
+    }
+
+    .section-head h2 {
+      font-size: clamp(2.35rem, 5vw, 4.8rem);
+      line-height: 0.92;
+      letter-spacing: -0.08em;
+      color: var(--deep);
+    }
+
+    .section-head p {
+      color: var(--muted);
+      font-size: 1.08rem;
+      max-width: 680px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .service-card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 14px 40px rgba(14, 51, 34, 0.07);
+      transition: 0.22s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow);
+    }
+
+    .service-card img {
+      height: 210px;
+    }
+
+    .service-body {
+      padding: 24px;
+    }
+
+    .service-tag {
+      display: inline-flex;
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: var(--sage);
+      color: var(--deep);
+      font-size: 0.78rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 14px;
+    }
+
+    .service-body h3 {
+      color: var(--deep);
+      font-size: 1.32rem;
+      line-height: 1.1;
+      letter-spacing: -0.04em;
+      margin-bottom: 10px;
+    }
+
+    .service-body p {
+      color: var(--muted);
+    }
+
+    .before-after {
+      background: var(--deep);
+      color: var(--white);
+      border-radius: 44px;
+      padding: 52px;
+      box-shadow: var(--shadow);
+    }
+
+    .before-after .section-head h2,
+    .before-after .section-head p { color: var(--white); }
+    .before-after .section-head p { color: rgba(255,255,255,0.75); }
+
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .comparison-card {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 30px;
+      overflow: hidden;
+    }
+
+    .compare-images {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+    }
+
+    .compare-img {
+      position: relative;
+      min-height: 280px;
+      overflow: hidden;
+    }
+
+    .compare-img img { height: 100%; }
+
+    .label {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      background: rgba(255,255,255,0.9);
+      color: var(--deep);
+      border-radius: 999px;
+      padding: 7px 11px;
+      font-weight: 900;
+      font-size: 0.78rem;
+    }
+
+    .comparison-content {
+      padding: 22px;
+    }
+
+    .comparison-content h3 {
+      font-size: 1.35rem;
+      letter-spacing: -0.04em;
+      line-height: 1.1;
+      margin-bottom: 8px;
+    }
+
+    .comparison-content p {
+      color: rgba(255,255,255,0.72);
+    }
+
+    .real-work-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 20px;
+      align-items: stretch;
+    }
+
+    .feature-project {
+      position: relative;
+      overflow: hidden;
+      border-radius: 40px;
+      min-height: 560px;
+      box-shadow: var(--shadow);
+    }
+
+    .feature-project img { height: 100%; }
+
+    .feature-overlay {
+      position: absolute;
+      left: 26px;
+      right: 26px;
+      bottom: 26px;
+      padding: 24px;
+      border-radius: 26px;
+      background: rgba(255,255,255,0.88);
+      backdrop-filter: blur(16px);
+    }
+
+    .feature-overlay h3 {
+      color: var(--deep);
+      font-size: 1.8rem;
+      line-height: 1;
+      letter-spacing: -0.05em;
+      margin-bottom: 8px;
+    }
+
+    .feature-overlay p { color: var(--muted); }
+
+    .project-list {
+      display: grid;
+      gap: 20px;
+    }
+
+    .project-mini {
+      display: grid;
+      grid-template-columns: 170px 1fr;
+      gap: 18px;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      padding: 14px;
+      align-items: center;
+      box-shadow: 0 14px 36px rgba(14, 51, 34, 0.07);
+    }
+
+    .project-mini img {
+      height: 142px;
+      border-radius: 20px;
+    }
+
+    .project-mini h3 {
+      color: var(--deep);
+      font-size: 1.22rem;
+      line-height: 1.1;
+      letter-spacing: -0.04em;
+      margin-bottom: 8px;
+    }
+
+    .project-mini p { color: var(--muted); font-size: 0.95rem; }
+
+    .split-panel {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .panel {
+      border-radius: 38px;
+      padding: 44px;
+      border: 1px solid var(--line);
+      background: var(--white);
+      min-height: 430px;
+    }
+
+    .panel.dark {
+      background: linear-gradient(145deg, var(--deep), #071c12);
+      color: var(--white);
+      border: none;
+      box-shadow: var(--shadow);
+    }
+
+    .panel h2 {
+      font-size: clamp(2rem, 4vw, 3.6rem);
+      line-height: 0.96;
+      letter-spacing: -0.07em;
+      margin-bottom: 18px;
+    }
+
+    .panel p {
+      color: var(--muted);
+      margin-bottom: 24px;
+      font-size: 1.04rem;
+    }
+
+    .panel.dark p { color: rgba(255,255,255,0.74); }
+
+    .check-list { display: grid; gap: 12px; }
+
+    .check {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      color: var(--deep);
+      background: var(--bg);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 13px;
+    }
+
+    .check span {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--lime);
+      color: var(--deep);
+      display: grid;
+      place-items: center;
+      flex: 0 0 auto;
+      font-weight: 900;
+    }
+
+    .area-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 26px;
+    }
+
+    .area-cloud span {
+      padding: 11px 15px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      color: rgba(255, 255, 255, 0.86);
+      font-weight: 800;
+    }
+
+    .reviews {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .review-card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      padding: 26px;
+      box-shadow: 0 14px 36px rgba(14, 51, 34, 0.07);
+    }
+
+    .stars { color: #d69b2d; font-size: 1.1rem; margin-bottom: 12px; }
+    .review-card p { color: var(--muted); margin-bottom: 18px; }
+    .review-card strong { color: var(--deep); }
+
+    .cta {
+      border-radius: 44px;
+      padding: 58px;
+      background:
+        linear-gradient(rgba(14, 51, 34, 0.78), rgba(14, 51, 34, 0.88)),
+        url('https://images.unsplash.com/photo-1558904541-efa843a96f01?auto=format&fit=crop&w=1600&q=80') center/cover;
+      color: var(--white);
+      box-shadow: var(--shadow);
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .cta h2 {
+      font-size: clamp(2.3rem, 5vw, 4.7rem);
+      line-height: 0.9;
+      letter-spacing: -0.08em;
+      margin-bottom: 16px;
+    }
+
+    .cta p {
+      color: rgba(255, 255, 255, 0.78);
+      max-width: 700px;
+      font-size: 1.08rem;
+    }
+
+    .cta-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      min-width: 250px;
+    }
+
+    .cta .btn { background: var(--white); color: var(--deep); box-shadow: none; }
+    .cta .btn.light { background: rgba(255,255,255,0.12); color: var(--white); border-color: rgba(255,255,255,0.22); }
+
+    footer { padding: 46px 0 34px; }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr 0.8fr;
+      gap: 24px;
+      border-top: 1px solid var(--line);
+      padding-top: 32px;
+    }
+
+    .footer-grid h3 { color: var(--deep); font-size: 1rem; margin-bottom: 12px; }
+    .footer-grid p,
+    .footer-grid a { color: var(--muted); font-weight: 700; display: block; margin-bottom: 8px; }
+
+    .socials {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .socials a {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--white);
+      border: 1px solid var(--line);
+      color: var(--deep);
+      font-weight: 900;
+      margin-bottom: 0;
+    }
+
+    .socials a:hover { background: var(--deep); color: var(--white); }
+
+    .bottom-line {
+      color: var(--muted);
+      font-weight: 700;
+      font-size: 0.9rem;
+      margin-top: 30px;
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 980px) {
+      .menu-btn { display: block; }
+
+      .nav-links {
+        position: absolute;
+        left: 16px;
+        right: 16px;
+        top: 86px;
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        background: rgba(255,255,255,0.96);
+        border: 1px solid var(--line);
+        border-radius: 24px;
+        padding: 20px;
+        box-shadow: var(--shadow);
+      }
+
+      .nav-links.open { display: flex; }
+
+      .hero-grid,
+      .section-head,
+      .real-work-grid,
+      .split-panel,
+      .cta,
+      .footer-grid { grid-template-columns: 1fr; }
+
+      .hero-photo-grid { min-height: 520px; }
+      .services-grid,
+      .reviews { grid-template-columns: repeat(2, 1fr); }
+      .comparison-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 640px) {
+      .hero { padding-top: 46px; }
+      .hero-photo-grid { grid-template-columns: 1fr; min-height: auto; }
+      .hero-photo-main { min-height: 430px; }
+      .hero-photo-small { min-height: 260px; }
+      .services-grid,
+      .reviews { grid-template-columns: 1fr; }
+      .before-after { padding: 28px; border-radius: 32px; }
+      .compare-images { grid-template-columns: 1fr; }
+      .project-mini { grid-template-columns: 1fr; }
+      .panel,
+      .cta { padding: 30px; border-radius: 30px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#home" aria-label="Homepage">
+        <span class="brand-mark"></span>
+        <span>Evergreen Yard Co.</span>
+      </a>
+
+      <button class="menu-btn" onclick="toggleMenu()" aria-label="Open navigation">☰</button>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#services">Services</a>
+        <a href="#results">Results</a>
+        <a href="#projects">Work</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#contact" class="btn">Request Quote</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="pill">Lawn care website proposal</span>
+          <h1>Yard care that makes homes look maintained.</h1>
+          <p class="lead">
+            A realistic website concept for a local lawn care business, built to show services, completed work, before-and-after results, customer reviews, social media, and easy quote requests.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#contact" class="btn">Request a Free Quote</a>
+            <a href="#results" class="btn light">See Before & After</a>
+          </div>
+
+          <div class="hero-points">
+            <div class="hero-point"><span>✓</span> Weekly and bi-weekly lawn maintenance</div>
+            <div class="hero-point"><span>✓</span> Seasonal cleanups, trimming, edging, and disposal</div>
+            <div class="hero-point"><span>✓</span> Lawn repair, overseeding, fertilizing, and curb appeal services</div>
+          </div>
+        </div>
+
+        <div class="hero-photo-grid">
+          <div class="hero-photo-main">
+            <img src="https://images.unsplash.com/photo-1598902108854-10e335adac99?auto=format&fit=crop&w=1200&q=80" alt="Freshly cut green lawn beside a home" />
+            <div class="photo-badge">
+              <strong>Clean cuts. Sharp edges. Better curb appeal.</strong>
+              <span>Photo-based website layout that feels like a real local service brand.</span>
+            </div>
+          </div>
+
+          <div class="hero-photo-stack">
+            <div class="hero-photo-small">
+              <img src="https://images.unsplash.com/photo-1589923188900-85dae523342b?auto=format&fit=crop&w=900&q=80" alt="Lawn mower cutting grass" />
+            </div>
+            <div class="hero-photo-small">
+              <img src="https://images.unsplash.com/photo-1558521958-0a228e77e984?auto=format&fit=crop&w=900&q=80" alt="Garden landscaping and clean outdoor yard" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container">
+        <div class="section-head">
+          <h2>Complete lawn care services.</h2>
+          <p>This makes the business look like a full-service property care provider, not just someone cutting grass.</p>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card">
+            <img src="https://images.unsplash.com/photo-1590682680695-43b964a3ae17?auto=format&fit=crop&w=900&q=80" alt="Freshly mowed lawn" />
+            <div class="service-body">
+              <span class="service-tag">Maintenance</span>
+              <h3>Grass Cutting, Edging & Trimming</h3>
+              <p>Weekly or bi-weekly mowing, fence-line trimming, walkway edging, and clean finishing.</p>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=900&q=80" alt="Healthy green lawn and garden" />
+            <div class="service-body">
+              <span class="service-tag">Lawn Health</span>
+              <h3>Fertilizing & Overseeding</h3>
+              <p>Support for thicker growth, greener colour, and better coverage in thin or patchy areas.</p>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <img src="https://images.unsplash.com/photo-1591857177580-dc82b9ac4e1e?auto=format&fit=crop&w=900&q=80" alt="Garden cleanup tools and yard work" />
+            <div class="service-body">
+              <span class="service-tag">Seasonal</span>
+              <h3>Spring & Fall Cleanups</h3>
+              <p>Leaf removal, debris cleanup, garden bed reset, and property preparation between seasons.</p>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <img src="https://images.unsplash.com/photo-1622383563227-04401ab4e5ea?auto=format&fit=crop&w=900&q=80" alt="Trimmed shrubs and landscaping" />
+            <div class="service-body">
+              <span class="service-tag">Detail Work</span>
+              <h3>Shrub & Hedge Trimming</h3>
+              <p>Shape shrubs, hedges, and small bushes so the front yard looks clean and controlled.</p>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <img src="https://images.unsplash.com/photo-1601001815894-4bb6c81416d7?auto=format&fit=crop&w=900&q=80" alt="Mulch landscaping around a garden bed" />
+            <div class="service-body">
+              <span class="service-tag">Curb Appeal</span>
+              <h3>Mulch, Beds & Weed Support</h3>
+              <p>Garden bed cleanup, mulch refreshes, basic weed support, and tidy border maintenance.</p>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=900&q=80" alt="Outdoor garden and lawn area" />
+            <div class="service-body">
+              <span class="service-tag">Haul Away</span>
+              <h3>Yard Waste Removal</h3>
+              <p>Removal of clippings, leaves, branches, trimmings, and light yard debris after service.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="results">
+      <div class="container before-after">
+        <div class="section-head">
+          <h2>Before and after results.</h2>
+          <p>These image blocks make the site feel real. Riley can replace these stock images later with actual client photos.</p>
+        </div>
+
+        <div class="comparison-grid">
+          <article class="comparison-card">
+            <div class="compare-images">
+              <div class="compare-img">
+                <img src="https://images.unsplash.com/photo-1599685315640-79e061c396c4?auto=format&fit=crop&w=900&q=80" alt="Overgrown lawn before lawn care service" />
+                <span class="label">Before</span>
+              </div>
+              <div class="compare-img">
+                <img src="https://images.unsplash.com/photo-1598902108854-10e335adac99?auto=format&fit=crop&w=900&q=80" alt="Clean green lawn after service" />
+                <span class="label">After</span>
+              </div>
+            </div>
+            <div class="comparison-content">
+              <h3>Overgrown lawn reset</h3>
+              <p>Mowing, trimming, edging, and cleanup to bring the yard back to a maintained look.</p>
+            </div>
+          </article>
+
+          <article class="comparison-card">
+            <div class="compare-images">
+              <div class="compare-img">
+                <img src="https://images.unsplash.com/photo-1578167635642-1dbfb887c0d8?auto=format&fit=crop&w=900&q=80" alt="Leaves and outdoor debris before clean up" />
+                <span class="label">Before</span>
+              </div>
+              <div class="compare-img">
+                <img src="https://images.unsplash.com/photo-1558521958-0a228e77e984?auto=format&fit=crop&w=900&q=80" alt="Clean landscaped yard after cleanup" />
+                <span class="label">After</span>
+              </div>
+            </div>
+            <div class="comparison-content">
+              <h3>Seasonal cleanup</h3>
+              <p>Leaf removal, debris disposal, garden bed cleanup, and a refreshed outdoor space.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <div class="section-head">
+          <h2>Recent work showcase.</h2>
+          <p>A real site should include project-style sections so visitors can quickly see the kind of results the business provides.</p>
+        </div>
+
+        <div class="real-work-grid">
+          <div class="feature-project">
+            <img src="https://images.unsplash.com/photo-1598902108854-10e335adac99?auto=format&fit=crop&w=1300&q=80" alt="Fresh lawn after professional cut" />
+            <div class="feature-overlay">
+              <h3>Residential lawn maintenance</h3>
+              <p>Recurring lawn care package with mowing, trimming, and edging for a polished weekly look.</p>
+            </div>
+          </div>
+
+          <div class="project-list">
+            <article class="project-mini">
+              <img src="https://images.unsplash.com/photo-1601001815894-4bb6c81416d7?auto=format&fit=crop&w=700&q=80" alt="Mulched garden bed" />
+              <div>
+                <h3>Garden bed refresh</h3>
+                <p>Mulch, light weeding, border cleanup, and improved front yard presentation.</p>
+              </div>
+            </article>
+
+            <article class="project-mini">
+              <img src="https://images.unsplash.com/photo-1622383563227-04401ab4e5ea?auto=format&fit=crop&w=700&q=80" alt="Trimmed shrubs" />
+              <div>
+                <h3>Shrub shaping</h3>
+                <p>Cleaner lines around shrubs and hedges for a more maintained property.</p>
+              </div>
+            </article>
+
+            <article class="project-mini">
+              <img src="https://images.unsplash.com/photo-1591857177580-dc82b9ac4e1e?auto=format&fit=crop&w=700&q=80" alt="Yard cleanup" />
+              <div>
+                <h3>Seasonal yard cleanup</h3>
+                <p>Leaves, trimmings, and light debris removed before the next season.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container split-panel">
+        <div class="panel">
+          <span class="pill">Simple process</span>
+          <h2>Easy for customers to start.</h2>
+          <p>This gives the website a clear customer journey from first visit to quote request.</p>
+
+          <div class="check-list">
+            <div class="check"><span>1</span> Send property photos or address</div>
+            <div class="check"><span>2</span> Get a quote and service recommendation</div>
+            <div class="check"><span>3</span> Choose one-time or recurring service</div>
+            <div class="check"><span>4</span> Enjoy a cleaner, better-looking yard</div>
+          </div>
+        </div>
+
+        <div class="panel dark">
+          <span class="pill">Local service area</span>
+          <h2>Built for neighbourhood growth.</h2>
+          <p>The website can target nearby homeowners and be adjusted later based on the exact cities Riley wants to cover.</p>
+
+          <div class="area-cloud">
+            <span>Oshawa</span>
+            <span>Whitby</span>
+            <span>Brooklin</span>
+            <span>Courtice</span>
+            <span>Ajax</span>
+            <span>Pickering</span>
+            <span>Bowmanville</span>
+            <span>Durham Region</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="reviews">
+      <div class="container">
+        <div class="section-head">
+          <h2>Customer reviews.</h2>
+          <p>These are placeholder reviews for the mockup. Real Google reviews can be added later once the final website is built.</p>
+        </div>
+
+        <div class="reviews">
+          <article class="review-card">
+            <div class="stars">★★★★★</div>
+            <p>“The lawn looked clean, sharp, and professionally maintained after every visit.”</p>
+            <strong>Homeowner Review</strong>
+          </article>
+
+          <article class="review-card">
+            <div class="stars">★★★★★</div>
+            <p>“Great communication and reliable service. The front yard looked much better.”</p>
+            <strong>Local Client</strong>
+          </article>
+
+          <article class="review-card">
+            <div class="stars">★★★★★</div>
+            <p>“Helped with cleanup, trimming, and lawn care. Very easy to work with.”</p>
+            <strong>Seasonal Cleanup Client</strong>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="cta">
+          <div>
+            <h2>Ready to turn this into a real site?</h2>
+            <p>This proposal can be customized with Riley’s real business name, phone number, email, Instagram, actual before-and-after photos, pricing notes, and a working contact form.</p>
+          </div>
+
+          <div class="cta-actions">
+            <a class="btn" href="mailto:hello@example.com">Email for Quote</a>
+            <a class="btn light" href="sms:0000000000">Text for Quote</a>
+            <a class="btn light" href="https://www.instagram.com/" target="_blank" rel="noopener">View Instagram</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <a class="brand" href="#home">
+          <span class="brand-mark"></span>
+          <span>Evergreen Yard Co.</span>
+        </a>
+        <p style="margin-top: 14px; max-width: 460px;">A modern lawn care website proposal built to help a local service business look credible, visual, and easy to contact.</p>
+      </div>
+
+      <div>
+        <h3>Contact</h3>
+        <a href="mailto:hello@example.com">hello@example.com</a>
+        <a href="sms:0000000000">Text: 000-000-0000</a>
+        <a href="#contact">Request a free quote</a>
+      </div>
+
+      <div>
+        <h3>Social Media</h3>
+        <p>Plug in real social links before launch.</p>
+        <div class="socials" aria-label="Social media links">
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
+          <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook">FB</a>
+          <a href="https://www.tiktok.com/" target="_blank" rel="noopener" aria-label="TikTok">TT</a>
+          <a href="https://www.youtube.com/" target="_blank" rel="noopener" aria-label="YouTube">YT</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container bottom-line">
+      <span>© <span id="year"></span> Evergreen Yard Co. Website Proposal.</span>
+      <span>Instagram • Facebook • TikTok • YouTube</span>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('navLinks').classList.toggle('open');
+    }
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.getElementById('navLinks').classList.remove('open');
+      });
+    });
+  </script>
+</body>
+</html>

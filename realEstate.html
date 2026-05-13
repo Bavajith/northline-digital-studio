@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GTA Nest Realty | Homes in Scarborough, Markham, Pickering, Ajax & More</title>
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --dark: #10231f;
+      --green: #2f6f5e;
+      --mint: #dff5ec;
+      --soft: #f7fbf8;
+      --gold: #d5a84f;
+      --text: #24332f;
+      --muted: #6b7a75;
+      --white: #ffffff;
+      --border: #dce8e2;
+      --shadow: 0 18px 45px rgba(16, 35, 31, 0.12);
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      color: var(--text);
+      background: var(--soft);
+      line-height: 1.6;
+    }
+
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
+
+    header {
+      background: rgba(255,255,255,0.95);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(10px);
+    }
+
+    .nav {
+      max-width: 1200px;
+      margin: auto;
+      padding: 18px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--dark);
+    }
+
+    .logo span { color: var(--green); }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    .nav-links a:hover { color: var(--green); }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 18px;
+      border-radius: 999px;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: var(--green);
+      color: white;
+    }
+
+    .btn-secondary {
+      background: var(--mint);
+      color: var(--dark);
+    }
+
+    .hero {
+      background:
+        linear-gradient(rgba(16,35,31,0.72), rgba(16,35,31,0.72)),
+        url("https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=1600&q=80");
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: 110px 24px 80px;
+    }
+
+    .hero-inner {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .hero h1 {
+      max-width: 760px;
+      font-size: clamp(42px, 6vw, 76px);
+      line-height: 1.02;
+      margin-bottom: 22px;
+    }
+
+    .hero p {
+      max-width: 680px;
+      font-size: 19px;
+      color: #e8f2ee;
+      margin-bottom: 30px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .search-panel {
+      max-width: 1200px;
+      margin: -45px auto 70px;
+      background: white;
+      padding: 24px;
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      position: relative;
+      z-index: 5;
+    }
+
+    .search-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 14px;
+    }
+
+    .field label {
+      display: block;
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--muted);
+      margin-bottom: 6px;
+      text-transform: uppercase;
+    }
+
+    .field input,
+    .field select {
+      width: 100%;
+      padding: 13px 14px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      font-size: 14px;
+      background: white;
+    }
+
+    section {
+      max-width: 1200px;
+      margin: auto;
+      padding: 35px 24px;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: end;
+      margin-bottom: 24px;
+    }
+
+    .section-head h2 {
+      font-size: 36px;
+      color: var(--dark);
+    }
+
+    .section-head p {
+      max-width: 560px;
+      color: var(--muted);
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      margin-bottom: 30px;
+    }
+
+    .stat-card {
+      background: white;
+      padding: 24px;
+      border-radius: 22px;
+      border: 1px solid var(--border);
+    }
+
+    .stat-card h3 {
+      font-size: 30px;
+      color: var(--green);
+    }
+
+    .stat-card p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .listings {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 26px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: 0 12px 30px rgba(16,35,31,0.07);
+    }
+
+    .card-img {
+      height: 230px;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+
+    .badge {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      background: white;
+      color: var(--green);
+      font-weight: 800;
+      font-size: 12px;
+      padding: 8px 12px;
+      border-radius: 999px;
+    }
+
+    .price {
+      position: absolute;
+      bottom: 15px;
+      left: 15px;
+      background: var(--green);
+      color: white;
+      font-weight: 900;
+      padding: 10px 14px;
+      border-radius: 999px;
+    }
+
+    .card-body {
+      padding: 20px;
+    }
+
+    .card-body h3 {
+      font-size: 21px;
+      color: var(--dark);
+      margin-bottom: 6px;
+    }
+
+    .location {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 14px;
+    }
+
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+
+    .features span {
+      background: var(--mint);
+      color: var(--dark);
+      padding: 7px 10px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .card-body button {
+      width: 100%;
+      margin-top: 8px;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 34px;
+      align-items: center;
+    }
+
+    .panel {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      padding: 32px;
+      box-shadow: var(--shadow);
+    }
+
+    .panel h2 {
+      font-size: 34px;
+      color: var(--dark);
+      margin-bottom: 14px;
+    }
+
+    .panel p {
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .area-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+    }
+
+    .area {
+      min-height: 130px;
+      border-radius: 22px;
+      padding: 18px;
+      background: linear-gradient(135deg, var(--green), #1b4037);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: end;
+    }
+
+    .area strong {
+      font-size: 20px;
+    }
+
+    .area span {
+      color: #d8eee6;
+      font-size: 13px;
+    }
+
+    .contact {
+      background: var(--dark);
+      color: white;
+      border-radius: 34px;
+      padding: 44px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      align-items: start;
+    }
+
+    .contact h2 {
+      font-size: 36px;
+      margin-bottom: 12px;
+    }
+
+    .contact p {
+      color: #d7e8e2;
+    }
+
+    form {
+      display: grid;
+      gap: 14px;
+    }
+
+    form input,
+    form textarea,
+    form select {
+      padding: 14px;
+      border-radius: 14px;
+      border: none;
+      font-size: 15px;
+    }
+
+    textarea { min-height: 120px; resize: vertical; }
+
+    footer {
+      margin-top: 60px;
+      background: #0b1916;
+      color: white;
+      padding: 44px 24px;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 30px;
+    }
+
+    footer h3,
+    footer h4 {
+      margin-bottom: 12px;
+    }
+
+    footer p,
+    footer a {
+      color: #bfd4cd;
+      font-size: 14px;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .disclaimer {
+      max-width: 1200px;
+      margin: 30px auto 0;
+      color: #91aaa1;
+      font-size: 12px;
+      border-top: 1px solid rgba(255,255,255,0.12);
+      padding-top: 20px;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.6);
+      z-index: 999;
+      padding: 24px;
+      overflow: auto;
+    }
+
+    .modal-content {
+      max-width: 850px;
+      margin: 40px auto;
+      background: white;
+      border-radius: 28px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .modal-close {
+      position: absolute;
+      right: 18px;
+      top: 14px;
+      border: none;
+      background: white;
+      font-size: 28px;
+      cursor: pointer;
+      border-radius: 50%;
+      width: 44px;
+      height: 44px;
+    }
+
+    .modal-img {
+      height: 370px;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .modal-body {
+      padding: 28px;
+    }
+
+    .modal-body h2 {
+      color: var(--dark);
+      font-size: 32px;
+    }
+
+    .empty {
+      background: white;
+      padding: 30px;
+      border-radius: 22px;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      grid-column: 1 / -1;
+    }
+
+    @media (max-width: 900px) {
+      .nav-links { display: none; }
+      .search-grid,
+      .stats,
+      .listings,
+      .split,
+      .contact,
+      .footer-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .area-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .hero {
+        padding-top: 75px;
+      }
+
+      .search-panel {
+        margin: -25px 14px 40px;
+      }
+
+      .area-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact {
+        padding: 28px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="nav">
+    <a href="#" class="logo">GTA <span>Nest</span> Realty</a>
+
+    <nav class="nav-links">
+      <a href="#listings">Listings</a>
+      <a href="#areas">Communities</a>
+      <a href="#buyers">Buyers</a>
+      <a href="#sellers">Sellers</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <a href="#contact" class="btn btn-primary">Book a Call</a>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <h1>Find your next home across the Greater Toronto Area.</h1>
+      <p>
+        Search homes across Scarborough, Markham, Pickering, Ajax, Brampton, Whitby, Toronto, Durham and York Region.
+        Built for buyers, sellers and families looking for clear real estate guidance.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#listings" class="btn btn-primary">View Listings</a>
+        <a href="#contact" class="btn btn-secondary">Get Home Value</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="search-panel">
+    <div class="search-grid">
+      <div class="field">
+        <label>City</label>
+        <select id="cityFilter">
+          <option value="">All Cities</option>
+          <option>Scarborough</option>
+          <option>Markham</option>
+          <option>Pickering</option>
+          <option>Ajax</option>
+          <option>Brampton</option>
+          <option>Whitby</option>
+          <option>Toronto</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label>Property Type</label>
+        <select id="typeFilter">
+          <option value="">Any Type</option>
+          <option>Detached</option>
+          <option>Semi-Detached</option>
+          <option>Townhouse</option>
+          <option>Condo</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label>Max Price</label>
+        <select id="priceFilter">
+          <option value="">No Max</option>
+          <option value="700000">$700,000</option>
+          <option value="900000">$900,000</option>
+          <option value="1100000">$1,100,000</option>
+          <option value="1300000">$1,300,000</option>
+          <option value="1600000">$1,600,000</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label>Bedrooms</label>
+        <select id="bedFilter">
+          <option value="">Any</option>
+          <option value="1">1+</option>
+          <option value="2">2+</option>
+          <option value="3">3+</option>
+          <option value="4">4+</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label>&nbsp;</label>
+        <button class="btn btn-primary" style="width:100%;" onclick="filterListings()">Search</button>
+      </div>
+    </div>
+  </div>
+
+  <section>
+    <div class="stats">
+      <div class="stat-card">
+        <h3>GTA</h3>
+        <p>Toronto, York, Peel and Durham coverage</p>
+      </div>
+      <div class="stat-card">
+        <h3>24/7</h3>
+        <p>Online buyer inquiries and lead capture</p>
+      </div>
+      <div class="stat-card">
+        <h3>IDX</h3>
+        <p>Ready for licensed MLS feed integration</p>
+      </div>
+      <div class="stat-card">
+        <h3>MLS</h3>
+        <p>Compliance-ready structure and disclaimers</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="listings">
+    <div class="section-head">
+      <div>
+        <h2>Featured GTA Listings</h2>
+        <p>
+          Sample listing cards shown for design purposes. Replace with licensed CREA DDF, TRREB IDX or VOW data when available.
+        </p>
+      </div>
+    </div>
+
+    <div class="listings" id="listingGrid"></div>
+  </section>
+
+  <section id="areas">
+    <div class="section-head">
+      <div>
+        <h2>Popular Communities</h2>
+        <p>Explore high-demand GTA markets for families, commuters and investors.</p>
+      </div>
+    </div>
+
+    <div class="area-grid">
+      <div class="area"><strong>Scarborough</strong><span>East Toronto family homes</span></div>
+      <div class="area"><strong>Markham</strong><span>Top schools and tech corridor</span></div>
+      <div class="area"><strong>Pickering</strong><span>Durham growth market</span></div>
+      <div class="area"><strong>Ajax</strong><span>Value-driven family homes</span></div>
+      <div class="area"><strong>Brampton</strong><span>Large homes and strong demand</span></div>
+      <div class="area"><strong>Whitby</strong><span>Suburban lifestyle and space</span></div>
+      <div class="area"><strong>Toronto</strong><span>Condos, semis and luxury homes</span></div>
+      <div class="area"><strong>Durham Region</strong><span>Pickering, Ajax, Whitby, Oshawa</span></div>
+    </div>
+  </section>
+
+  <section id="buyers">
+    <div class="split">
+      <div class="panel">
+        <h2>For Buyers</h2>
+        <p>
+          Get a clear buying plan before you view homes. We help you understand budget, neighbourhoods,
+          property types, offer strategy, closing costs and next steps.
+        </p>
+        <a href="#contact" class="btn btn-primary">Start Buying Plan</a>
+      </div>
+
+      <div class="panel">
+        <h2>For Sellers</h2>
+        <p>
+          Prepare your home for market with pricing guidance, staging recommendations, photography,
+          listing strategy, showings and offer review support.
+        </p>
+        <a href="#contact" class="btn btn-primary">Request Home Value</a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="panel">
+      <h2>MLS / IDX Integration Notes</h2>
+      <p>
+        This template is front-end ready. To show real MLS listings, connect a licensed feed from CREA DDF,
+        TRREB IDX, VOW, or an approved provider such as a brokerage-approved real estate API. Do not scrape
+        REALTOR.ca or copy listing photos/descriptions without permission.
+      </p>
+      <p>
+        In production, the listing data should come from your own backend API, not directly from the browser,
+        because API keys and MLS credentials must remain private.
+      </p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="contact">
+      <div>
+        <h2>Ready to move in the GTA?</h2>
+        <p>
+          Tell us what you are looking for and we will help you narrow down the right neighbourhood,
+          property type and price range.
+        </p>
+      </div>
+
+      <form onsubmit="submitLead(event)">
+        <input type="text" id="name" placeholder="Full Name" required />
+        <input type="email" id="email" placeholder="Email Address" required />
+        <input type="tel" id="phone" placeholder="Phone Number" />
+        <select id="interest">
+          <option>Buying a home</option>
+          <option>Selling a home</option>
+          <option>Buying and selling</option>
+          <option>Investment property</option>
+        </select>
+        <textarea id="message" placeholder="Tell us your preferred city, budget, bedrooms and timeline"></textarea>
+        <button class="btn btn-secondary" type="submit">Send Inquiry</button>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <h3>GTA Nest Realty</h3>
+      <p>
+        A modern Canadian real estate website template for GTA buyers and sellers.
+      </p>
+    </div>
+
+    <div>
+      <h4>Explore</h4>
+      <a href="#listings">Listings</a>
+      <a href="#areas">Communities</a>
+      <a href="#buyers">Buyers</a>
+      <a href="#sellers">Sellers</a>
+    </div>
+
+    <div>
+      <h4>Markets</h4>
+      <a>Scarborough</a>
+      <a>Markham</a>
+      <a>Pickering</a>
+      <a>Ajax</a>
+      <a>Brampton</a>
+      <a>Whitby</a>
+    </div>
+
+    <div>
+      <h4>Contact</h4>
+      <p>Email: hello@gtanestrealty.ca</p>
+      <p>Phone: 416-555-0199</p>
+      <p>Serving the Greater Toronto Area</p>
+    </div>
+  </div>
+
+  <div class="disclaimer">
+    Disclaimer: This is a website template. Listing data shown is sample data only and must not be represented as live MLS data.
+    MLS, REALTOR.ca, CREA, TRREB and brokerage listing data require authorized access, licensing and proper attribution.
+  </div>
+</footer>
+
+<div class="modal" id="listingModal">
+  <div class="modal-content">
+    <button class="modal-close" onclick="closeModal()">×</button>
+    <div class="modal-img" id="modalImg"></div>
+    <div class="modal-body" id="modalBody"></div>
+  </div>
+</div>
+
+<script>
+  const listings = [
+    {
+      id: 1,
+      city: "Scarborough",
+      type: "Detached",
+      price: 1199000,
+      beds: 4,
+      baths: 3,
+      parking: 4,
+      address: "12 Meadowvale Grove",
+      image: "https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=1200&q=80",
+      description: "Spacious detached family home near parks, schools, transit and shopping. Finished basement and private backyard."
+    },
+    {
+      id: 2,
+      city: "Markham",
+      type: "Townhouse",
+      price: 1088000,
+      beds: 3,
+      baths: 3,
+      parking: 2,
+      address: "88 Cornell Centre Blvd",
+      image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
+      description: "Modern townhouse in a desirable Markham community with open-concept living and convenient access to Highway 407."
+    },
+    {
+      id: 3,
+      city: "Pickering",
+      type: "Detached",
+      price: 999000,
+      beds: 4,
+      baths: 4,
+      parking: 4,
+      address: "34 Rouge Valley Drive",
+      image: "https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?auto=format&fit=crop&w=1200&q=80",
+      description: "Bright detached home with large bedrooms, finished basement and family-friendly layout close to transit and amenities."
+    },
+    {
+      id: 4,
+      city: "Ajax",
+      type: "Semi-Detached",
+      price: 849900,
+      beds: 3,
+      baths: 3,
+      parking: 3,
+      address: "21 Harwood Avenue North",
+      image: "https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=1200&q=80",
+      description: "Well-kept semi-detached home with practical layout, updated kitchen and easy access to shopping and schools."
+    },
+    {
+      id: 5,
+      city: "Brampton",
+      type: "Detached",
+      price: 1299000,
+      beds: 5,
+      baths: 4,
+      parking: 4,
+      address: "47 Creditview Road",
+      image: "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?auto=format&fit=crop&w=1200&q=80",
+      description: "Large detached home ideal for extended family living with spacious rooms, multiple bathrooms and a double garage."
+    },
+    {
+      id: 6,
+      city: "Whitby",
+      type: "Townhouse",
+      price: 799900,
+      beds: 3,
+      baths: 3,
+      parking: 2,
+      address: "9 Brooklin Lane",
+      image: "https://images.unsplash.com/photo-1598228723793-52759bba239c?auto=format&fit=crop&w=1200&q=80",
+      description: "Stylish townhouse in a growing Whitby neighbourhood with open-concept main floor and family-friendly surroundings."
+    },
+    {
+      id: 7,
+      city: "Toronto",
+      type: "Condo",
+      price: 689000,
+      beds: 2,
+      baths: 2,
+      parking: 1,
+      address: "120 Harbour Street",
+      image: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=1200&q=80",
+      description: "Downtown condo with city views, modern finishes and convenient access to transit, restaurants and the waterfront."
+    },
+    {
+      id: 8,
+      city: "Markham",
+      type: "Detached",
+      price: 1588000,
+      beds: 4,
+      baths: 4,
+      parking: 4,
+      address: "66 Cachet Parkway",
+      image: "https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=1200&q=80",
+      description: "Executive detached home in a premium Markham area with elegant finishes, large principal rooms and strong curb appeal."
+    },
+    {
+      id: 9,
+      city: "Pickering",
+      type: "Condo",
+      price: 629000,
+      beds: 2,
+      baths: 2,
+      parking: 1,
+      address: "1455 Celebration Drive",
+      image: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80",
+      description: "Contemporary condo near Pickering Town Centre, GO Transit and waterfront trails. Great option for first-time buyers."
+    }
+  ];
+
+  function money(value) {
+    return value.toLocaleString("en-CA", {
+      style: "currency",
+      currency: "CAD",
+      maximumFractionDigits: 0
+    });
+  }
+
+  function renderListings(items) {
+    const grid = document.getElementById("listingGrid");
+    grid.innerHTML = "";
+
+    if (items.length === 0) {
+      grid.innerHTML = '<div class="empty">No listings match your search. Try changing the city, price or bedroom filters.</div>';
+      return;
+    }
+
+    items.forEach(listing => {
+      const card = document.createElement("article");
+      card.className = "card";
+
+      card.innerHTML = `
+        <div class="card-img" style="background-image:url('${listing.image}')">
+          <div class="badge">${listing.type}</div>
+          <div class="price">${money(listing.price)}</div>
+        </div>
+
+        <div class="card-body">
+          <h3>${listing.address}</h3>
+          <div class="location">${listing.city}, Ontario</div>
+
+          <div class="features">
+            <span>${listing.beds} Beds</span>
+            <span>${listing.baths} Baths</span>
+            <span>${listing.parking} Parking</span>
+          </div>
+
+          <p>${listing.description}</p>
+          <button class="btn btn-primary" onclick="openListing(${listing.id})">View Details</button>
+        </div>
+      `;
+
+      grid.appendChild(card);
+    });
+  }
+
+  function filterListings() {
+    const city = document.getElementById("cityFilter").value;
+    const type = document.getElementById("typeFilter").value;
+    const maxPrice = document.getElementById("priceFilter").value;
+    const beds = document.getElementById("bedFilter").value;
+
+    const filtered = listings.filter(listing => {
+      const cityMatch = !city || listing.city === city;
+      const typeMatch = !type || listing.type === type;
+      const priceMatch = !maxPrice || listing.price <= Number(maxPrice);
+      const bedMatch = !beds || listing.beds >= Number(beds);
+
+      return cityMatch && typeMatch && priceMatch && bedMatch;
+    });
+
+    renderListings(filtered);
+  }
+
+  function openListing(id) {
+    const listing = listings.find(item => item.id === id);
+
+    document.getElementById("modalImg").style.backgroundImage = `url('${listing.image}')`;
+
+    document.getElementById("modalBody").innerHTML = `
+      <h2>${listing.address}</h2>
+      <p><strong>${listing.city}, Ontario</strong></p>
+      <p style="font-size:24px; color:#2f6f5e; font-weight:900; margin:12px 0;">${money(listing.price)}</p>
+
+      <div class="features">
+        <span>${listing.type}</span>
+        <span>${listing.beds} Bedrooms</span>
+        <span>${listing.baths} Bathrooms</span>
+        <span>${listing.parking} Parking</span>
+      </div>
+
+      <p>${listing.description}</p>
+
+      <br>
+
+      <p>
+        <strong>Important:</strong> This is sample listing content only. In a live website,
+        this section should show licensed MLS/IDX data from your approved feed.
+      </p>
+
+      <br>
+
+      <a href="#contact" onclick="closeModal()" class="btn btn-primary">Ask About This Property</a>
+    `;
+
+    document.getElementById("listingModal").style.display = "block";
+  }
+
+  function closeModal() {
+    document.getElementById("listingModal").style.display = "none";
+  }
+
+  function submitLead(event) {
+    event.preventDefault();
+
+    const lead = {
+      name: document.getElementById("name").value,
+      email: document.getElementById("email").value,
+      phone: document.getElementById("phone").value,
+      interest: document.getElementById("interest").value,
+      message: document.getElementById("message").value
+    };
+
+    console.log("Lead submitted:", lead);
+
+    alert("Thank you. Your inquiry has been received. In production, this would send to your CRM, email, or database.");
+
+    event.target.reset();
+  }
+
+  window.onclick = function(event) {
+    const modal = document.getElementById("listingModal");
+    if (event.target === modal) {
+      closeModal();
+    }
+  };
+
+  renderListings(listings);
+</script>
+
+</body>
+</html>

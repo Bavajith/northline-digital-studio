@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Contact Northline Digital Studio to start a website project, request a website direction plan, or discuss WordPress, redesign, and maintenance services." />
+  <title>Contact | Northline Digital Studio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #fbfaf7;
+      --surface: #ffffff;
+      --surface-soft: #f4efe8;
+      --dark: #111827;
+      --muted: #6b7280;
+      --border: #e8dfd4;
+      --accent: #9a6a43;
+      --accent-dark: #6f482c;
+      --accent-soft: #efe2d3;
+      --green: #273c36;
+      --shadow: 0 24px 80px rgba(17, 24, 39, 0.10);
+      --radius: 26px;
+      --max: 1180px;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+
+    body {
+      font-family: "Inter", sans-serif;
+      background: var(--bg);
+      color: var(--dark);
+      line-height: 1.6;
+      overflow-x: hidden;
+      max-width: 100%;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
+
+    .announcement { background: var(--green); color: #fff; font-size: 14px; text-align: center; padding: 10px 16px; }
+    .announcement a { font-weight: 700; border-bottom: 1px solid rgba(255,255,255,0.6); }
+
+    header { position: sticky; top: 0; z-index: 1000; background: rgba(251,250,247,.88); backdrop-filter: blur(18px); border-bottom: 1px solid rgba(232,223,212,.8); }
+    .navbar { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: flex; align-items: center; gap: 12px; font-weight: 800; letter-spacing: -0.04em; font-size: 20px; }
+    .brand-mark { width: 42px; height: 42px; border-radius: 14px; background: linear-gradient(135deg, var(--green), var(--accent)); display: grid; place-items: center; color: #fff; font-weight: 800; box-shadow: 0 12px 30px rgba(39,60,54,.25); }
+    .nav-links { display: flex; align-items: center; gap: 28px; font-size: 14px; font-weight: 600; color: #374151; }
+    .nav-links a { position: relative; }
+    .nav-links a::after { content: ""; position: absolute; width: 0; height: 2px; left: 0; bottom: -8px; background: var(--accent); transition: width .25s ease; }
+    .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+    .nav-actions { display: flex; align-items: center; gap: 12px; }
+
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; border: 1px solid transparent; padding: 13px 19px; border-radius: 999px; font-weight: 700; font-size: 14px; transition: transform .2s ease, box-shadow .2s ease, background .2s ease; cursor: pointer; white-space: nowrap; }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary { background: var(--dark); color: #fff; box-shadow: 0 16px 40px rgba(17,24,39,.18); }
+    .btn-primary:hover { background: #000; }
+    .btn-secondary { background: var(--surface); color: var(--dark); border-color: var(--border); }
+    .btn-accent { background: var(--accent); color: #fff; box-shadow: 0 16px 38px rgba(154,106,67,.22); }
+
+    .mobile-toggle { display: none; width: 46px; height: 46px; border: 1px solid var(--border); border-radius: 14px; background: #fff; cursor: pointer; }
+    .mobile-toggle span { display: block; width: 19px; height: 2px; background: var(--dark); margin: 5px auto; border-radius: 99px; }
+
+    .mobile-menu { display: none; }
+
+    h1, h2, h3 { letter-spacing: -0.055em; line-height: 1.05; }
+    h1 { font-size: clamp(38px, 7vw, 76px); max-width: 850px; }
+    h2 { font-size: clamp(34px, 5vw, 54px); max-width: 740px; }
+    h3 { font-size: 25px; }
+    .serif { font-family: "Playfair Display", serif; font-weight: 700; color: var(--accent-dark); }
+
+    .eyebrow { display: inline-flex; align-items: center; gap: 9px; padding: 8px 12px; border: 1px solid var(--border); background: rgba(255,255,255,.72); border-radius: 999px; color: var(--accent-dark); font-size: 13px; font-weight: 800; margin-bottom: 22px; }
+    .eyebrow-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
+
+    .hero { padding: 86px 0 44px; position: relative; }
+    .hero::before { content: ""; position: absolute; width: 620px; height: 620px; background: radial-gradient(circle, rgba(154,106,67,.18), transparent 65%); top: -80px; right: -210px; pointer-events: none; }
+    .hero-grid { display: grid; grid-template-columns: .95fr 1.05fr; gap: 46px; align-items: start; position: relative; z-index: 2; }
+    .hero-copy { font-size: 19px; color: var(--muted); max-width: 640px; margin: 24px 0 30px; }
+
+    .quick-contact { display: grid; gap: 14px; margin-top: 30px; }
+    .quick-item { background: #fff; border: 1px solid var(--border); border-radius: 20px; padding: 18px; display: grid; grid-template-columns: 48px 1fr; gap: 14px; align-items: center; box-shadow: 0 14px 50px rgba(17,24,39,.04); }
+    .quick-icon { width: 48px; height: 48px; border-radius: 16px; background: var(--accent-soft); color: var(--accent-dark); display: grid; place-items: center; font-weight: 900; }
+    .quick-item strong { display: block; line-height: 1.2; }
+    .quick-item span { color: var(--muted); font-size: 14px; }
+
+    .form-card { background: #fff; border: 1px solid var(--border); border-radius: 34px; padding: 32px; box-shadow: var(--shadow); }
+    .form-card h2 { font-size: clamp(30px, 4vw, 44px); margin-bottom: 12px; }
+    .form-card > p { color: var(--muted); margin-bottom: 26px; }
+
+    form { display: grid; gap: 16px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    label { display: block; font-size: 13px; font-weight: 800; color: #374151; margin-bottom: 7px; }
+    input, select, textarea { width: 100%; border: 1px solid var(--border); border-radius: 16px; padding: 14px 15px; font-family: inherit; font-size: 15px; background: #fffdfb; color: var(--dark); outline: none; transition: border .2s ease, box-shadow .2s ease; }
+    input:focus, select:focus, textarea:focus { border-color: var(--accent); box-shadow: 0 0 0 4px rgba(154,106,67,.12); }
+    textarea { min-height: 140px; resize: vertical; }
+    .form-note { color: var(--muted); font-size: 13px; margin-top: 4px; }
+
+    section { padding: 88px 0; }
+    .section-header { display: flex; justify-content: space-between; gap: 32px; align-items: end; margin-bottom: 42px; }
+    .section-kicker { color: var(--accent-dark); font-size: 13px; text-transform: uppercase; letter-spacing: .12em; font-weight: 900; margin-bottom: 12px; }
+    .section-header p { max-width: 430px; color: var(--muted); }
+
+    .expect-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+    .expect-card { background: #fff; border: 1px solid var(--border); border-radius: 24px; padding: 24px; box-shadow: 0 14px 50px rgba(17,24,39,.05); }
+    .expect-card span { display: block; color: var(--accent-dark); font-size: 13px; font-weight: 900; margin-bottom: 22px; }
+    .expect-card h3 { font-size: 22px; margin-bottom: 10px; }
+    .expect-card p { color: var(--muted); font-size: 15px; }
+
+    .dark-section { background: var(--green); color: #fff; border-radius: 38px; margin: 0; overflow: hidden; position: relative; }
+    .dark-section::before { content: ""; position: absolute; width: 520px; height: 520px; right: -180px; top: -220px; background: radial-gradient(circle, rgba(255,255,255,.15), transparent 65%); }
+    .split-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 42px; align-items: center; position: relative; z-index: 2; }
+    .split-grid p { color: rgba(255,255,255,.72); margin: 18px 0 28px; font-size: 17px; }
+    .info-panel { background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.14); border-radius: 30px; padding: 30px; }
+    .info-row { display: flex; justify-content: space-between; gap: 20px; padding: 18px 0; border-bottom: 1px solid rgba(255,255,255,.13); }
+    .info-row:last-child { border-bottom: 0; }
+    .info-row span { color: rgba(255,255,255,.62); font-size: 14px; }
+    .info-row strong { text-align: right; }
+
+    .faq-wrap { display: grid; grid-template-columns: .8fr 1.2fr; gap: 48px; align-items: start; }
+    .faq-list { display: grid; gap: 14px; }
+    details { background: #fff; border: 1px solid var(--border); border-radius: 20px; padding: 20px 22px; }
+    summary { cursor: pointer; font-weight: 800; list-style: none; display: flex; justify-content: space-between; gap: 20px; }
+    summary::-webkit-details-marker { display: none; }
+    summary::after { content: "+"; font-size: 22px; color: var(--accent-dark); }
+    details[open] summary::after { content: "−"; }
+    details p { color: var(--muted); margin-top: 14px; font-size: 15px; }
+
+    .cta { padding: 0 0 88px; }
+    .cta-card { background: linear-gradient(135deg, var(--green), #15231f); color: #fff; border-radius: 38px; padding: 54px; display: grid; grid-template-columns: 1.1fr .9fr; gap: 34px; align-items: center; overflow: hidden; position: relative; }
+    .cta-card::after { content: ""; position: absolute; width: 420px; height: 420px; right: -160px; bottom: -180px; background: radial-gradient(circle, rgba(232,199,164,.23), transparent 64%); }
+    .cta-card p { margin-top: 18px; color: rgba(255,255,255,.72); max-width: 620px; }
+
+    .cta-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 28px; }
+
+    footer { background: #101714; color: #fff; padding: 58px 0 28px; }
+    .footer-grid { display: grid; grid-template-columns: 1.3fr repeat(3, 1fr); gap: 36px; margin-bottom: 44px; }
+    .footer-brand p { color: rgba(255,255,255,.62); max-width: 360px; margin-top: 16px; }
+    .footer-col h4 { margin-bottom: 16px; font-size: 15px; }
+    .footer-col a { display: block; color: rgba(255,255,255,.62); margin-bottom: 10px; font-size: 14px; }
+    .footer-col a:hover { color: #fff; }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,.1); padding-top: 22px; display: flex; justify-content: space-between; gap: 18px; color: rgba(255,255,255,.54); font-size: 14px; }
+
+    @media (max-width: 980px) {
+      .nav-links, .nav-actions { display: none; }
+      .mobile-toggle { display: block; }
+      .hero-grid, .split-grid, .faq-wrap, .cta-card { grid-template-columns: 1fr; }
+      .expect-grid, .footer-grid { grid-template-columns: 1fr 1fr; }
+      .section-header { display: block; }
+      .section-header p { margin-top: 18px; }
+
+      .mobile-menu {
+        display: none;
+        padding: 18px 20px 24px;
+        background: #fbfaf7;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .mobile-menu.open {
+        display: grid;
+        gap: 14px;
+      }
+
+      .mobile-menu a {
+        font-weight: 700;
+        padding: 12px 0;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .container {
+        width: calc(100% - 28px);
+        max-width: 100%;
+      }
+
+      .announcement { font-size: 12px; }
+
+      .form-row,
+      .expect-grid,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .btn { width: 100%; }
+
+      .form-card,
+      .cta-card {
+        padding: 30px 22px;
+        border-radius: 28px;
+      }
+
+      .footer-bottom { flex-direction: column; }
+
+      section { padding: 66px 0; }
+
+      .hero::before,
+      .dark-section::before,
+      .cta-card::after {
+        display: none;
+      }
+
+      h1 { font-size: 42px; }
+      h2 { font-size: 34px; }
+
+      .quick-item {
+        grid-template-columns: 44px 1fr;
+      }
+
+      .quick-icon {
+        width: 44px;
+        height: 44px;
+      }
+
+      .info-row {
+        display: block;
+      }
+
+      .info-row strong {
+        display: block;
+        text-align: left;
+        margin-top: 6px;
+      }
+
+      .cta-actions {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="announcement">
+    Ready to start? <a href="#project-form">Send your website project details</a>
+  </div>
+
+  <header>
+    <div class="container navbar">
+      <a href="index.html" class="brand" aria-label="Northline Digital Studio home">
+        <span class="brand-mark">N</span>
+        <span>Northline Digital</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="services.html">Services</a>
+        <a href="work.html">Work</a>
+        <a href="index.html#approach">Approach</a>
+        <a href="packages.html">Packages</a>
+        <a class="active" href="contact.html">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a class="btn btn-secondary" href="packages.html">View Packages</a>
+        <a class="btn btn-primary" href="#project-form">Start Project</a>
+      </div>
+
+      <button class="mobile-toggle" aria-label="Open mobile menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <nav class="mobile-menu" id="mobileMenu">
+      <a href="services.html">Services</a>
+      <a href="work.html">Work</a>
+      <a href="index.html#approach">Approach</a>
+      <a href="packages.html">Packages</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow"><span class="eyebrow-dot"></span>Start your website project</div>
+          <h1>Tell us what you want to build, and we’ll help shape the <span class="serif">right website plan.</span></h1>
+          <p class="hero-copy">Share a few details about your business, current website, goals, and timeline. We’ll recommend the right page structure, platform, and package direction.</p>
+
+          <div class="quick-contact">
+            <a class="quick-item" href="mailto:hello@northlinedigital.ca">
+              <span class="quick-icon">@</span>
+              <span><strong>Email</strong><span>hello@northlinedigital.ca</span></span>
+            </a>
+            <a class="quick-item" href="tel:+14165550192">
+              <span class="quick-icon">☎</span>
+              <span><strong>Phone</strong><span>+1 416 555 0192</span></span>
+            </a>
+            <div class="quick-item">
+              <span class="quick-icon">⌂</span>
+              <span><strong>Location</strong><span>Toronto, Ontario</span></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-card" id="project-form">
+          <h2>Project inquiry</h2>
+          <p>This is a front-end form mockup. When deployed, connect it to Formspree, Netlify Forms, WordPress, HubSpot, or your preferred email/form provider.</p>
+
+          <form action="mailto:hello@northlinedigital.ca" method="post" enctype="text/plain">
+            <div class="form-row">
+              <div>
+                <label for="name">Full name</label>
+                <input id="name" name="Full Name" type="text" placeholder="Your name" required />
+              </div>
+              <div>
+                <label for="email">Email address</label>
+                <input id="email" name="Email" type="email" placeholder="you@example.com" required />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div>
+                <label for="business">Business name</label>
+                <input id="business" name="Business Name" type="text" placeholder="Your business name" />
+              </div>
+              <div>
+                <label for="website">Current website</label>
+                <input id="website" name="Current Website" type="url" placeholder="https://example.com" />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div>
+                <label for="service">What do you need?</label>
+                <select id="service" name="Service Needed" required>
+                  <option value="">Select one</option>
+                  <option>New business website</option>
+                  <option>WordPress website</option>
+                  <option>Website redesign</option>
+                  <option>Landing page</option>
+                  <option>Portfolio website</option>
+                  <option>Monthly maintenance</option>
+                </select>
+              </div>
+              <div>
+                <label for="budget">Estimated budget</label>
+                <select id="budget" name="Estimated Budget">
+                  <option value="">Select range</option>
+                  <option>Under $1,000</option>
+                  <option>$1,000 to $2,500</option>
+                  <option>$2,500 to $5,000</option>
+                  <option>$5,000+</option>
+                  <option>Not sure yet</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label for="message">Project details</label>
+              <textarea id="message" name="Project Details" placeholder="Tell us about your business, goals, pages needed, design style, timeline, and any features you want."></textarea>
+            </div>
+
+            <button class="btn btn-primary" type="submit">Send Project Inquiry</button>
+            <p class="form-note">Placeholder form behavior uses email. Replace with a real form provider before going live.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <div class="section-kicker">What happens next</div>
+            <h2>A clear first step before any build begins.</h2>
+          </div>
+          <p>The contact page should reduce hesitation by explaining what clients can expect after reaching out.</p>
+        </div>
+
+        <div class="expect-grid">
+          <article class="expect-card">
+            <span>01</span>
+            <h3>Review</h3>
+            <p>We review your business, current website, goals, and the type of website you need.</p>
+          </article>
+          <article class="expect-card">
+            <span>02</span>
+            <h3>Direction</h3>
+            <p>We recommend the right pages, platform, package, and general website structure.</p>
+          </article>
+          <article class="expect-card">
+            <span>03</span>
+            <h3>Proposal</h3>
+            <p>You receive a clear scope, timeline, pricing direction, and next steps before work begins.</p>
+          </article>
+          <article class="expect-card">
+            <span>04</span>
+            <h3>Build</h3>
+            <p>Once approved, we move into design, content structure, development, testing, and launch.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="dark-section">
+      <div class="container split-grid">
+        <div>
+          <div class="section-kicker" style="color:#e8c7a4;">Before you reach out</div>
+          <h2>Helpful details to include in your message.</h2>
+          <p>You do not need everything figured out. A few details are enough to help us recommend the right direction.</p>
+          <a class="btn btn-accent" href="packages.html">Compare Packages</a>
+        </div>
+
+        <div class="info-panel">
+          <div class="info-row"><span>Business type</span><strong>Bakery, photographer, contractor, coach, etc.</strong></div>
+          <div class="info-row"><span>Website goal</span><strong>Bookings, leads, orders, credibility</strong></div>
+          <div class="info-row"><span>Current website</span><strong>Share the link if available</strong></div>
+          <div class="info-row"><span>Needed features</span><strong>Forms, booking, gallery, ecommerce</strong></div>
+          <div class="info-row"><span>Timeline</span><strong>Ideal launch date or urgency</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container faq-wrap">
+        <div>
+          <div class="section-kicker">Contact FAQ</div>
+          <h2>Common questions before sending an inquiry.</h2>
+          <p style="color:var(--muted); margin-top:18px;">This section helps answer concerns before someone fills out the form.</p>
+        </div>
+
+        <div class="faq-list">
+          <details open>
+            <summary>Do I need to know exactly what I want?</summary>
+            <p>No. You can share your business type, goals, and examples of websites you like. We can help shape the structure and direction.</p>
+          </details>
+          <details>
+            <summary>Can you work with an existing website?</summary>
+            <p>Yes. We can review an existing website and recommend whether it needs a refresh, redesign, rebuild, or smaller improvements.</p>
+          </details>
+          <details>
+            <summary>Can this be built in WordPress?</summary>
+            <p>Yes. WordPress is a strong option if you want editable pages, blogs, plugins, and content management after launch.</p>
+          </details>
+          <details>
+            <summary>What if I do not have photos or text yet?</summary>
+            <p>We can start with placeholder content and help plan what photos, text, sections, and business details are needed before launch.</p>
+          </details>
+          <details>
+            <summary>How quickly can a website be launched?</summary>
+            <p>Simple websites can often be launched faster than larger builds. Timeline depends on content readiness, number of pages, features, and review speed.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container">
+        <div class="cta-card">
+          <div>
+            <div class="section-kicker" style="color:#e8c7a4;">Final step</div>
+            <h2>Ready to make the website feel real?</h2>
+            <p>Send the project details now, or review the packages first if you want a clearer idea of scope and pricing.</p>
+            <div class="cta-actions">
+              <a class="btn btn-accent" href="#project-form">Go to Form</a>
+              <a class="btn btn-secondary" href="packages.html">Review Packages</a>
+            </div>
+          </div>
+
+          <div class="info-panel">
+            <div class="info-row"><span>Email</span><strong>hello@northlinedigital.ca</strong></div>
+            <div class="info-row"><span>Phone</span><strong>+1 416 555 0192</strong></div>
+            <div class="info-row"><span>Location</span><strong>Toronto, Ontario</strong></div>
+            <div class="info-row"><span>Good first project</span><strong>5-page business website</strong></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand">
+            <span class="brand-mark">N</span>
+            <span>Northline Digital</span>
+          </a>
+          <p>Premium website design and development for local businesses that want to look credible, modern, and ready to grow.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Services</h4>
+          <a href="services.html">Business Websites</a>
+          <a href="services.html">WordPress Builds</a>
+          <a href="services.html">Landing Pages</a>
+          <a href="services.html">Website Redesigns</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="work.html">Sample Work</a>
+          <a href="index.html#approach">Approach</a>
+          <a href="packages.html">Packages</a>
+          <a href="contact.html">Contact</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <a href="mailto:hello@northlinedigital.ca">Email</a>
+          <a href="tel:+14165550192">Phone</a>
+          <a href="#">Instagram</a>
+          <a href="#">LinkedIn</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 Northline Digital Studio. All rights reserved.</span>
+        <span>Privacy Policy · Terms · Accessibility</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.querySelector('.mobile-toggle');
+    const menu = document.querySelector('#mobileMenu');
+
+    toggle.addEventListener('click', () => {
+      menu.classList.toggle('open');
+    });
+  </script>
+</body>
+</html>

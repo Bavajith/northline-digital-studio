@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Website packages and pricing options for local businesses, including starter websites, growth websites, premium builds, add-ons, and monthly maintenance." />
+  <title>Packages | Northline Digital Studio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #fbfaf7;
+      --surface: #ffffff;
+      --surface-soft: #f4efe8;
+      --dark: #111827;
+      --muted: #6b7280;
+      --border: #e8dfd4;
+      --accent: #9a6a43;
+      --accent-dark: #6f482c;
+      --accent-soft: #efe2d3;
+      --green: #273c36;
+      --shadow: 0 24px 80px rgba(17, 24, 39, 0.10);
+      --radius: 26px;
+      --max: 1180px;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+
+    body {
+      font-family: "Inter", sans-serif;
+      background: var(--bg);
+      color: var(--dark);
+      line-height: 1.6;
+      overflow-x: hidden;
+      max-width: 100%;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
+
+    .announcement { background: var(--green); color: #fff; font-size: 14px; text-align: center; padding: 10px 16px; }
+    .announcement a { font-weight: 700; border-bottom: 1px solid rgba(255,255,255,0.6); }
+
+    header { position: sticky; top: 0; z-index: 1000; background: rgba(251,250,247,.88); backdrop-filter: blur(18px); border-bottom: 1px solid rgba(232,223,212,.8); }
+    .navbar { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: flex; align-items: center; gap: 12px; font-weight: 800; letter-spacing: -0.04em; font-size: 20px; }
+    .brand-mark { width: 42px; height: 42px; border-radius: 14px; background: linear-gradient(135deg, var(--green), var(--accent)); display: grid; place-items: center; color: #fff; font-weight: 800; box-shadow: 0 12px 30px rgba(39,60,54,.25); }
+    .nav-links { display: flex; align-items: center; gap: 28px; font-size: 14px; font-weight: 600; color: #374151; }
+    .nav-links a { position: relative; }
+    .nav-links a::after { content: ""; position: absolute; width: 0; height: 2px; left: 0; bottom: -8px; background: var(--accent); transition: width .25s ease; }
+    .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+    .nav-actions { display: flex; align-items: center; gap: 12px; }
+
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; border: 1px solid transparent; padding: 13px 19px; border-radius: 999px; font-weight: 700; font-size: 14px; transition: transform .2s ease, box-shadow .2s ease, background .2s ease; cursor: pointer; white-space: nowrap; }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary { background: var(--dark); color: #fff; box-shadow: 0 16px 40px rgba(17,24,39,.18); }
+    .btn-primary:hover { background: #000; }
+    .btn-secondary { background: var(--surface); color: var(--dark); border-color: var(--border); }
+    .btn-accent { background: var(--accent); color: #fff; box-shadow: 0 16px 38px rgba(154,106,67,.22); }
+
+    .mobile-toggle { display: none; width: 46px; height: 46px; border: 1px solid var(--border); border-radius: 14px; background: #fff; cursor: pointer; }
+    .mobile-toggle span { display: block; width: 19px; height: 2px; background: var(--dark); margin: 5px auto; border-radius: 99px; }
+    .mobile-menu { display: none; }
+
+    h1, h2, h3 { letter-spacing: -0.055em; line-height: 1.05; }
+    h1 { font-size: clamp(38px, 7vw, 78px); max-width: 930px; }
+    h2 { font-size: clamp(34px, 5vw, 56px); max-width: 780px; }
+    h3 { font-size: 25px; }
+    .serif { font-family: "Playfair Display", serif; font-weight: 700; color: var(--accent-dark); }
+
+    .eyebrow { display: inline-flex; align-items: center; gap: 9px; padding: 8px 12px; border: 1px solid var(--border); background: rgba(255,255,255,.72); border-radius: 999px; color: var(--accent-dark); font-size: 13px; font-weight: 800; margin-bottom: 22px; }
+    .eyebrow-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
+
+    .hero { padding: 86px 0 58px; position: relative; }
+    .hero::before { content: ""; position: absolute; width: 620px; height: 620px; background: radial-gradient(circle, rgba(154,106,67,.18), transparent 65%); top: -80px; right: -210px; pointer-events: none; }
+    .hero-inner { position: relative; z-index: 2; max-width: 940px; }
+    .hero-copy { font-size: 19px; color: var(--muted); max-width: 710px; margin: 24px 0 32px; }
+    .hero-buttons { display: flex; flex-wrap: wrap; gap: 14px; }
+
+    section { padding: 88px 0; }
+    .section-header { display: flex; justify-content: space-between; gap: 32px; align-items: end; margin-bottom: 42px; }
+    .section-kicker { color: var(--accent-dark); font-size: 13px; text-transform: uppercase; letter-spacing: .12em; font-weight: 900; margin-bottom: 12px; }
+    .section-header p { max-width: 430px; color: var(--muted); }
+
+    .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; align-items: stretch; }
+    .price-card { background: #fff; border: 1px solid var(--border); border-radius: 30px; padding: 30px; display: flex; flex-direction: column; min-height: 610px; box-shadow: 0 14px 50px rgba(17,24,39,.05); position: relative; }
+    .price-card.featured { background: var(--dark); color: #fff; transform: translateY(-12px); box-shadow: var(--shadow); }
+    .badge { position: absolute; top: 22px; right: 22px; background: var(--accent-soft); color: var(--accent-dark); border: 1px solid var(--border); border-radius: 999px; padding: 7px 11px; font-size: 12px; font-weight: 900; }
+    .price-card.featured .badge { background: var(--accent); color: #fff; border-color: transparent; }
+    .price-card h3 { margin-bottom: 10px; padding-right: 75px; }
+    .price-card p { color: var(--muted); margin-bottom: 24px; }
+    .price-card.featured p { color: rgba(255,255,255,.72); }
+    .price { font-size: 44px; font-weight: 900; letter-spacing: -0.06em; margin-bottom: 6px; }
+    .price-note { color: var(--muted); font-size: 13px; font-weight: 700; margin-bottom: 24px; }
+    .price-card.featured .price-note { color: rgba(255,255,255,.62); }
+
+    .check-list { list-style: none; display: grid; gap: 11px; color: #374151; font-size: 14px; font-weight: 650; margin-bottom: 28px; }
+    .check-list li::before { content: "✓"; color: var(--accent-dark); font-weight: 900; margin-right: 9px; }
+    .price-card.featured .check-list { color: rgba(255,255,255,.76); }
+    .price-card.featured .check-list li::before { color: #e8c7a4; }
+    .price-card .btn { margin-top: auto; }
+
+    .compare-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; border: 1px solid var(--border); border-radius: 30px; background: #fff; box-shadow: 0 14px 50px rgba(17,24,39,.05); }
+    table { width: 100%; border-collapse: collapse; min-width: 720px; }
+    th, td { padding: 18px 20px; text-align: left; border-bottom: 1px solid var(--border); font-size: 14px; }
+    th { background: var(--surface-soft); font-weight: 900; color: var(--dark); }
+    tr:last-child td { border-bottom: 0; }
+    td:not(:first-child) { font-weight: 750; color: #374151; }
+
+    .dark-section { background: var(--green); color: #fff; border-radius: 38px; margin: 0; overflow: hidden; position: relative; }
+    .dark-section::before { content: ""; position: absolute; width: 520px; height: 520px; right: -180px; top: -220px; background: radial-gradient(circle, rgba(255,255,255,.15), transparent 65%); }
+    .maintenance-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 42px; align-items: center; position: relative; z-index: 2; }
+    .maintenance-card { background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.14); border-radius: 30px; padding: 30px; }
+    .maintenance-price { font-size: 54px; font-weight: 900; letter-spacing: -.06em; color: #e8c7a4; margin: 14px 0 4px; }
+    .maintenance-card p, .maintenance-grid p { color: rgba(255,255,255,.72); }
+    .maintenance-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    .maintenance-item { background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.14); border-radius: 22px; padding: 20px; }
+    .maintenance-item strong { display: block; margin-bottom: 7px; }
+    .maintenance-item span { color: rgba(255,255,255,.67); font-size: 14px; }
+
+    .addons-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+    .addon-card { background: #fff; border: 1px solid var(--border); border-radius: 24px; padding: 24px; box-shadow: 0 14px 50px rgba(17,24,39,.05); }
+    .addon-card span { display: inline-block; color: var(--accent-dark); font-weight: 900; font-size: 13px; margin-bottom: 20px; }
+    .addon-card h3 { font-size: 21px; margin-bottom: 10px; }
+    .addon-card p { color: var(--muted); font-size: 14px; }
+
+    .faq-wrap { display: grid; grid-template-columns: .8fr 1.2fr; gap: 48px; align-items: start; }
+    .faq-list { display: grid; gap: 14px; }
+    details { background: #fff; border: 1px solid var(--border); border-radius: 20px; padding: 20px 22px; }
+    summary { cursor: pointer; font-weight: 800; list-style: none; display: flex; justify-content: space-between; gap: 20px; }
+    summary::-webkit-details-marker { display: none; }
+    summary::after { content: "+"; font-size: 22px; color: var(--accent-dark); }
+    details[open] summary::after { content: "−"; }
+    details p { color: var(--muted); margin-top: 14px; font-size: 15px; }
+
+    .cta { padding: 0 0 88px; }
+    .cta-card { background: linear-gradient(135deg, var(--green), #15231f); color: #fff; border-radius: 38px; padding: 54px; display: grid; grid-template-columns: 1.1fr .9fr; gap: 34px; align-items: center; overflow: hidden; position: relative; }
+    .cta-card::after { content: ""; position: absolute; width: 420px; height: 420px; right: -160px; bottom: -180px; background: radial-gradient(circle, rgba(232,199,164,.23), transparent 64%); }
+    .cta-card p { margin-top: 18px; color: rgba(255,255,255,.72); max-width: 620px; }
+    .contact-box { position: relative; z-index: 2; background: rgba(255,255,255,.09); border: 1px solid rgba(255,255,255,.15); border-radius: 28px; padding: 26px; }
+    .contact-row { display: flex; justify-content: space-between; gap: 20px; padding: 16px 0; border-bottom: 1px solid rgba(255,255,255,.13); }
+    .contact-row:last-child { border-bottom: 0; }
+    .contact-row span { color: rgba(255,255,255,.62); font-size: 14px; }
+    .contact-row strong { text-align: right; }
+
+    footer { background: #101714; color: #fff; padding: 58px 0 28px; }
+    .footer-grid { display: grid; grid-template-columns: 1.3fr repeat(3, 1fr); gap: 36px; margin-bottom: 44px; }
+    .footer-brand p { color: rgba(255,255,255,.62); max-width: 360px; margin-top: 16px; }
+    .footer-col h4 { margin-bottom: 16px; font-size: 15px; }
+    .footer-col a { display: block; color: rgba(255,255,255,.62); margin-bottom: 10px; font-size: 14px; }
+    .footer-col a:hover { color: #fff; }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,.1); padding-top: 22px; display: flex; justify-content: space-between; gap: 18px; color: rgba(255,255,255,.54); font-size: 14px; }
+
+    @media (max-width: 980px) {
+      .nav-links,
+      .nav-actions {
+        display: none;
+      }
+
+      .mobile-toggle {
+        display: block;
+      }
+
+      .pricing-grid,
+      .maintenance-grid,
+      .faq-wrap,
+      .cta-card {
+        grid-template-columns: 1fr;
+      }
+
+      .price-card.featured {
+        transform: none;
+      }
+
+      .addons-grid,
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .section-header {
+        display: block;
+      }
+
+      .section-header p {
+        margin-top: 18px;
+      }
+
+      .mobile-menu {
+        display: none;
+        padding: 18px 20px 24px;
+        background: #fbfaf7;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .mobile-menu.open {
+        display: grid;
+        gap: 14px;
+      }
+
+      .mobile-menu a {
+        font-weight: 700;
+        padding: 12px 0;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .container {
+        width: calc(100% - 28px);
+        max-width: 100%;
+      }
+
+      .announcement {
+        font-size: 12px;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .maintenance-list,
+      .addons-grid,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cta-card {
+        padding: 34px 24px;
+        border-radius: 28px;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+      }
+
+      section {
+        padding: 66px 0;
+      }
+
+      .hero::before,
+      .dark-section::before,
+      .cta-card::after {
+        display: none;
+      }
+
+      h1 {
+        font-size: 42px;
+      }
+
+      h2 {
+        font-size: 34px;
+      }
+
+      .compare-wrap {
+        max-width: 100%;
+      }
+
+      table {
+        min-width: 720px;
+      }
+
+      .contact-row {
+        display: block;
+      }
+
+      .contact-row strong {
+        display: block;
+        text-align: left;
+        margin-top: 6px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="announcement">
+    Not sure what package you need? <a href="contact.html">Request a free website direction plan</a>
+  </div>
+
+  <header>
+    <div class="container navbar">
+      <a href="index.html" class="brand" aria-label="Northline Digital Studio home">
+        <span class="brand-mark">N</span>
+        <span>Northline Digital</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="services.html">Services</a>
+        <a href="work.html">Work</a>
+        <a href="index.html#approach">Approach</a>
+        <a class="active" href="packages.html">Packages</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a class="btn btn-secondary" href="services.html">Services</a>
+        <a class="btn btn-primary" href="contact.html">Start Project</a>
+      </div>
+
+      <button class="mobile-toggle" aria-label="Open mobile menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <nav class="mobile-menu" id="mobileMenu">
+      <a href="services.html">Services</a>
+      <a href="work.html">Work</a>
+      <a href="index.html#approach">Approach</a>
+      <a href="packages.html">Packages</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="eyebrow"><span class="eyebrow-dot"></span>Website packages and pricing</div>
+        <h1>Simple website packages for businesses that want <span class="serif">clarity before committing.</span></h1>
+        <p class="hero-copy">Choose a starting point based on where your business is today. Every package can be adjusted depending on pages, platform, content, integrations, and timeline.</p>
+        <div class="hero-buttons">
+          <a class="btn btn-primary" href="#pricing">View Packages</a>
+          <a class="btn btn-secondary" href="contact.html">Ask What Fits Best</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <div class="section-kicker">Core packages</div>
+            <h2>Pick the package that matches your business stage.</h2>
+          </div>
+          <p>Pricing below is placeholder starting pricing. Final quotes depend on content, features, platform, revisions, and project complexity.</p>
+        </div>
+
+        <div class="pricing-grid">
+          <article class="price-card">
+            <span class="badge">Starter</span>
+            <h3>Launch Site</h3>
+            <p>For new businesses that need a clean, professional online presence without a large build.</p>
+            <div class="price">$899</div>
+            <div class="price-note">starting from</div>
+            <ul class="check-list">
+              <li>1 to 3 page website</li>
+              <li>Responsive mobile layout</li>
+              <li>Basic contact form</li>
+              <li>Business information section</li>
+              <li>Basic SEO page setup</li>
+              <li>Launch support</li>
+            </ul>
+            <a class="btn btn-secondary" href="contact.html">Choose Launch Site</a>
+          </article>
+
+          <article class="price-card featured">
+            <span class="badge">Most popular</span>
+            <h3>Growth Website</h3>
+            <p>For local businesses that need a full website with services, proof, visuals, and lead generation.</p>
+            <div class="price">$1,899</div>
+            <div class="price-note">starting from</div>
+            <ul class="check-list">
+              <li>5 to 7 page website</li>
+              <li>Custom homepage design</li>
+              <li>Services and gallery sections</li>
+              <li>Testimonials and FAQ</li>
+              <li>Inquiry form and CTA flow</li>
+              <li>WordPress or custom build option</li>
+              <li>Basic analytics setup</li>
+            </ul>
+            <a class="btn btn-accent" href="contact.html">Choose Growth Website</a>
+          </article>
+
+          <article class="price-card">
+            <span class="badge">Premium</span>
+            <h3>Signature Build</h3>
+            <p>For brands that want a more polished website with stronger strategy, content, and functionality.</p>
+            <div class="price">$3,499</div>
+            <div class="price-note">starting from</div>
+            <ul class="check-list">
+              <li>Advanced custom design direction</li>
+              <li>8 or more page structure</li>
+              <li>Copywriting support</li>
+              <li>Booking or ecommerce integration</li>
+              <li>Blog or CMS setup</li>
+              <li>Performance optimization</li>
+              <li>30-day post-launch support</li>
+            </ul>
+            <a class="btn btn-secondary" href="contact.html">Choose Signature Build</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <div class="section-kicker">Compare</div>
+            <h2>Quick package comparison.</h2>
+          </div>
+          <p>This makes pricing easier for clients to understand before booking a call.</p>
+        </div>
+
+        <div class="compare-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Feature</th>
+                <th>Launch Site</th>
+                <th>Growth Website</th>
+                <th>Signature Build</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Best for</td><td>New business</td><td>Growing local business</td><td>Premium brand</td></tr>
+              <tr><td>Pages</td><td>1 to 3</td><td>5 to 7</td><td>8+</td></tr>
+              <tr><td>Custom homepage</td><td>Basic</td><td>Included</td><td>Advanced</td></tr>
+              <tr><td>WordPress option</td><td>Optional</td><td>Included option</td><td>Included option</td></tr>
+              <tr><td>Copywriting support</td><td>Light</td><td>Moderate</td><td>Expanded</td></tr>
+              <tr><td>Booking or ecommerce</td><td>Add-on</td><td>Add-on</td><td>Included option</td></tr>
+              <tr><td>Post-launch support</td><td>7 days</td><td>14 days</td><td>30 days</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="dark-section">
+      <div class="container maintenance-grid">
+        <div class="maintenance-card">
+          <div class="section-kicker" style="color:#e8c7a4;">Monthly care</div>
+          <h2>Keep the website updated after launch.</h2>
+          <div class="maintenance-price">$149</div>
+          <p>starting monthly</p>
+          <p style="margin-top:18px;">Good for clients who want updates, backups, small edits, and support without managing the technical side themselves.</p>
+          <div style="margin-top:26px;">
+            <a class="btn btn-accent" href="contact.html">Ask About Maintenance</a>
+          </div>
+        </div>
+
+        <div class="maintenance-list">
+          <div class="maintenance-item">
+            <strong>Website updates</strong>
+            <span>Monthly plugin, theme, or content checks depending on platform.</span>
+          </div>
+          <div class="maintenance-item">
+            <strong>Backups</strong>
+            <span>Basic backup process so the site can be restored if needed.</span>
+          </div>
+          <div class="maintenance-item">
+            <strong>Small edits</strong>
+            <span>Minor text, image, service, pricing, or business info changes.</span>
+          </div>
+          <div class="maintenance-item">
+            <strong>Priority support</strong>
+            <span>Faster support for active monthly care clients.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <div class="section-kicker">Add-ons</div>
+            <h2>Optional upgrades when the business needs more.</h2>
+          </div>
+          <p>Add-ons let you keep base pricing simple while still offering more advanced features to the right clients.</p>
+        </div>
+
+        <div class="addons-grid">
+          <article class="addon-card">
+            <span>ADD-ON</span>
+            <h3>Booking Setup</h3>
+            <p>Connect a booking tool or appointment flow for consultations, sessions, or service calls.</p>
+          </article>
+          <article class="addon-card">
+            <span>ADD-ON</span>
+            <h3>Extra Pages</h3>
+            <p>Add service pages, location pages, team pages, landing pages, or campaign pages.</p>
+          </article>
+          <article class="addon-card">
+            <span>ADD-ON</span>
+            <h3>Copywriting</h3>
+            <p>Improve messaging, section headlines, calls-to-action, FAQs, and service descriptions.</p>
+          </article>
+          <article class="addon-card">
+            <span>ADD-ON</span>
+            <h3>SEO Starter</h3>
+            <p>Set up local search basics, page titles, descriptions, headings, and service keywords.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container faq-wrap">
+        <div>
+          <div class="section-kicker">Pricing FAQ</div>
+          <h2>Questions clients usually ask before choosing a package.</h2>
+          <p style="color:var(--muted); margin-top:18px;">This section helps reduce pricing confusion and makes the next step easier.</p>
+        </div>
+
+        <div class="faq-list">
+          <details open>
+            <summary>Are these fixed prices?</summary>
+            <p>No. These are starting prices. Final pricing depends on the number of pages, content needs, design complexity, platform, integrations, and timeline.</p>
+          </details>
+          <details>
+            <summary>Do clients pay everything upfront?</summary>
+            <p>A common structure is 50% deposit to start and 50% before launch. Larger projects can be split into milestones.</p>
+          </details>
+          <details>
+            <summary>Is hosting included?</summary>
+            <p>Hosting can be included in a maintenance plan or billed separately depending on whether the site is built on WordPress, custom hosting, or another platform.</p>
+          </details>
+          <details>
+            <summary>Can the client update the site themselves?</summary>
+            <p>Yes, if the site is built in WordPress or another editable CMS. For custom static websites, updates can be handled through a maintenance plan.</p>
+          </details>
+          <details>
+            <summary>What package should most local businesses choose?</summary>
+            <p>The Growth Website is usually the best fit because it includes enough pages, trust-building sections, and lead-generation structure for most local businesses.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container">
+        <div class="cta-card">
+          <div>
+            <div class="section-kicker" style="color:#e8c7a4;">Next step</div>
+            <h2>Need help choosing the right package?</h2>
+            <p>Send a few details about the business, current website, goals, and desired features. We will recommend the best starting package.</p>
+            <div class="hero-buttons" style="margin-top:28px; margin-bottom:0;">
+              <a class="btn btn-accent" href="contact.html">Request Recommendation</a>
+              <a class="btn btn-secondary" href="work.html">View Sample Work</a>
+            </div>
+          </div>
+
+          <div class="contact-box">
+            <div class="contact-row"><span>Best starter</span><strong>Launch Site</strong></div>
+            <div class="contact-row"><span>Most popular</span><strong>Growth Website</strong></div>
+            <div class="contact-row"><span>Most premium</span><strong>Signature Build</strong></div>
+            <div class="contact-row"><span>Ongoing revenue</span><strong>Monthly maintenance</strong></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand">
+            <span class="brand-mark">N</span>
+            <span>Northline Digital</span>
+          </a>
+          <p>Premium website design and development for local businesses that want to look credible, modern, and ready to grow.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Services</h4>
+          <a href="services.html">Business Websites</a>
+          <a href="services.html">WordPress Builds</a>
+          <a href="services.html">Landing Pages</a>
+          <a href="services.html">Website Redesigns</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="work.html">Sample Work</a>
+          <a href="index.html#approach">Approach</a>
+          <a href="packages.html">Packages</a>
+          <a href="contact.html">Contact</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <a href="mailto:hello@northlinedigital.ca">Email</a>
+          <a href="tel:+14165550192">Phone</a>
+          <a href="#">Instagram</a>
+          <a href="#">LinkedIn</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 Northline Digital Studio. All rights reserved.</span>
+        <span>Privacy Policy · Terms · Accessibility</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.querySelector('.mobile-toggle');
+    const menu = document.querySelector('#mobileMenu');
+
+    toggle.addEventListener('click', () => {
+      menu.classList.toggle('open');
+    });
+  </script>
+</body>
+</html>
