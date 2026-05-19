@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Packages | Northfolk Studio</title>
-  <meta name="description" content="Website packages from Northfolk Studio for local businesses that need a clear, professional, and polished online presence." />
+  <meta name="description" content="Custom-crafted website packages from Northfolk Studio for modern local businesses that want a polished, responsive, and credible online presence." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,7 +31,6 @@
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
-
     html { scroll-behavior: smooth; overflow-x: hidden; }
 
     body {
@@ -57,11 +56,15 @@
 
     a { color: inherit; text-decoration: none; }
     img { width: 100%; display: block; }
-    .container { width: min(var(--max), calc(100% - 48px)); margin: 0 auto; }
+
+    .container {
+      width: min(var(--max), calc(100% - 48px));
+      margin: 0 auto;
+    }
 
     header .container {
-  width: min(1360px, calc(100% - 96px));
-}
+      width: min(1360px, calc(100% - 96px));
+    }
 
     header {
       position: fixed;
@@ -74,13 +77,13 @@
       border-bottom: 1px solid rgba(21,21,17,.065);
     }
 
-.navbar {
-  height: 82px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 28px;
-}
+    .navbar {
+      height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
 
     .brand {
       display: flex;
@@ -114,14 +117,14 @@
     .brand-mark::before { left: 2px; }
     .brand-mark::after { right: 2px; transform: skewX(18deg); }
 
-.nav-links {
-  justify-self: end;
-  display: flex;
-  align-items: center;
-  gap: 36px;
-  font-size: 13px;
-  font-weight: 800;
-}
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 36px;
+      font-size: 13px;
+      font-weight: 800;
+    }
+
     .nav-links a {
       position: relative;
       color: rgba(21,21,17,.72);
@@ -174,7 +177,7 @@
       font-weight: 900;
       font-size: 13px;
       letter-spacing: .02em;
-      transition: transform .25s ease, box-shadow .25s ease, background .25s ease, border-color .25s ease;
+      transition: transform .25s ease, box-shadow .25s ease, background .25s ease;
       cursor: pointer;
       white-space: nowrap;
     }
@@ -182,19 +185,17 @@
     .btn:hover { transform: translateY(-3px); }
     .btn-primary { background: var(--olive-dark); color: #fff; box-shadow: 0 18px 42px rgba(63,66,48,.22); }
     .btn-primary:hover { background: #303326; }
-    .btn-light { background: rgba(255,253,250,.78); color: var(--ink); border-color: var(--line); }
+    .btn-light { background: rgba(255,253,250,.78); color: var(--ink); border: 1px solid var(--line); }
     .btn-light:hover { background: #fff; box-shadow: 0 14px 34px rgba(21,21,17,.08); }
 
-    h1,
-    h2,
-    h3 {
+    h1, h2, h3 {
       font-family: "Playfair Display", serif;
       letter-spacing: -.048em;
       line-height: 1.04;
       font-weight: 700;
     }
 
-    h1 { font-size: clamp(48px, 6vw, 82px); max-width: 760px; }
+    h1 { font-size: clamp(48px, 6vw, 82px); max-width: 780px; }
     h2 { font-size: clamp(34px, 4.3vw, 58px); }
     h3 { font-size: 25px; }
 
@@ -229,17 +230,17 @@
       pointer-events: none;
     }
 
-.hero-grid {
-  display: grid;
-  grid-template-columns: .78fr 1.22fr;
-  gap: 90px;
-  align-items: end;
-  position: relative;
-  z-index: 2;
-}
+    .hero-grid {
+      display: grid;
+      grid-template-columns: .82fr 1.18fr;
+      gap: 90px;
+      align-items: end;
+      position: relative;
+      z-index: 2;
+    }
 
     .hero-copy {
-      max-width: 620px;
+      max-width: 640px;
       color: var(--muted);
       margin: 26px 0 34px;
       font-size: 17px;
@@ -265,20 +266,6 @@
       overflow: hidden;
     }
 
-    .hero-panel::after {
-      content: "";
-      position: absolute;
-      width: 260px;
-      height: 260px;
-      right: -130px;
-      bottom: -130px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(101,102,77,.09), transparent 72%);
-      pointer-events: none;
-    }
-
-    .hero-panel-inner { position: relative; z-index: 2; }
-
     .hero-panel-title {
       font-family: "Inter", sans-serif;
       font-size: 14px;
@@ -289,10 +276,7 @@
       font-weight: 900;
     }
 
-    .quick-list {
-      display: grid;
-      gap: 16px;
-    }
+    .quick-list { display: grid; gap: 16px; }
 
     .quick-item {
       display: grid;
@@ -339,8 +323,54 @@
 
     .section-heading p {
       color: var(--muted);
-      max-width: 545px;
+      max-width: 560px;
       justify-self: end;
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .process-card {
+      border-radius: 26px;
+      padding: 28px;
+      background: rgba(255,255,255,.50);
+      border: 1px solid var(--line-soft);
+      min-height: 250px;
+      transition: transform .28s ease, background .28s ease;
+    }
+
+    .process-card:hover {
+      transform: translateY(-5px);
+      background: rgba(255,255,255,.72);
+    }
+
+    .process-card span {
+      display: inline-flex;
+      width: 42px;
+      height: 42px;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: rgba(101,102,77,.09);
+      color: var(--olive-dark);
+      font-weight: 900;
+      margin-bottom: 24px;
+      font-size: 12px;
+    }
+
+    .process-card h3 {
+      font-family: "Inter", sans-serif;
+      letter-spacing: -.02em;
+      font-size: 18px;
+      margin-bottom: 12px;
+    }
+
+    .process-card p {
+      color: var(--muted);
+      font-size: 14px;
     }
 
     .package-grid {
@@ -356,7 +386,7 @@
       padding: 34px;
       background: rgba(255,255,255,.56);
       border: 1px solid rgba(21,21,17,.08);
-      min-height: 620px;
+      min-height: 650px;
       display: flex;
       flex-direction: column;
       transition: transform .28s ease, box-shadow .28s ease, background .28s ease;
@@ -463,19 +493,7 @@
       overflow: hidden;
     }
 
-    .dark-section::after {
-      content: "";
-      position: absolute;
-      width: 520px;
-      height: 520px;
-      right: -230px;
-      bottom: -280px;
-      border: 1px solid rgba(255,255,255,.10);
-      border-radius: 50%;
-      pointer-events: none;
-    }
-
-    .care-grid {
+    .split-grid {
       display: grid;
       grid-template-columns: .8fr 1.2fr;
       gap: 56px;
@@ -484,35 +502,26 @@
       z-index: 2;
     }
 
-    .care-price {
-      font-size: 54px;
-      font-weight: 900;
-      letter-spacing: -.06em;
-      color: #e8c7a4;
-      line-height: 1;
-      margin: 24px 0 8px;
-    }
-
-    .care-copy p {
+    .split-copy p {
       color: rgba(255,255,255,.68);
-      max-width: 440px;
+      max-width: 460px;
       margin-top: 18px;
     }
 
-    .care-list {
+    .included-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 18px;
     }
 
-    .care-item {
+    .included-card {
       padding: 24px;
       border-radius: 24px;
       border: 1px solid rgba(255,255,255,.12);
       background: rgba(255,255,255,.06);
     }
 
-    .care-item span {
+    .included-card span {
       display: block;
       color: rgba(232,199,164,.84);
       font-size: 12px;
@@ -522,16 +531,56 @@
       margin-bottom: 20px;
     }
 
-    .care-item h3 {
+    .included-card h3 {
       font-family: "Inter", sans-serif;
       letter-spacing: -.02em;
       font-size: 17px;
       margin-bottom: 10px;
     }
 
-    .care-item p {
+    .included-card p {
       color: rgba(255,255,255,.66);
       font-size: 14px;
+    }
+
+    .two-col-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .info-card {
+      border-radius: 30px;
+      padding: 34px;
+      background: rgba(255,255,255,.52);
+      border: 1px solid var(--line-soft);
+      min-height: 390px;
+    }
+
+    .info-card h3 {
+      font-size: 36px;
+      margin-bottom: 18px;
+    }
+
+    .info-card p {
+      color: var(--muted);
+      margin-bottom: 26px;
+    }
+
+    .info-list {
+      list-style: none;
+      display: grid;
+      gap: 12px;
+      color: rgba(21,21,17,.72);
+      font-weight: 750;
+      font-size: 14px;
+    }
+
+    .info-list li::before {
+      content: "•";
+      color: var(--olive-dark);
+      margin-right: 10px;
+      font-weight: 900;
     }
 
     .addons-grid {
@@ -758,27 +807,28 @@
         gap: 16px;
       }
 
-      .mobile-menu a {
-        font-weight: 800;
-      }
+      .mobile-menu a { font-weight: 800; }
 
       .hero-grid,
       .section-heading,
-      .care-grid,
+      .split-grid,
       .faq-grid,
       .cta-card,
-      .footer-grid {
+      .footer-grid,
+      .two-col-grid {
         grid-template-columns: 1fr;
       }
 
       .section-heading p { justify-self: start; }
       .package-grid { grid-template-columns: 1fr; }
       .addons-grid { grid-template-columns: 1fr 1fr; }
-      .care-list { grid-template-columns: 1fr 1fr; }
+      .included-grid { grid-template-columns: 1fr 1fr; }
+      .process-grid { grid-template-columns: 1fr 1fr; }
     }
 
     @media (max-width: 680px) {
       .container { width: calc(100% - 30px); }
+      header .container { width: calc(100% - 30px); }
       .navbar { height: 74px; }
       .brand { font-size: 19px; }
       .hero { padding-top: 126px; padding-bottom: 74px; }
@@ -792,8 +842,10 @@
       }
 
       .btn { width: 100%; }
+
       .hero-panel,
-      .cta-card {
+      .cta-card,
+      .info-card {
         padding: 26px;
         border-radius: 24px;
       }
@@ -805,13 +857,12 @@
       }
 
       .addons-grid,
-      .care-list {
+      .included-grid,
+      .process-grid {
         grid-template-columns: 1fr;
       }
 
-      .cta-row {
-        display: block;
-      }
+      .cta-row { display: block; }
 
       .cta-row strong {
         display: block;
@@ -840,8 +891,6 @@
         <a href="contact.html">Contact</a>
       </nav>
 
-      <div class="nav-actions">
-</div>
       <button class="mobile-toggle" aria-label="Open mobile menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
@@ -861,42 +910,84 @@
       <div class="container hero-grid">
         <div class="reveal">
           <div class="kicker">Website packages</div>
-          <h1>Simple website packages for businesses that need a <span class="italic">clear starting point.</span></h1>
-          <p class="hero-copy">Choose a package based on your business stage, page count, and how much support you need. Final pricing can be adjusted based on features, content, and timeline.</p>
+          <h1>Custom-crafted websites for <span class="italic">modern local businesses.</span></h1>
+          <p class="hero-copy">
+            We design, build, and launch polished websites that help local businesses look credible, professional, and ready to be trusted online.
+          </p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="#packages">View Packages →</a>
-            <a class="btn btn-light" href="contact.html">Ask What Fits Best</a>
+            <a class="btn btn-light" href="#process">See The Process</a>
           </div>
         </div>
 
-        <aside class="hero-panel reveal" aria-label="Package guide">
-          <div class="hero-panel-inner">
-            <div class="hero-panel-title">Quick guide</div>
-            <div class="quick-list">
-              <div class="quick-item">
-                <div class="quick-number">01</div>
-                <div>
-                  <strong>Launch Site</strong>
-                  <span>Best for a new business or simple online presence.</span>
-                </div>
+        <aside class="hero-panel reveal" aria-label="What Northfolk Studio handles">
+          <div class="hero-panel-title">What we handle</div>
+          <div class="quick-list">
+            <div class="quick-item">
+              <div class="quick-number">01</div>
+              <div>
+                <strong>Design direction</strong>
+                <span>A refined visual style built around your business and audience.</span>
               </div>
-              <div class="quick-item">
-                <div class="quick-number">02</div>
-                <div>
-                  <strong>Growth Website</strong>
-                  <span>Best for most local businesses that need trust and inquiries.</span>
-                </div>
+            </div>
+
+            <div class="quick-item">
+              <div class="quick-number">02</div>
+              <div>
+                <strong>Custom website build</strong>
+                <span>Responsive pages built for desktop, tablet, and mobile.</span>
               </div>
-              <div class="quick-item">
-                <div class="quick-number">03</div>
-                <div>
-                  <strong>Signature Build</strong>
-                  <span>Best for a more polished brand or larger page structure.</span>
-                </div>
+            </div>
+
+            <div class="quick-item">
+              <div class="quick-number">03</div>
+              <div>
+                <strong>Launch setup</strong>
+                <span>We handle the technical launch and help connect your domain.</span>
               </div>
             </div>
           </div>
         </aside>
+      </div>
+    </section>
+
+    <section id="process">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div>
+            <div class="kicker">How it works</div>
+            <h2>A simple process from first idea to launch.</h2>
+          </div>
+          <p>
+            You do not need technical knowledge. We guide the structure, design, build, and launch so the process feels clear from the beginning.
+          </p>
+        </div>
+
+        <div class="process-grid reveal">
+          <article class="process-card">
+            <span>01</span>
+            <h3>Discovery</h3>
+            <p>We learn about your business, services, goals, audience, and the type of website you need.</p>
+          </article>
+
+          <article class="process-card">
+            <span>02</span>
+            <h3>Design Direction</h3>
+            <p>We create the visual direction, layout approach, and overall feel before moving into the full build.</p>
+          </article>
+
+          <article class="process-card">
+            <span>03</span>
+            <h3>Build</h3>
+            <p>Your website is custom-built with responsive layouts, clean sections, forms, and basic SEO structure.</p>
+          </article>
+
+          <article class="process-card">
+            <span>04</span>
+            <h3>Launch</h3>
+            <p>We test the site, connect the domain, deploy the website, and make sure everything is ready to go live.</p>
+          </article>
+        </div>
       </div>
     </section>
 
@@ -905,103 +996,149 @@
         <div class="section-heading reveal">
           <div>
             <div class="kicker">Core packages</div>
-            <h2>Pick the level that matches your business stage.</h2>
+            <h2>Pick the starting point that fits your business.</h2>
           </div>
-          <p>These are starting packages. We can keep it simple or expand the build depending on your content, platform, features, and timeline.</p>
+          <p>
+            Each package is custom-built, not template-dropped. Final pricing depends on pages, content, features, timeline, and how much creative direction is needed.
+          </p>
         </div>
 
         <div class="package-grid reveal">
           <article class="package-card">
             <span class="package-label">Starter</span>
             <h3>Launch Site</h3>
-            <p>For businesses that need a small, professional website to establish credibility online.</p>
+            <p>For new or small businesses that need a clean, credible website to establish their online presence.</p>
             <div class="price">$899</div>
             <div class="price-note">Starting from</div>
+
             <ul class="package-list">
-              <li>1 to 3 pages</li>
-              <li>Mobile responsive layout</li>
-              <li>Contact section or form</li>
+              <li>1 to 3 custom pages</li>
+              <li>Responsive desktop and mobile layout</li>
+              <li>Homepage design direction</li>
+              <li>Contact section or inquiry form</li>
               <li>Basic SEO setup</li>
-              <li>Launch support</li>
+              <li>Launch and domain connection support</li>
             </ul>
+
             <a class="btn btn-light" href="contact.html">Choose Launch Site</a>
           </article>
 
           <article class="package-card featured">
             <span class="package-label">Most popular</span>
             <h3>Growth Website</h3>
-            <p>For local businesses that need a stronger website with service details, trust sections, and lead flow.</p>
+            <p>For local businesses that need a stronger website with service details, trust sections, and a clear inquiry flow.</p>
             <div class="price">$1,899</div>
             <div class="price-note">Starting from</div>
+
             <ul class="package-list">
-              <li>5 to 7 pages</li>
-              <li>Custom homepage design</li>
-              <li>Services and proof sections</li>
-              <li>Inquiry form and CTA flow</li>
-              <li>WordPress or custom build option</li>
-              <li>Basic analytics setup</li>
+              <li>5 to 7 custom pages</li>
+              <li>Custom homepage and inner page layouts</li>
+              <li>Services, proof, and CTA sections</li>
+              <li>Inquiry form and contact flow</li>
+              <li>Responsive design across devices</li>
+              <li>Basic analytics and SEO setup</li>
+              <li>Launch support and deployment</li>
             </ul>
+
             <a class="btn btn-primary" href="contact.html">Choose Growth Website</a>
           </article>
 
           <article class="package-card">
             <span class="package-label">Premium</span>
             <h3>Signature Build</h3>
-            <p>For businesses that want a more polished website with deeper structure and more creative direction.</p>
+            <p>For businesses that want a more refined website with deeper structure, stronger creative direction, and a more polished presence.</p>
             <div class="price">$3,499</div>
             <div class="price-note">Starting from</div>
+
             <ul class="package-list">
-              <li>8 or more pages</li>
-              <li>Advanced design direction</li>
-              <li>Copywriting support</li>
-              <li>Booking or CMS setup option</li>
+              <li>8 or more custom pages</li>
+              <li>Advanced visual design direction</li>
+              <li>Expanded content and section structure</li>
+              <li>Booking or third-party tool setup option</li>
               <li>Performance optimization</li>
-              <li>30-day post-launch support</li>
+              <li>Stronger local SEO foundation</li>
+              <li>30-day post-launch check-in</li>
             </ul>
+
             <a class="btn btn-light" href="contact.html">Choose Signature Build</a>
           </article>
         </div>
 
         <div class="note-strip reveal">
-          Prices are starting points. The final quote depends on content, number of pages, platform, integrations, timeline, and how much support is needed.
+          Prices are starting points. We keep the scope clear before starting so you know what is included, what is optional, and what is needed from your side.
         </div>
       </div>
     </section>
 
     <section class="dark-section reveal">
-      <div class="container care-grid">
-        <div class="care-copy">
-          <div class="kicker" style="color:#e8c7a4;">Monthly care</div>
-          <h2>Keep the website updated after launch.</h2>
-          <div class="care-price">$149</div>
-          <p>Starting monthly. Good for clients who want help with updates, small edits, basic checks, and support after the site is live.</p>
+      <div class="container split-grid">
+        <div class="split-copy">
+          <div class="kicker" style="color:#e8c7a4;">What is included</div>
+          <h2>More than just pages on a screen.</h2>
+          <p>
+            Every build is designed to help your business look professional, feel trustworthy, and make it easier for customers to take the next step.
+          </p>
         </div>
 
-        <div class="care-list">
-          <article class="care-item">
-            <span>01</span>
-            <h3>Small edits</h3>
-            <p>Text, image, service, pricing, or business information changes.</p>
+        <div class="included-grid">
+          <article class="included-card">
+            <span>Design</span>
+            <h3>Custom visual direction</h3>
+            <p>Typography, spacing, layout, and brand feel designed around your business.</p>
           </article>
 
-          <article class="care-item">
-            <span>02</span>
-            <h3>Basic checks</h3>
-            <p>Review links, forms, mobile behavior, and general site health.</p>
+          <article class="included-card">
+            <span>Responsive</span>
+            <h3>Desktop and mobile ready</h3>
+            <p>Your website is built to feel polished across desktop, tablet, and phone screens.</p>
           </article>
 
-          <article class="care-item">
-            <span>03</span>
-            <h3>Platform updates</h3>
-            <p>WordPress plugin, theme, or content checks where applicable.</p>
+          <article class="included-card">
+            <span>SEO</span>
+            <h3>Basic SEO setup</h3>
+            <p>Page titles, descriptions, headings, structure, and local keyword basics.</p>
           </article>
 
-          <article class="care-item">
-            <span>04</span>
-            <h3>Priority support</h3>
-            <p>Faster turnaround for active monthly care clients.</p>
+          <article class="included-card">
+            <span>Launch</span>
+            <h3>Deployment support</h3>
+            <p>We handle the technical launch and help connect your domain properly.</p>
           </article>
         </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container two-col-grid">
+        <article class="info-card reveal">
+          <div class="kicker">What you provide</div>
+          <h3>We make the process easy, but we still need your business details.</h3>
+          <p>To build the right website, we’ll ask for the key information customers need to understand and contact your business.</p>
+
+          <ul class="info-list">
+            <li>Business name, contact details, and service area</li>
+            <li>Logo, photos, or brand materials if available</li>
+            <li>Service list, pricing details, or package information</li>
+            <li>Examples of websites or styles you like</li>
+            <li>Feedback and approval during the design/build process</li>
+            <li>Domain ownership or help purchasing a domain</li>
+          </ul>
+        </article>
+
+        <article class="info-card reveal">
+          <div class="kicker">What we handle</div>
+          <h3>The technical side stays simple for you.</h3>
+          <p>You do not need to manage code, hosting setup, or deployment tools. We keep the launch process straightforward.</p>
+
+          <ul class="info-list">
+            <li>Website structure and layout planning</li>
+            <li>Custom design and responsive development</li>
+            <li>Contact forms and call-to-action flow</li>
+            <li>Basic SEO and performance checks</li>
+            <li>Deployment and launch setup</li>
+            <li>Domain connection guidance</li>
+          </ul>
+        </article>
       </div>
     </section>
 
@@ -1010,9 +1147,11 @@
         <div class="section-heading reveal">
           <div>
             <div class="kicker">Optional add-ons</div>
-            <h2>Add only what the business actually needs.</h2>
+            <h2>Add only what your business actually needs.</h2>
           </div>
-          <p>Add-ons keep the package simple while still allowing room for extra features, content, or launch support.</p>
+          <p>
+            We keep the core website package clear, then add features only when they make sense for the business.
+          </p>
         </div>
 
         <div class="addons-grid reveal">
@@ -1025,19 +1164,19 @@
           <article class="addon-card">
             <span>Add-on</span>
             <h3>Booking Setup</h3>
-            <p>Connect a booking tool or appointment flow for consultations, sessions, or calls.</p>
+            <p>Connect a booking tool for consultations, tutoring sessions, appointments, or calls.</p>
           </article>
 
           <article class="addon-card">
             <span>Add-on</span>
             <h3>Copywriting Help</h3>
-            <p>Improve section headlines, service descriptions, calls-to-action, and FAQs.</p>
+            <p>Improve headlines, service descriptions, calls-to-action, and FAQ sections.</p>
           </article>
 
           <article class="addon-card">
             <span>Add-on</span>
-            <h3>SEO Starter</h3>
-            <p>Basic local SEO setup, page titles, descriptions, headings, and keyword structure.</p>
+            <h3>Future Edits</h3>
+            <p>Small updates after launch can be handled separately when needed. No monthly plan required.</p>
           </article>
         </div>
       </div>
@@ -1046,30 +1185,42 @@
     <section>
       <div class="container faq-grid">
         <div class="faq-intro reveal">
-          <div class="kicker">Pricing FAQ</div>
-          <h2>Common questions before choosing a package.</h2>
-          <p>The goal is to keep pricing simple while still giving enough flexibility for different business needs.</p>
+          <div class="kicker">Questions</div>
+          <h2>Common questions before starting.</h2>
+          <p>
+            The goal is to make the process clear, realistic, and easy to understand before any project begins.
+          </p>
         </div>
 
         <div class="faq-list reveal">
           <details open>
             <summary>Are these fixed prices?</summary>
-            <p>No. They are starting prices. Final pricing depends on pages, content, features, platform, timeline, and complexity.</p>
+            <p>No. They are starting prices. Final pricing depends on page count, content, features, integrations, timeline, and overall complexity.</p>
+          </details>
+
+          <details>
+            <summary>Do I need to understand hosting or deployment?</summary>
+            <p>No. We handle the technical launch and deployment. You should own your domain, and we can help connect it to the finished website.</p>
+          </details>
+
+          <details>
+            <summary>Who owns the domain?</summary>
+            <p>The client should own the domain. This keeps ownership clear and avoids future issues. We can guide you through purchasing and connecting it.</p>
+          </details>
+
+          <details>
+            <summary>Is monthly maintenance required?</summary>
+            <p>No. Monthly maintenance is not required. Future edits and updates can be requested separately when needed.</p>
+          </details>
+
+          <details>
+            <summary>Can I request changes after launch?</summary>
+            <p>Yes. Small post-launch adjustments can be handled after the site goes live. Larger changes or new pages can be quoted separately.</p>
           </details>
 
           <details>
             <summary>What package fits most local businesses?</summary>
             <p>The Growth Website is usually the best fit because it gives enough space for services, trust signals, calls-to-action, and inquiry flow.</p>
-          </details>
-
-          <details>
-            <summary>Do clients pay everything upfront?</summary>
-            <p>A common structure is a deposit to start and the remaining balance before launch. Larger projects can be split into milestones.</p>
-          </details>
-
-          <details>
-            <summary>Can the website be edited after launch?</summary>
-            <p>Yes. WordPress sites can be edited by the client. Custom static sites can be updated through a care plan.</p>
           </details>
         </div>
       </div>
@@ -1080,8 +1231,11 @@
         <div class="cta-card">
           <div>
             <div class="kicker">Next step</div>
-            <h2>Need help choosing the right package?</h2>
-            <p>Send a few details about the business, current website, goals, and desired features. We’ll recommend the best starting point.</p>
+            <h2>Need help choosing the right starting point?</h2>
+            <p>
+              Send a few details about your business, current website, goals, and desired features. We’ll recommend the package that makes the most sense.
+            </p>
+
             <div class="cta-actions">
               <a class="btn btn-primary" href="contact.html">Request Recommendation →</a>
               <a class="btn btn-light" href="work.html">View Concepts</a>
@@ -1102,8 +1256,8 @@
               <strong>Signature Build</strong>
             </div>
             <div class="cta-row">
-              <span>After launch</span>
-              <strong>Monthly Care</strong>
+              <span>Support style</span>
+              <strong>Optional future edits</strong>
             </div>
           </div>
         </div>
@@ -1120,7 +1274,7 @@
 
       <div class="footer-brand">
         <a href="index.html" class="brand"><span class="brand-mark"></span><span>Northfolk Studio</span></a>
-        <p>A modern web studio crafting clean, high-performing websites for local businesses across the GTA.</p>
+        <p>A modern web studio crafting custom websites for local businesses across the GTA.</p>
       </div>
 
       <div class="footer-col">
@@ -1134,7 +1288,7 @@
 
       <div class="footer-col">
         <h4>Services</h4>
-        <a href="services.html">Business Websites</a>
+        <a href="services.html">Custom Websites</a>
         <a href="services.html">Website Redesigns</a>
         <a href="services.html">Landing Pages</a>
         <a href="services.html">Launch Support</a>
@@ -1143,7 +1297,7 @@
 
     <div class="container footer-bottom">
       <span>© 2026 Northfolk Studio. All rights reserved.</span>
-      <span>Made with care for local businesses.</span>
+      <span>Made with care for modern local businesses.</span>
     </div>
   </footer>
 
@@ -1157,6 +1311,7 @@
     });
 
     const revealEls = document.querySelectorAll('.reveal');
+
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) entry.target.classList.add('show');
