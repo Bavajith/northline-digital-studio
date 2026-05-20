@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact | Northfolk Studio</title>
-  <meta name="description" content="Contact Northfolk Studio to start a modern website project for your local business, request a website plan, or discuss a redesign." />
+  <meta name="description" content="Contact Northfolk Studio to start a custom-crafted website project for your local business." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -758,8 +758,7 @@
         <a class="active" href="contact.html">Contact</a>
       </nav>
 
-      <div class="nav-actions">
-      </div>
+      <div class="nav-actions"></div>
 
       <button class="mobile-toggle" aria-label="Open mobile menu" aria-expanded="false">
         <span></span><span></span><span></span>
@@ -781,18 +780,18 @@
         <div class="reveal">
           <div class="kicker">Start your website project</div>
           <h1>Tell us what you want to build, and we’ll shape the <span class="italic">right website plan.</span></h1>
-          <p class="hero-copy">Share a few details about your business, your current website, and what you want the new site to accomplish. We’ll help recommend the right structure, platform, and next step.</p>
+          <p class="hero-copy">Share a few details about your business, your current website, and what you want the new site to accomplish. We’ll recommend the right structure, package, and next step.</p>
 
           <div class="contact-methods">
-            <a class="contact-method" href="mailto:NFS@NorthFolkStudio.com">
+            <a class="contact-method" href="mailto:nfs@northfolkstudio.com">
               <span class="contact-icon">@</span>
               <span>
                 <strong>Email</strong>
-                <span>NFS@NorthFolkStudio.com</span>
+                <span>nfs@northfolkstudio.com</span>
               </span>
             </a>
 
-            <a class="contact-method" href="tel:+14165550192">
+            <a class="contact-method" href="tel:+16479997499">
               <span class="contact-icon">☎</span>
               <span>
                 <strong>Phone</strong>
@@ -813,9 +812,13 @@
         <aside class="form-card reveal" id="project-form">
           <div class="form-card-inner">
             <h2>Project inquiry</h2>
-            <p>This form is ready visually. Before going live, connect it to Formspree, Netlify Forms, WordPress, HubSpot, or another form provider.</p>
+            <p>Share a few details about your business and the website you have in mind. We’ll review your inquiry and recommend the best next step.</p>
 
-            <form action="mailto:NFS@NorthFolkStudio.com" method="post" enctype="text/plain">
+            <form 
+  action="https://formspree.io/f/xvzyzwae"
+  method="POST"
+  id="contact-form"
+>
               <div class="form-row">
                 <div>
                   <label for="name">Full name</label>
@@ -829,26 +832,35 @@
 
               <div class="form-row">
                 <div>
-                  <label for="business">Business</label>
-                  <input id="business" name="Business Name" type="text" placeholder="Business name" />
+                  <label for="phone">Phone</label>
+                  <input id="phone" name="Phone" type="tel" placeholder="+1 647 999 7499" />
                 </div>
                 <div>
-                  <label for="website">Current website</label>
-                  <input id="website" name="Current Website" type="url" placeholder="https://example.com" />
+                  <label for="business">Business name</label>
+                  <input id="business" name="Business Name" type="text" placeholder="Business name" />
                 </div>
               </div>
 
               <div class="form-row">
                 <div>
-                  <label for="service">Service needed</label>
-                  <select id="service" name="Service Needed" required>
+                  <label for="website">Current website</label>
+                <input id="website" name="Current Website" type="text" placeholder="yourwebsite.com (optional)" />
+                </div>
+                <div>
+                  <label for="business-type">Business type</label>
+                  <input id="business-type" name="Business Type" type="text" placeholder="Tutor, bakery, contractor, etc." />
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div>
+                  <label for="package">Package interest</label>
+                  <select id="package" name="Package Interest" required>
                     <option value="">Select one</option>
-                    <option>Business website</option>
-                    <option>Website redesign</option>
-                    <option>Landing page</option>
-                    <option>WordPress website</option>
-                    <option>Custom coded website</option>
-                    <option>Website care</option>
+                    <option>Launch Site</option>
+                    <option>Growth Website</option>
+                    <option>Signature Build</option>
+                    <option>Not sure yet</option>
                   </select>
                 </div>
                 <div>
@@ -864,13 +876,37 @@
                 </div>
               </div>
 
+              <div class="form-row">
+                <div>
+                  <label for="timeline">Timeline</label>
+                  <select id="timeline" name="Timeline">
+                    <option value="">Select one</option>
+                    <option>As soon as possible</option>
+                    <option>Within 2 to 4 weeks</option>
+                    <option>Within 1 to 2 months</option>
+                    <option>Still planning</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="domain">Domain status</label>
+                  <select id="domain" name="Domain Status">
+                    <option value="">Select one</option>
+                    <option>I already own a domain</option>
+                    <option>I need help buying a domain</option>
+                    <option>Not sure yet</option>
+                  </select>
+                </div>
+              </div>
+
               <div>
                 <label for="message">Project details</label>
-                <textarea id="message" name="Project Details" placeholder="Tell us about your business, goals, pages needed, timeline, and any features you want."></textarea>
+                <textarea id="message" name="Project Details" placeholder="Tell us about your business, goals, pages needed, style ideas, and any features you want." required></textarea>
               </div>
 
               <button class="btn btn-primary" type="submit">Send Project Inquiry →</button>
-              <p class="form-note">Current behavior opens email. Replace with a real form provider before client launch.</p>
+              <p id="success-message" style="display:none; color:#65664d; font-weight:700; margin-top:14px;">
+  Inquiry sent successfully. We’ll be in touch shortly.
+</p>
             </form>
           </div>
         </aside>
@@ -897,7 +933,7 @@
           <article class="step-card">
             <span>02</span>
             <h3>Direction</h3>
-            <p>We recommend the right pages, platform, content structure, and visual direction.</p>
+            <p>We recommend the right pages, content structure, package, and visual direction.</p>
           </article>
 
           <article class="step-card">
@@ -938,7 +974,7 @@
           </div>
           <div class="details-row">
             <span>Features</span>
-            <strong>Forms, booking, gallery, blog, WordPress editing, landing pages, or basic SEO setup.</strong>
+            <strong>Forms, booking links, gallery sections, location pages, landing pages, or basic SEO setup.</strong>
           </div>
           <div class="details-row">
             <span>Timeline</span>
@@ -968,8 +1004,8 @@
           </details>
 
           <details>
-            <summary>Can this be built in WordPress?</summary>
-            <p>Yes. WordPress is useful when the client wants editable pages, blogs, plugins, or content management after launch.</p>
+            <summary>Do I need to manage hosting or deployment?</summary>
+            <p>No. We handle the technical launch and deployment. You should own your domain, and we can help connect it to the finished website.</p>
           </details>
 
           <details>
@@ -1001,11 +1037,11 @@
           <div class="cta-panel">
             <div class="cta-row">
               <span>Email</span>
-              <strong>NFS@NorthFolkStudio.com</strong>
+              <strong>nfs@northfolkstudio.com</strong>
             </div>
             <div class="cta-row">
               <span>Phone</span>
-              <strong>+1 416 555 0192</strong>
+              <strong>+1 647 999 7499</strong>
             </div>
             <div class="cta-row">
               <span>Location</span>
@@ -1013,7 +1049,7 @@
             </div>
             <div class="cta-row">
               <span>Good first project</span>
-              <strong>5-page business website</strong>
+              <strong>Growth Website</strong>
             </div>
           </div>
         </div>
@@ -1030,7 +1066,7 @@
 
       <div class="footer-brand">
         <a href="index.html" class="brand"><span class="brand-mark"></span><span>Northfolk Studio</span></a>
-        <p>A modern web studio crafting clean, high-performing websites for local businesses across the GTA.</p>
+        <p>A modern web studio crafting custom websites for local businesses across the GTA.</p>
       </div>
 
       <div class="footer-col">
@@ -1044,7 +1080,7 @@
 
       <div class="footer-col">
         <h4>Services</h4>
-        <a href="services.html">Business Websites</a>
+        <a href="services.html">Custom Websites</a>
         <a href="services.html">Website Redesigns</a>
         <a href="services.html">Landing Pages</a>
         <a href="services.html">Launch Support</a>
@@ -1053,27 +1089,53 @@
 
     <div class="container footer-bottom">
       <span>© 2026 Northfolk Studio. All rights reserved.</span>
-      <span>Made with care for local businesses.</span>
+      <span>Made with care for modern local businesses.</span>
     </div>
   </footer>
+<script>
+  const toggle = document.querySelector('.mobile-toggle');
+  const menu = document.querySelector('#mobileMenu');
 
-  <script>
-    const toggle = document.querySelector('.mobile-toggle');
-    const menu = document.querySelector('#mobileMenu');
+  toggle.addEventListener('click', () => {
+    const isOpen = menu.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
 
-    toggle.addEventListener('click', () => {
-      const isOpen = menu.classList.toggle('open');
-      toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  const revealEls = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('show');
+    });
+  }, { threshold: 0.14 });
+
+  revealEls.forEach(el => observer.observe(el));
+</script>
+
+<script>
+  const form = document.getElementById("contact-form");
+  const successMessage = document.getElementById("success-message");
+
+  form.addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    const data = new FormData(form);
+
+    const response = await fetch(form.action, {
+      method: form.method,
+      body: data,
+      headers: {
+        'Accept': 'application/json'
+      }
     });
 
-    const revealEls = document.querySelectorAll('.reveal');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add('show');
-      });
-    }, { threshold: 0.14 });
+    if (response.ok) {
+      successMessage.style.display = "block";
+      form.reset();
+    } else {
+      alert("Something went wrong. Please try again.");
+    }
+  });
+</script>
 
-    revealEls.forEach(el => observer.observe(el));
-  </script>
 </body>
 </html>
