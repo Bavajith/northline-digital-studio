@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Northfolk Studio | Modern Websites for Local Businesses</title>
-  <meta name="description" content="Northfolk Studio designs and builds modern websites for local businesses across the GTA with clean branding, responsive layouts, and professional web experiences." />
+
+  <title>Northfolk Studio | Websites, AI Lead Generation & Social Media Systems</title>
+  <meta name="description" content="Northfolk Studio helps GTA businesses get more customers through modern websites, AI lead generation systems, social media content, reels, CRM workflows, and business automation." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -119,6 +120,7 @@
 
     .nav-links a { position: relative; color: rgba(21,21,17,.72); }
     .nav-links a:hover { color: var(--ink); }
+
     .nav-links a.active::after {
       content: "";
       width: 5px;
@@ -129,6 +131,12 @@
       left: 50%;
       transform: translateX(-50%);
       bottom: -15px;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
     }
 
     .btn {
@@ -149,10 +157,25 @@
     }
 
     .btn:hover { transform: translateY(-3px); }
-    .btn-primary { background: var(--olive-dark); color: #fff; box-shadow: 0 18px 42px rgba(63,66,48,.22); }
+
+    .btn-primary {
+      background: var(--olive-dark);
+      color: #fff;
+      box-shadow: 0 18px 42px rgba(63,66,48,.22);
+    }
+
     .btn-primary:hover { background: #303326; }
-    .btn-light { background: rgba(255,253,250,.78); color: var(--ink); border-color: var(--line); }
-    .btn-light:hover { background: #fff; box-shadow: 0 14px 34px rgba(21,21,17,.08); }
+
+    .btn-light {
+      background: rgba(255,253,250,.78);
+      color: var(--ink);
+      border-color: var(--line);
+    }
+
+    .btn-light:hover {
+      background: #fff;
+      box-shadow: 0 14px 34px rgba(21,21,17,.08);
+    }
 
     .mobile-toggle {
       display: none;
@@ -182,11 +205,15 @@
       font-weight: 700;
     }
 
-    h1 { font-size: clamp(48px, 6.7vw, 88px); max-width: 760px; }
+    h1 { font-size: clamp(48px, 6.7vw, 88px); max-width: 780px; }
     h2 { font-size: clamp(34px, 4.3vw, 58px); }
     h3 { font-size: 25px; }
 
-    .italic { font-style: italic; color: var(--olive); font-weight: 600; }
+    .italic {
+      font-style: italic;
+      color: var(--olive);
+      font-weight: 600;
+    }
 
     .kicker {
       font-size: 12px;
@@ -225,7 +252,7 @@
     }
 
     .hero-copy {
-      max-width: 530px;
+      max-width: 555px;
       color: var(--muted);
       margin: 26px 0 34px;
       font-size: 16px;
@@ -306,7 +333,7 @@
       border: 1px solid rgba(255,255,255,.46);
       border-radius: 18px;
       padding: 16px 18px;
-      max-width: 280px;
+      max-width: 310px;
       box-shadow: 0 18px 52px rgba(21,21,17,.14);
     }
 
@@ -357,14 +384,14 @@
       z-index: 2;
     }
 
-    .service-intro h2 { max-width: 380px; }
+    .service-intro h2 { max-width: 410px; }
     .service-intro .btn { margin-top: 34px; }
     .dark-services .kicker { color: rgba(232,199,164,.78); }
 
     .service-card {
       border-left: 1px solid rgba(255,255,255,.12);
       padding-left: 28px;
-      min-height: 245px;
+      min-height: 260px;
     }
 
     .service-icon {
@@ -377,6 +404,7 @@
       place-items: center;
       margin-bottom: 34px;
       font-size: 18px;
+      font-weight: 900;
     }
 
     .service-card h3 {
@@ -392,7 +420,11 @@
       margin-bottom: 20px;
     }
 
-    .service-card a { color: #fff; font-size: 12px; font-weight: 900; }
+    .service-card a {
+      color: #fff;
+      font-size: 12px;
+      font-weight: 900;
+    }
 
     .section-heading {
       display: grid;
@@ -416,218 +448,136 @@
     }
 
     .concept-grid {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: 26px;
-  margin-top: 54px;
-}
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 26px;
+      margin-top: 54px;
+    }
 
-.concept-card {
-  position: relative;
-  overflow: hidden;
-  border-radius: 28px;
-  padding: 34px;
-  min-height: 260px;
+    .concept-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 28px;
+      padding: 34px;
+      min-height: 260px;
+      background:
+        radial-gradient(circle at top right, rgba(101,102,77,.08), transparent 34%),
+        rgba(255,255,255,.56);
+      border: 1px solid rgba(21,21,17,.08);
+      backdrop-filter: blur(10px);
+      transition:
+        transform .32s ease,
+        border-color .32s ease,
+        box-shadow .32s ease,
+        background .32s ease;
+    }
 
-  background:
-    radial-gradient(circle at top right,
-      rgba(101,102,77,.08),
-      transparent 34%),
-    rgba(255,255,255,.56);
+    .concept-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(101,102,77,.24);
+      box-shadow: 0 26px 70px rgba(21,21,17,.08);
+      background:
+        radial-gradient(circle at top right, rgba(101,102,77,.14), transparent 38%),
+        rgba(255,255,255,.78);
+    }
 
-  border: 1px solid rgba(21,21,17,.08);
+    .concept-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(135deg, rgba(255,255,255,.12), transparent 60%);
+      pointer-events: none;
+    }
 
-  backdrop-filter: blur(10px);
+    .concept-card::after {
+      content: "";
+      position: absolute;
+      width: 240px;
+      height: 240px;
+      right: -120px;
+      bottom: -120px;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle, rgba(101,102,77,.08), transparent 72%);
+      pointer-events: none;
+      transition: transform .5s ease;
+    }
 
-  transition:
-    transform .32s ease,
-    border-color .32s ease,
-    box-shadow .32s ease,
-    background .32s ease;
-}
+    .concept-card:hover::after { transform: scale(1.12); }
 
-.concept-card:hover {
-  transform: translateY(-8px);
+    .concept-large {
+      grid-column: span 8;
+      min-height: 360px;
+    }
 
-  border-color: rgba(101,102,77,.24);
+    .concept-tall {
+      grid-column: span 4;
+      min-height: 360px;
+    }
 
-  box-shadow:
-    0 26px 70px rgba(21,21,17,.08);
+    .concept-grid > .concept-card:not(.concept-large):not(.concept-tall) {
+      grid-column: span 6;
+    }
 
-  background:
-    radial-gradient(circle at top right,
-      rgba(101,102,77,.14),
-      transparent 38%),
-    rgba(255,255,255,.78);
-}
+    .concept-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 54px;
+    }
 
-.concept-card::before {
-  content: "";
+    .concept-tag {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      font-weight: 900;
+      color: var(--muted);
+    }
 
-  position: absolute;
-  inset: 0;
+    .concept-arrow {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: rgba(101,102,77,.08);
+      color: var(--olive-dark);
+      transition:
+        transform .3s ease,
+        background .3s ease;
+    }
 
-  background:
-    linear-gradient(
-      135deg,
-      rgba(255,255,255,.12),
-      transparent 60%
-    );
+    .concept-card:hover .concept-arrow {
+      transform: translate(4px, -4px);
+      background: rgba(101,102,77,.16);
+    }
 
-  pointer-events: none;
-}
+    .concept-content h3 {
+      font-size: clamp(30px, 3vw, 52px);
+      line-height: .96;
+      margin-bottom: 18px;
+      transition:
+        transform .32s ease,
+        color .32s ease;
+    }
 
-.concept-card::after {
-  content: "";
+    .concept-card:hover .concept-content h3 {
+      transform: translateY(-2px);
+      color: var(--olive-dark);
+    }
 
-  position: absolute;
+    .concept-content p {
+      max-width: 470px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.75;
+    }
 
-  width: 240px;
-  height: 240px;
-
-  right: -120px;
-  bottom: -120px;
-
-  border-radius: 50%;
-
-  background:
-    radial-gradient(
-      circle,
-      rgba(101,102,77,.08),
-      transparent 72%
-    );
-
-  pointer-events: none;
-
-  transition: transform .5s ease;
-}
-
-.concept-card:hover::after {
-  transform: scale(1.12);
-}
-.concept-large {
-  grid-column: span 8;
-  min-height: 360px;
-}
-
-.concept-tall {
-  grid-column: span 4;
-  min-height: 360px;
-}
-
-.concept-grid > .concept-card:not(.concept-large):not(.concept-tall) {
-  grid-column: span 6;
-}
-
-.concept-top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  margin-bottom: 54px;
-}
-
-.concept-tag {
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: .14em;
-  font-weight: 900;
-  color: var(--muted);
-}
-
-.concept-arrow {
-  width: 42px;
-  height: 42px;
-
-  display: grid;
-  place-items: center;
-
-  border-radius: 50%;
-
-  background: rgba(101,102,77,.08);
-
-  color: var(--olive-dark);
-
-  transition:
-    transform .3s ease,
-    background .3s ease;
-}
-
-.concept-card:hover .concept-arrow {
-  transform: translate(4px, -4px);
-
-  background: rgba(101,102,77,.16);
-}
-
-.concept-content h3 {
-  font-size: clamp(30px, 3vw, 52px);
-  line-height: .96;
-  margin-bottom: 18px;
-}
-
-.concept-content h3 {
-  transition:
-    transform .32s ease,
-    color .32s ease;
-}
-
-.concept-card:hover .concept-content h3 {
-  transform: translateY(-2px);
-
-  color: var(--olive-dark);
-}
-
-.concept-content p {
-  max-width: 440px;
-
-  color: var(--muted);
-
-  font-size: 14px;
-  line-height: 1.75;
-}
-
-.concept-minimal {
-  background:
-    linear-gradient(
-      180deg,
-      rgba(255,255,255,.82),
-      rgba(240,235,226,.82)
-    );
-}
-
-@media (max-width: 980px) {
-
-  .concept-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .concept-large,
-  .concept-tall,
-  .concept-grid > .concept-card:not(.concept-large):not(.concept-tall) {
-    grid-column: span 1;
-  }
-
-}
-
-@media (max-width: 680px) {
-
-  .concept-card {
-    padding: 26px;
-    min-height: 240px;
-  }
-
-  .concept-large,
-  .concept-tall {
-    min-height: 300px;
-  }
-
-  .concept-content h3 {
-    font-size: 38px;
-  }
-
-}
-
-    
+    .concept-minimal {
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.82), rgba(240,235,226,.82));
+    }
 
     .process {
       background: rgba(255,255,255,.36);
@@ -677,7 +627,11 @@
       font-size: 18px;
     }
 
-    .step-no { font-size: 12px; font-weight: 900; color: var(--muted); }
+    .step-no {
+      font-size: 12px;
+      font-weight: 900;
+      color: var(--muted);
+    }
 
     .step h3 {
       font-family: "Inter", sans-serif;
@@ -686,7 +640,10 @@
       margin: 6px 0 10px;
     }
 
-    .step p { color: var(--muted); font-size: 13px; }
+    .step p {
+      color: var(--muted);
+      font-size: 13px;
+    }
 
     .trust-section {
       padding: 82px 0;
@@ -750,6 +707,129 @@
       font-weight: 700;
     }
 
+    .industry-section {
+      background:
+        radial-gradient(circle at 15% 18%, rgba(255,255,255,.78), transparent 30%),
+        linear-gradient(180deg, #f8f5ef, #eee8dd);
+    }
+
+    .industry-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 44px;
+    }
+
+    .industry-card {
+      border-radius: 28px;
+      padding: 34px;
+      min-height: 300px;
+      border: 1px solid rgba(21,21,17,.08);
+      background:
+        radial-gradient(circle at top right, rgba(101,102,77,.12), transparent 36%),
+        rgba(255,255,255,.58);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform .32s ease, box-shadow .32s ease;
+    }
+
+    .industry-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 24px 70px rgba(21,21,17,.08);
+    }
+
+    .industry-card h3 {
+      font-size: clamp(30px, 3vw, 44px);
+      margin-bottom: 16px;
+    }
+
+    .industry-card p {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.75;
+    }
+
+    .industry-card span {
+      font-size: 12px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .13em;
+      color: var(--olive-dark);
+      margin-top: 28px;
+    }
+
+    .cta-band {
+      background: var(--dark);
+      color: #fff;
+      padding: 86px 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-band::before {
+      content: "";
+      position: absolute;
+      width: 520px;
+      height: 520px;
+      right: -180px;
+      top: -220px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,.12);
+    }
+
+    .cta-inner {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 54px;
+      align-items: center;
+    }
+
+    .cta-inner p {
+      color: rgba(255,255,255,.66);
+      margin-top: 20px;
+      max-width: 610px;
+    }
+
+    .cta-box {
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 28px;
+      padding: 28px;
+    }
+
+    .cta-box h3 {
+      font-family: "Inter", sans-serif;
+      font-size: 17px;
+      letter-spacing: 0;
+      margin-bottom: 16px;
+    }
+
+    .cta-box ul {
+      list-style: none;
+      display: grid;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .cta-box li {
+      color: rgba(255,255,255,.68);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .cta-box li::before {
+      content: "✓";
+      color: #e8c7a4;
+      margin-right: 9px;
+    }
+
+    .cta-box .btn {
+      width: 100%;
+    }
+
     footer {
       background:
         radial-gradient(circle at 8% 78%, rgba(101,102,77,.28), transparent 24%),
@@ -780,11 +860,29 @@
       z-index: 2;
     }
 
-    .footer-cta h2 { max-width: 500px; margin-bottom: 22px; }
-    .footer-cta p { color: rgba(255,255,255,.66); max-width: 400px; margin-bottom: 28px; }
-    .footer-brand p { color: rgba(255,255,255,.62); margin: 18px 0 24px; max-width: 340px; }
+    .footer-cta h2 {
+      max-width: 520px;
+      margin-bottom: 22px;
+    }
 
-    .socials { display: flex; gap: 14px; color: rgba(255,255,255,.82); font-weight: 900; }
+    .footer-cta p {
+      color: rgba(255,255,255,.66);
+      max-width: 430px;
+      margin-bottom: 28px;
+    }
+
+    .footer-brand p {
+      color: rgba(255,255,255,.62);
+      margin: 18px 0 24px;
+      max-width: 340px;
+    }
+
+    .socials {
+      display: flex;
+      gap: 14px;
+      color: rgba(255,255,255,.82);
+      font-weight: 900;
+    }
 
     .footer-col h4 {
       font-size: 12px;
@@ -822,7 +920,10 @@
       transition: opacity .8s ease, transform .8s ease;
     }
 
-    .reveal.show { opacity: 1; transform: translateY(0); }
+    .reveal.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
     @media (max-width: 1050px) {
       .nav-links, .nav-actions { display: none; }
@@ -835,19 +936,28 @@
         background: rgba(247,244,239,.96);
       }
 
-      .mobile-menu.open { display: grid; gap: 16px; }
-      .mobile-menu a { font-weight: 800; }
+      .mobile-menu.open {
+        display: grid;
+        gap: 16px;
+      }
+
+      .mobile-menu a {
+        font-weight: 800;
+      }
 
       .hero-grid,
       .service-row,
       .section-heading,
       .process-grid,
       .trust-grid,
-      .footer-grid {
+      .footer-grid,
+      .cta-inner {
         grid-template-columns: 1fr;
       }
 
-      .hero-showcase { transform: none; }
+      .hero-showcase {
+        transform: none;
+      }
 
       .service-card {
         border-left: 0;
@@ -857,29 +967,114 @@
         min-height: auto;
       }
 
+      .section-heading p {
+        justify-self: start;
+      }
 
-      .section-heading p { justify-self: start; }
-      .steps { grid-template-columns: 1fr 1fr; }
-      .steps::before { display: none; }
-      .trust-points { grid-template-columns: 1fr; }
+      .steps {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .steps::before {
+        display: none;
+      }
+
+      .trust-points,
+      .industry-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .concept-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .concept-large,
+      .concept-tall,
+      .concept-grid > .concept-card:not(.concept-large):not(.concept-tall) {
+        grid-column: span 1;
+      }
     }
 
     @media (max-width: 680px) {
-      .container { width: calc(100% - 30px); }
-      .navbar { height: 74px; }
-      .brand { font-size: 19px; }
-      .hero { padding-top: 126px; min-height: auto; padding-bottom: 74px; }
-      h1 { font-size: 46px; }
-      h2 { font-size: 36px; }
-      section { padding: 74px 0; }
-      .hero-actions { margin-bottom: 44px; }
-      .hero-proof { grid-template-columns: 1fr; }
-      .hero-showcase { border-radius: 24px; min-height: auto; }
-      .hero-showcase img { height: 365px; }
-      .showcase-badge { left: 18px; right: 18px; bottom: 18px; max-width: none; }
-      .steps { grid-template-columns: 1fr; }
-      .footer-bottom { flex-direction: column; }
-      .btn { width: 100%; }
+      .container {
+        width: calc(100% - 30px);
+      }
+
+      .navbar {
+        height: 74px;
+      }
+
+      .brand {
+        font-size: 19px;
+      }
+
+      .hero {
+        padding-top: 126px;
+        min-height: auto;
+        padding-bottom: 74px;
+      }
+
+      h1 {
+        font-size: 46px;
+      }
+
+      h2 {
+        font-size: 36px;
+      }
+
+      section {
+        padding: 74px 0;
+      }
+
+      .hero-actions {
+        margin-bottom: 44px;
+      }
+
+      .hero-proof {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-showcase {
+        border-radius: 24px;
+        min-height: auto;
+      }
+
+      .hero-showcase img {
+        height: 365px;
+      }
+
+      .showcase-badge {
+        left: 18px;
+        right: 18px;
+        bottom: 18px;
+        max-width: none;
+      }
+
+      .steps {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .concept-card {
+        padding: 26px;
+        min-height: 240px;
+      }
+
+      .concept-large,
+      .concept-tall {
+        min-height: 300px;
+      }
+
+      .concept-content h3 {
+        font-size: 38px;
+      }
     }
   </style>
 </head>
@@ -901,6 +1096,10 @@
       </nav>
 
       <div class="nav-actions">
+        <a class="btn btn-light" href="work.html">View Work</a>
+        <a class="btn btn-primary" href="https://forms.gle/iL9ip2JEk12K7bSp9" target="_blank" rel="noopener">
+          Free Consultation →
+        </a>
       </div>
 
       <button class="mobile-toggle" aria-label="Open mobile menu" aria-expanded="false">
@@ -914,6 +1113,7 @@
       <a href="work.html">Portfolio</a>
       <a href="packages.html">Packages</a>
       <a href="contact.html">Contact</a>
+      <a href="https://forms.gle/iL9ip2JEk12K7bSp9" target="_blank" rel="noopener">Book a Free Consultation</a>
     </nav>
   </header>
 
@@ -921,36 +1121,52 @@
     <section class="hero">
       <div class="container hero-grid">
         <div class="reveal">
-          <div class="kicker">Web design & development for local brands</div>
-          <h1>Websites that make your business feel <span class="italic">established from the first click.</span></h1>
-          <p class="hero-copy">Northfolk Studio designs and builds polished, responsive websites for local businesses across the GTA that want stronger credibility, clearer messaging, and more customer inquiries.</p>
+          <div class="kicker">Websites, AI lead generation & social media systems</div>
+
+          <h1>
+            Helping local businesses get more customers from the
+            <span class="italic">first click.</span>
+          </h1>
+
+          <p class="hero-copy">
+            Northfolk Studio helps GTA businesses grow with modern websites, lead capture systems,
+            social media content, reels, and AI-powered automation built to turn attention into real inquiries.
+          </p>
 
           <div class="hero-actions">
-            <a class="btn btn-primary" href="contact.html">Start Your Project →</a>
-            <a class="btn btn-light" href="#work">View Concepts</a>
+            <a class="btn btn-primary" href="https://forms.gle/iL9ip2JEk12K7bSp9" target="_blank" rel="noopener">
+              Book a Free Consultation →
+            </a>
+
+            <a class="btn btn-light" href="#work">
+              View Client Work
+            </a>
           </div>
 
           <div class="hero-proof">
             <div class="proof-item">
               <strong>01</strong>
-              <span>Custom design direction</span>
+              <span>Website Design</span>
             </div>
+
             <div class="proof-item">
               <strong>02</strong>
-              <span>Responsive build quality</span>
+              <span>Lead Generation Systems</span>
             </div>
+
             <div class="proof-item">
               <strong>03</strong>
-              <span>Local business focused</span>
+              <span>Social Media Content</span>
             </div>
           </div>
         </div>
 
         <div class="hero-showcase reveal">
-          <img src="assets/imgs/NorthFolk/hero-showcase.png" alt="Premium website design concept displayed in a warm architectural studio setting">
+          <img src="assets/imgs/NorthFolk/hero-showcase.png" alt="Premium website and lead generation concept displayed in a warm architectural studio setting">
+
           <div class="showcase-badge">
-            <strong>Concept-driven presentation</strong>
-            <span>Custom visuals, premium spacing, and responsive layouts designed to make local brands look credible.</span>
+            <strong>Websites built with a lead system behind them.</strong>
+            <span>Modern design, clear messaging, lead capture forms, CRM tracking, and follow-up workflows for local businesses.</span>
           </div>
         </div>
       </div>
@@ -959,137 +1175,229 @@
     <section class="dark-services reveal">
       <div class="container service-row">
         <div class="service-intro">
-          <div class="kicker">What we do</div>
-          <h2>End-to-end web solutions tailored to business goals.</h2>
+          <div class="kicker">What we build</div>
+
+          <h2>
+            Growth systems for local businesses that need more inquiries.
+          </h2>
+
           <a class="btn btn-primary" href="services.html">Explore Services →</a>
         </div>
 
         <article class="service-card">
-          <div class="service-icon">▣</div>
-          <h3>Web Design</h3>
-          <p>Modern visual direction, page structure, spacing, typography, and layouts that make a business feel established.</p>
+          <div class="service-icon">W</div>
+          <h3>Website Design</h3>
+          <p>
+            Custom business websites with polished visuals, clear messaging, mobile-friendly layouts,
+            and strong calls-to-action.
+          </p>
           <a href="services.html">Learn More →</a>
         </article>
 
         <article class="service-card">
-          <div class="service-icon">&lt;/&gt;</div>
-          <h3>Development</h3>
-          <p>Clean responsive builds using HTML, CSS, JavaScript, and practical deployment workflows.</p>
+          <div class="service-icon">AI</div>
+          <h3>AI Lead Generation</h3>
+          <p>
+            Landing pages, lead forms, CRM tracking, and AI-assisted follow-up systems designed
+            to turn visitors into conversations.
+          </p>
           <a href="services.html">Learn More →</a>
         </article>
 
         <article class="service-card">
-          <div class="service-icon">▯</div>
-          <h3>Mobile Experience</h3>
-          <p>Layouts tested for desktop, tablet, and mobile so customers get a smooth first impression anywhere.</p>
+          <div class="service-icon">▶</div>
+          <h3>Social Media & Reels</h3>
+          <p>
+            Content direction, reels ideas, posting strategy, and creative support to help local
+            businesses stay visible online.
+          </p>
           <a href="services.html">Learn More →</a>
         </article>
 
         <article class="service-card">
           <div class="service-icon">↗</div>
-          <h3>Launch Support</h3>
-          <p>Domain connection, hosting setup, contact forms, basic SEO, and launch-ready polish.</p>
+          <h3>Business Automation</h3>
+          <p>
+            Simple CRM workflows, email alerts, follow-up systems, and automation that helps
+            reduce missed opportunities.
+          </p>
           <a href="services.html">Learn More →</a>
         </article>
       </div>
     </section>
 
-    <section id="work" class="work-section reveal">
-  <div class="container">
+    <section class="industry-section reveal">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <div class="kicker">Focused industries</div>
 
-    <div class="section-heading">
-      <div>
-        <div class="kicker">Selected concepts</div>
+            <h2>
+              Starting with businesses where
+              <span class="italic">trust and speed matter.</span>
+            </h2>
+          </div>
 
-        <h2>
-          Minimal presentations with a
-          <span class="italic">clear creative direction.</span>
-        </h2>
+          <p>
+            Northfolk Studio is not trying to target everyone at once. The initial focus is on
+            local service-based businesses that need stronger credibility, better lead capture,
+            and a clearer follow-up process.
+          </p>
+        </div>
+
+        <div class="industry-grid">
+          <article class="industry-card">
+            <div>
+              <h3>Realtors</h3>
+              <p>
+                Landing pages, home value forms, listing content, reels, and follow-up workflows
+                designed to generate buyer and seller conversations.
+              </p>
+            </div>
+            <span>Real estate lead engine</span>
+          </article>
+
+          <article class="industry-card">
+            <div>
+              <h3>Mechanics</h3>
+              <p>
+                Professional service websites with repair categories, trust signals, mobile-first
+                contact paths, and request forms for local customers.
+              </p>
+            </div>
+            <span>Service request funnel</span>
+          </article>
+
+          <article class="industry-card">
+            <div>
+              <h3>Landscapers</h3>
+              <p>
+                Quote-focused service pages, seasonal campaigns, before-and-after content,
+                project galleries, and lead capture forms.
+              </p>
+            </div>
+            <span>Quote generation system</span>
+          </article>
+        </div>
       </div>
+    </section>
 
-      <p>
-        Each concept is designed to feel intentional, modern, and tailored
-        toward helping local businesses build trust online through stronger
-        presentation and cleaner digital experiences.
-      </p>
-    </div>
+    <section id="work" class="work-section reveal">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <div class="kicker">Selected work</div>
 
-    <div class="concept-grid">
-
-      <a class="concept-card concept-large" href="LawnCareConcept_2.html">
-        <div class="concept-top">
-          <span class="concept-tag">Contractor Website</span>
-          <span class="concept-arrow">↗</span>
-        </div>
-
-        <div class="concept-content">
-          <h3>Premier Landscaping</h3>
+            <h2>
+              Websites and concepts with a
+              <span class="italic">clear conversion purpose.</span>
+            </h2>
+          </div>
 
           <p>
-            A premium landscaping concept focused on curb appeal,
-            trust-building, and lead generation for modern outdoor brands.
+            Each project is positioned around credibility, customer trust, mobile experience,
+            lead capture, and the next step a visitor should take.
           </p>
         </div>
-      </a>
 
-      <a class="concept-card concept-tall" href="ChurchConcept_1.html">
-        <div class="concept-top">
-          <span class="concept-tag">Church Website</span>
-          <span class="concept-arrow">↗</span>
+        <div class="concept-grid">
+          <a class="concept-card concept-large" href="work.html">
+            <div class="concept-top">
+              <span class="concept-tag">Automotive Website</span>
+              <span class="concept-arrow">↗</span>
+            </div>
+
+            <div class="concept-content">
+              <h3>INLINE 5 AUTO INC</h3>
+
+              <p>
+                Custom website built for a Scarborough-based automotive service business specializing
+                in European vehicles including Audi, Volkswagen, Porsche and BMW. Includes website design,
+                mobile optimization, lead capture form, and SEO setup.
+              </p>
+            </div>
+          </a>
+
+          <a class="concept-card concept-tall" href="realEstate.html">
+            <div class="concept-top">
+              <span class="concept-tag">Real Estate Lead Funnel</span>
+              <span class="concept-arrow">↗</span>
+            </div>
+
+            <div class="concept-content">
+              <h3>GTA Nest Realty</h3>
+
+              <p>
+                A real estate concept built around trust, listings, home value inquiries,
+                and lead capture for future realtor campaigns.
+              </p>
+            </div>
+          </a>
+
+          <a class="concept-card" href="LawnCareConcept_2.html">
+            <div class="concept-top">
+              <span class="concept-tag">Landscaping Website</span>
+              <span class="concept-arrow">↗</span>
+            </div>
+
+            <div class="concept-content">
+              <h3>Premier Landscaping</h3>
+
+              <p>
+                A premium landscaping concept focused on quote requests, seasonal services,
+                project presentation, and local trust-building.
+              </p>
+            </div>
+          </a>
+
+          <a class="concept-card concept-minimal" href="bakery-project.html">
+            <div class="concept-top">
+              <span class="concept-tag">Boutique Brand</span>
+              <span class="concept-arrow">↗</span>
+            </div>
+
+            <div class="concept-content">
+              <h3>Mint & Flour</h3>
+
+              <p>
+                A warm bakery concept balancing visual storytelling, product presentation,
+                and simple customer action.
+              </p>
+            </div>
+          </a>
+
+          <a class="concept-card concept-minimal" href="ChurchConcept_1.html">
+            <div class="concept-top">
+              <span class="concept-tag">Community Website</span>
+              <span class="concept-arrow">↗</span>
+            </div>
+
+            <div class="concept-content">
+              <h3>Toronto Harvest Missionary Church</h3>
+
+              <p>
+                A welcoming church concept designed around clarity, visitor engagement,
+                community trust, and easy navigation.
+              </p>
+            </div>
+          </a>
         </div>
-
-        <div class="concept-content">
-          <h3>Toronto Harvest Missionary Church</h3>
-
-          <p>
-            A warm and welcoming church experience designed around clarity,
-            community, and meaningful visitor engagement.
-          </p>
-        </div>
-      </a>
-
-      <a class="concept-card" href="realEstate.html">
-        <div class="concept-top">
-          <span class="concept-tag">Real Estate</span>
-          <span class="concept-arrow">↗</span>
-        </div>
-
-        <div class="concept-content">
-          <h3>GTA Nest Realty</h3>
-
-          <p>
-            A luxury-inspired real estate presentation using elegant spacing,
-            editorial hierarchy, and refined typography.
-          </p>
-        </div>
-      </a>
-
-      <a class="concept-card concept-minimal" href="bakery-project.html">
-        <div class="concept-top">
-          <span class="concept-tag">Boutique Brand</span>
-          <span class="concept-arrow">↗</span>
-        </div>
-
-        <div class="concept-content">
-          <h3>Mint & Flour</h3>
-
-          <p>
-            A softer editorial concept balancing warmth, minimalism,
-            and modern brand presentation.
-          </p>
-        </div>
-      </a>
-
-    </div>
-  </div>
-</section>
+      </div>
+    </section>
 
     <section class="process reveal">
       <div class="container process-grid">
         <div>
           <div class="kicker">Our process</div>
-          <h2>A clear process from idea to launch.</h2>
-          <p>Simple enough for local businesses to understand, polished enough to feel professional.</p>
+
+          <h2>
+            From idea to lead system.
+          </h2>
+
+          <p>
+            A simple process that helps a local business go from unclear online presence
+            to a polished website with a working inquiry flow.
+          </p>
         </div>
 
         <div class="steps">
@@ -1097,28 +1405,36 @@
             <div class="step-icon">⌕</div>
             <span class="step-no">01</span>
             <h3>Discover</h3>
-            <p>We learn about your business, audience, services, and goals.</p>
+            <p>
+              We learn about your business, services, audience, goals, and what kind of leads you want.
+            </p>
           </article>
 
           <article class="step">
             <div class="step-icon">✄</div>
             <span class="step-no">02</span>
             <h3>Design</h3>
-            <p>We create the visual direction, layout system, and page flow.</p>
+            <p>
+              We create the website structure, visual direction, messaging, and conversion flow.
+            </p>
           </article>
 
           <article class="step">
             <div class="step-icon">&lt;/&gt;</div>
             <span class="step-no">03</span>
-            <h3>Develop</h3>
-            <p>We build a clean, responsive, fast website with attention to detail.</p>
+            <h3>Build</h3>
+            <p>
+              We build the responsive website, connect forms, set up CRM tracking, and prepare the launch.
+            </p>
           </article>
 
           <article class="step">
             <div class="step-icon">↗</div>
             <span class="step-no">04</span>
-            <h3>Launch</h3>
-            <p>We test, optimize, connect the domain, and prepare the site for launch.</p>
+            <h3>Grow</h3>
+            <p>
+              We can add content, reels, AI-assisted follow-up, automation, and campaign improvements.
+            </p>
           </article>
         </div>
       </div>
@@ -1132,22 +1448,63 @@
         </div>
 
         <div>
-          <p class="trust-copy">A local business does not need a complicated website. It needs a site that instantly feels trustworthy, looks current, loads well, and makes it easy for customers to take the next step.</p>
+          <p class="trust-copy">
+            A local business does not just need a website. It needs a clear online presence,
+            a way to capture interested customers, and a simple system to follow up before
+            the opportunity goes cold.
+          </p>
 
           <div class="trust-points">
             <div class="trust-point">
-              <strong>Clear messaging</strong>
-              <span>Visitors understand what you offer quickly.</span>
+              <strong>Clear offer</strong>
+              <span>Visitors understand what you do and why they should contact you.</span>
             </div>
+
             <div class="trust-point">
-              <strong>Professional visuals</strong>
-              <span>Your business feels established and credible.</span>
+              <strong>Lead capture</strong>
+              <span>Forms and calls-to-action guide visitors toward real inquiries.</span>
             </div>
+
             <div class="trust-point">
-              <strong>Conversion structure</strong>
-              <span>Calls-to-action guide customers toward contact.</span>
+              <strong>Follow-up system</strong>
+              <span>New leads are tracked so the next step does not get missed.</span>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-band reveal">
+      <div class="container cta-inner">
+        <div>
+          <div class="kicker">Free consultation</div>
+
+          <h2>
+            Ready to turn your website into a
+            <span class="italic">lead generation system?</span>
+          </h2>
+
+          <p>
+            Tell us about your business, your current website, your biggest challenge,
+            and what kind of customers you want to attract. We’ll review the opportunity
+            and recommend the best next step.
+          </p>
+        </div>
+
+        <div class="cta-box">
+          <h3>Consultation form includes:</h3>
+
+          <ul>
+            <li>Business and contact details</li>
+            <li>Current website status</li>
+            <li>Service interest</li>
+            <li>Biggest business challenge</li>
+            <li>Project timeline and preferred contact method</li>
+          </ul>
+
+          <a class="btn btn-primary" href="https://forms.gle/iL9ip2JEk12K7bSp9" target="_blank" rel="noopener">
+            Book a Free Consultation →
+          </a>
         </div>
       </div>
     </section>
@@ -1156,14 +1513,38 @@
   <footer>
     <div class="container footer-grid">
       <div class="footer-cta">
-        <h2>Ready to build something <span class="italic">credible and incredible?</span></h2>
-        <p>Let’s create a website that elevates your business and helps customers trust you faster.</p>
+        <h2>
+          Let’s build something that brings in
+          <span class="italic">real inquiries.</span>
+        </h2>
+
+        <p>
+          Northfolk Studio helps local businesses grow through websites, AI lead generation,
+          social media content, and business automation.
+        </p>
+
+        <a class="btn btn-primary" href="https://forms.gle/iL9ip2JEk12K7bSp9" target="_blank" rel="noopener">
+          Book a Free Consultation →
+        </a>
       </div>
 
       <div class="footer-brand">
-        <a href="index.html" class="brand"><span class="brand-mark"></span><span>Northfolk Studio</span></a>
-        <p>A modern web studio crafting clean, high-performing websites for local businesses across the GTA.</p>
-        <div class="socials"><span>in</span><span>Be</span><span>◌</span><span>◎</span></div>
+        <a href="index.html" class="brand">
+          <span class="brand-mark"></span>
+          <span>Northfolk Studio</span>
+        </a>
+
+        <p>
+          A GTA-based studio helping local businesses turn attention into inquiries
+          through modern websites, lead capture systems, content, and automation.
+        </p>
+
+        <div class="socials">
+          <span>in</span>
+          <span>Be</span>
+          <span>◌</span>
+          <span>◎</span>
+        </div>
       </div>
 
       <div class="footer-col">
@@ -1177,16 +1558,16 @@
 
       <div class="footer-col">
         <h4>Services</h4>
-        <a href="services.html">Web Design</a>
-        <a href="services.html">Web Development</a>
-        <a href="services.html">Responsive Design</a>
-        <a href="services.html">Launch Support</a>
+        <a href="services.html">Website Design</a>
+        <a href="services.html">AI Lead Generation</a>
+        <a href="services.html">Social Media & Reels</a>
+        <a href="services.html">Business Automation</a>
       </div>
     </div>
 
     <div class="container footer-bottom">
       <span>© 2026 Northfolk Studio. All rights reserved.</span>
-      <span>Made with care for local businesses.</span>
+      <span>Websites, lead generation, content, and automation for local businesses.</span>
     </div>
   </footer>
 
@@ -1200,6 +1581,7 @@
     });
 
     const revealEls = document.querySelectorAll('.reveal');
+
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) entry.target.classList.add('show');
