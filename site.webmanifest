@@ -1,0 +1,14 @@
+{
+  "name": "Northfolk Studio",
+  "short_name": "Northfolk",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "64x64",
+      "type": "image/svg+xml"
+    }
+  ],
+  "theme_color": "#10130f",
+  "background_color": "#f7f4ef",
+  "display": "standalone"
+}

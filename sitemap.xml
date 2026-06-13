@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <url>
+    <loc>https://www.northfolkstudio.com/</loc>
+    <priority>1.00</priority>
+  </url>
+
+  <url>
+    <loc>https://www.northfolkstudio.com/services.html</loc>
+    <priority>0.90</priority>
+  </url>
+
+  <url>
+    <loc>https://www.northfolkstudio.com/work.html</loc>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://www.northfolkstudio.com/packages.html</loc>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://www.northfolkstudio.com/contact.html</loc>
+    <priority>0.90</priority>
+  </url>
+
+  <url>
+    <loc>https://www.northfolkstudio.com/realEstate.html</loc>
+    <priority>0.60</priority>
+  </url>
+
+  <url>
+    <loc>https://www.northfolkstudio.com/bakery-project.html</loc>
+    <priority>0.60</priority>
+  </url>
+
+  <url>
+    <loc>https://www.northfolkstudio.com/LawnCareConcept_1.html</loc>
+    <priority>0.60</priority>
+  </url>
+
+  <url>
+    <loc>https://www.northfolkstudio.com/LawnCareConcept_2.html</loc>
+    <priority>0.60</priority>
+  </url>
+
+  <url>
+    <loc>https://www.northfolkstudio.com/ChurchConcept_1.html</loc>
+    <priority>0.60</priority>
+  </url>
+
+</urlset>

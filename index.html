@@ -4,13 +4,27 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Northfolk Studio | Websites, AI Lead Generation & Social Media Systems</title>
-  <meta name="description" content="Northfolk Studio helps GTA businesses get more customers through modern websites, AI lead generation systems, social media content, reels, CRM workflows, and business automation." />
+  <title>Northfolk Studio | GTA Website Design & AI Lead Generation</title>
+<meta name="description" content="Northfolk Studio helps GTA businesses get more customers through modern websites, AI lead generation systems, social media content, reels, CRM workflows, and business automation." />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&display=swap" rel="stylesheet">
+<link rel="canonical" href="https://www.northfolkstudio.com/" />
 
+<meta name="robots" content="index, follow" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Northfolk Studio | GTA Website Design & AI Lead Generation" />
+<meta property="og:description" content="Modern websites, AI lead generation, social media content, reels, and automation for local businesses across the GTA." />
+<meta property="og:url" content="https://www.northfolkstudio.com/" />
+<meta property="og:image" content="https://www.northfolkstudio.com/assets/imgs/NorthFolk/hero-showcase.png" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Northfolk Studio | GTA Website Design & AI Lead Generation" />
+<meta name="twitter:description" content="Websites, lead capture systems, social content, and automation for local businesses." />
+<meta name="twitter:image" content="https://www.northfolkstudio.com/assets/imgs/NorthFolk/hero-showcase.png" />
+
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
   <style>
     :root {
       --bg: #f7f4ef;
@@ -877,12 +891,30 @@
       max-width: 340px;
     }
 
-    .socials {
-      display: flex;
-      gap: 14px;
-      color: rgba(255,255,255,.82);
-      font-weight: 900;
-    }
+  .socials {
+  display: flex;
+  gap: 14px;
+  color: rgba(255,255,255,.82);
+  font-weight: 900;
+}
+
+.social-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,.18);
+  display: grid;
+  place-items: center;
+  color: rgba(255,255,255,.84);
+  background: rgba(255,255,255,.06);
+  transition: transform .25s ease, background .25s ease, color .25s ease;
+}
+
+.social-icon:hover {
+  transform: translateY(-3px);
+  background: rgba(255,255,255,.12);
+  color: #fff;
+}
 
     .footer-col h4 {
       font-size: 12px;
@@ -1082,39 +1114,31 @@
 <body>
   <header>
     <div class="container navbar">
-      <a href="index.html" class="brand" aria-label="Northfolk Studio Home">
-        <span class="brand-mark"></span>
-        <span>Northfolk Studio</span>
-      </a>
+  <a href="index.html" class="brand" aria-label="Northfolk Studio Home">
+    <span class="brand-mark"></span>
+    <span>Northfolk Studio</span>
+  </a>
 
-      <nav class="nav-links" aria-label="Main navigation">
-        <a class="active" href="index.html">Home</a>
-        <a href="services.html">Services</a>
-        <a href="work.html">Portfolio</a>
-        <a href="packages.html">Packages</a>
-        <a href="contact.html">Contact</a>
-      </nav>
+  <nav class="nav-links" aria-label="Main navigation">
+    <a class="active" href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="work.html">Portfolio</a>
+    <a href="packages.html">Packages</a>
+    <a href="contact.html">Contact</a>
+  </nav>
 
-      <div class="nav-actions">
-        <a class="btn btn-light" href="work.html">View Work</a>
-        <a class="btn btn-primary" href="https://forms.gle/iL9ip2JEk12K7bSp9" target="_blank" rel="noopener">
-          Free Consultation →
-        </a>
-      </div>
+  <button class="mobile-toggle" aria-label="Open mobile menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</div>
 
-      <button class="mobile-toggle" aria-label="Open mobile menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-
-    <nav class="mobile-menu" id="mobileMenu">
-      <a href="index.html">Home</a>
-      <a href="services.html">Services</a>
-      <a href="work.html">Portfolio</a>
-      <a href="packages.html">Packages</a>
-      <a href="contact.html">Contact</a>
-      <a href="https://forms.gle/iL9ip2JEk12K7bSp9" target="_blank" rel="noopener">Book a Free Consultation</a>
-    </nav>
+<nav class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a>
+  <a href="services.html">Services</a>
+  <a href="work.html">Portfolio</a>
+  <a href="packages.html">Packages</a>
+  <a href="contact.html">Contact</a>
+</nav>
   </header>
 
   <main>
@@ -1134,9 +1158,9 @@
           </p>
 
           <div class="hero-actions">
-            <a class="btn btn-primary" href="https://forms.gle/iL9ip2JEk12K7bSp9" target="_blank" rel="noopener">
-              Book a Free Consultation →
-            </a>
+<a class="btn btn-primary" href="contact.html#project-form">
+  Book a Free Consultation →
+</a>
 
             <a class="btn btn-light" href="#work">
               View Client Work
@@ -1301,7 +1325,7 @@
         </div>
 
         <div class="concept-grid">
-          <a class="concept-card concept-large" href="work.html">
+      <a class="concept-card concept-large" href="https://www.inline5autoinc.ca/" target="_blank" rel="noopener">
             <div class="concept-top">
               <span class="concept-tag">Automotive Website</span>
               <span class="concept-arrow">↗</span>
@@ -1502,9 +1526,9 @@
             <li>Project timeline and preferred contact method</li>
           </ul>
 
-          <a class="btn btn-primary" href="https://forms.gle/iL9ip2JEk12K7bSp9" target="_blank" rel="noopener">
-            Book a Free Consultation →
-          </a>
+      <a class="btn btn-primary" href="contact.html#project-form">
+  Book a Free Consultation →
+</a>
         </div>
       </div>
     </section>
@@ -1523,9 +1547,9 @@
           social media content, and business automation.
         </p>
 
-        <a class="btn btn-primary" href="https://forms.gle/iL9ip2JEk12K7bSp9" target="_blank" rel="noopener">
-          Book a Free Consultation →
-        </a>
+     <a class="btn btn-primary" href="contact.html#project-form">
+  Book a Free Consultation →
+</a>
       </div>
 
       <div class="footer-brand">
@@ -1539,12 +1563,11 @@
           through modern websites, lead capture systems, content, and automation.
         </p>
 
-        <div class="socials">
-          <span>in</span>
-          <span>Be</span>
-          <span>◌</span>
-          <span>◎</span>
-        </div>
+<div class="socials">
+  <a href="https://www.instagram.com/northfolk.studio/" target="_blank" rel="noopener" aria-label="Northfolk Studio Instagram" class="social-icon">
+    ◎
+  </a>
+</div>
       </div>
 
       <div class="footer-col">

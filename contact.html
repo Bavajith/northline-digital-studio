@@ -265,17 +265,27 @@
       background: rgba(255,255,255,.78);
     }
 
-    .contact-icon {
-      width: 46px;
-      height: 46px;
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-      background: rgba(101,102,77,.09);
-      color: var(--olive-dark);
-      font-weight: 900;
-    }
+.contact-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: rgba(101,102,77,.09);
+  color: var(--olive-dark);
+  font-weight: 900;
+  flex-shrink: 0;
+}
 
+.contact-icon svg {
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.9;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
     .contact-method strong {
       display: block;
       line-height: 1.2;
@@ -743,36 +753,34 @@
 </head>
 
 <body>
-  <header>
-    <div class="container navbar">
-      <a href="index.html" class="brand" aria-label="Northfolk Studio Home">
-        <span class="brand-mark"></span>
-        <span>Northfolk Studio</span>
-      </a>
+<header>
+  <div class="container navbar">
+    <a href="index.html" class="brand" aria-label="Northfolk Studio Home">
+      <span class="brand-mark"></span>
+      <span>Northfolk Studio</span>
+    </a>
 
-      <nav class="nav-links" aria-label="Main navigation">
-        <a href="index.html">Home</a>
-        <a href="services.html">Services</a>
-        <a href="work.html">Portfolio</a>
-        <a href="packages.html">Packages</a>
-        <a class="active" href="contact.html">Contact</a>
-      </nav>
-
-      <div class="nav-actions"></div>
-
-      <button class="mobile-toggle" aria-label="Open mobile menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-
-    <nav class="mobile-menu" id="mobileMenu">
+    <nav class="nav-links" aria-label="Main navigation">
       <a href="index.html">Home</a>
       <a href="services.html">Services</a>
       <a href="work.html">Portfolio</a>
       <a href="packages.html">Packages</a>
       <a href="contact.html">Contact</a>
     </nav>
-  </header>
+
+    <button class="mobile-toggle" aria-label="Open mobile menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <nav class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="work.html">Portfolio</a>
+    <a href="packages.html">Packages</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
 
   <main>
     <section class="hero">
@@ -799,8 +807,27 @@
               </span>
             </a>
 
+<a class="contact-method" href="https://www.instagram.com/northfolk.studio/" target="_blank" rel="noopener">
+  <span class="contact-icon">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <rect x="5" y="5" width="14" height="14" rx="4"></rect>
+      <circle cx="12" cy="12" r="3.2"></circle>
+      <circle cx="16.5" cy="7.5" r="0.8"></circle>
+    </svg>
+  </span>
+  <span>
+    <strong>Instagram</strong>
+    <span>@northfolk.studio</span>
+  </span>
+</a>
+
             <div class="contact-method">
-              <span class="contact-icon">⌂</span>
+           <span class="contact-icon">
+  <svg viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M12 21s7-5.2 7-11a7 7 0 1 0-14 0c0 5.8 7 11 7 11Z"></path>
+    <circle cx="12" cy="10" r="2.4"></circle>
+  </svg>
+</span>
               <span>
                 <strong>Location</strong>
                 <span>Toronto, Ontario</span>
@@ -897,6 +924,59 @@
                   </select>
                 </div>
               </div>
+
+              <div class="form-row">
+  <div>
+    <label for="service-interest">Service interested in</label>
+    <select id="service-interest" name="Service Interested In" required>
+      <option value="">Select one</option>
+      <option>Website Design</option>
+      <option>AI Lead Generation</option>
+      <option>Social Media & Reels</option>
+      <option>Business Automation</option>
+      <option>Full Lead Generation System</option>
+      <option>Not sure yet</option>
+    </select>
+  </div>
+
+  <div>
+    <label for="website-status">Current website status</label>
+    <select id="website-status" name="Current Website Status">
+      <option value="">Select one</option>
+      <option>I do not have a website</option>
+      <option>I have a website but it needs improvement</option>
+      <option>I have a website and want more leads</option>
+      <option>I need a full redesign</option>
+      <option>Not sure yet</option>
+    </select>
+  </div>
+</div>
+
+<div class="form-row">
+  <div>
+    <label for="biggest-challenge">Biggest challenge</label>
+    <select id="biggest-challenge" name="Biggest Challenge">
+      <option value="">Select one</option>
+      <option>I need more leads</option>
+      <option>My website looks outdated</option>
+      <option>I do not post consistently on social media</option>
+      <option>I miss or forget to follow up with leads</option>
+      <option>I need help looking more professional online</option>
+      <option>Other</option>
+    </select>
+  </div>
+
+  <div>
+    <label for="preferred-contact">Preferred contact method</label>
+    <select id="preferred-contact" name="Preferred Contact Method">
+      <option value="">Select one</option>
+      <option>Email</option>
+      <option>Phone</option>
+      <option>Text message</option>
+      <option>Instagram DM</option>
+    </select>
+  </div>
+</div>
 
               <div>
                 <label for="message">Project details</label>
