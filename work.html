@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portfolio | Northfolk Studio</title>
-  <meta name="description" content="Explore selected website concepts by Northfolk Studio for local businesses, including landscaping, church, real estate, bakery, and service-based website designs." />
+  <meta name="description" content="Explore selected websites and concepts by Northfolk Studio for local businesses, including restaurant, automotive, landscaping, real estate, bakery, and community website designs." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -708,6 +708,89 @@
       .cta-row strong { display: block; text-align: left; margin-top: 6px; }
       .footer-bottom { flex-direction: column; }
     }
+
+    /* Compact portfolio layout */
+    #portfolio {
+      padding-top: 78px;
+    }
+
+    .portfolio-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .portfolio-card,
+    .portfolio-large,
+    .portfolio-tall,
+    .portfolio-half {
+      grid-column: auto;
+      min-height: 245px;
+      padding: 24px;
+      border-radius: 22px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .portfolio-top {
+      margin-bottom: 34px;
+    }
+
+    .portfolio-arrow {
+      width: 36px;
+      height: 36px;
+      font-size: 14px;
+    }
+
+    .portfolio-content h3 {
+      font-size: clamp(26px, 2.1vw, 34px);
+      margin-bottom: 12px;
+    }
+
+    .portfolio-content p {
+      max-width: none;
+      font-size: 13px;
+      line-height: 1.62;
+    }
+
+    .portfolio-meta {
+      margin-top: 18px;
+      gap: 8px;
+    }
+
+    .portfolio-meta span {
+      padding: 7px 10px;
+      font-size: 10px;
+    }
+
+    @media (max-width: 1050px) {
+      .portfolio-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 680px) {
+      .portfolio-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .portfolio-card,
+      .portfolio-large,
+      .portfolio-tall,
+      .portfolio-half {
+        min-height: auto;
+        padding: 24px;
+      }
+
+      .portfolio-top {
+        margin-bottom: 28px;
+      }
+
+      .portfolio-content h3 {
+        font-size: 32px;
+      }
+    }
+
   </style>
 </head>
 
@@ -722,7 +805,7 @@
     <nav class="nav-links" aria-label="Main navigation">
       <a href="index.html">Home</a>
       <a href="services.html">Services</a>
-      <a href="work.html">Portfolio</a>
+      <a class="active" href="work.html">Portfolio</a>
       <a href="packages.html">Packages</a>
       <a href="contact.html">Contact</a>
     </nav>
@@ -759,12 +842,12 @@
             <div class="hero-panel-title">Portfolio focus</div>
             <div class="project-counts">
               <div class="count-item">
-                <strong>05</strong>
-                <span>Current concept directions</span>
+             <strong>06</strong>
+<span>Portfolio projects</span>
               </div>
               <div class="count-item">
-                <strong>04</strong>
-                <span>Local business categories</span>
+                <strong>05</strong>
+                <span>Business categories covered</span>
               </div>
               <div class="count-item">
                 <strong>01</strong>
@@ -787,7 +870,39 @@
         </div>
 
         <div class="portfolio-grid reveal">
-          <a class="portfolio-card portfolio-large" href="LawnCareConcept_2.html">
+          <a class="portfolio-card" href="goldenscoop/index.html">
+            <div class="portfolio-top">
+              <span class="portfolio-tag">Restaurant & Catering Website</span>
+              <span class="portfolio-arrow">↗</span>
+            </div>
+            <div class="portfolio-content">
+              <h3>GoldenScoop</h3>
+              <p>A custom Tamil Sarbath & Ice Cream Café website with menu sections, gallery, reviews, catering content, and a WhatsApp request form.</p>
+              <div class="portfolio-meta">
+                <span>Completed Build</span>
+                <span>WhatsApp Form</span>
+                <span>Responsive</span>
+              </div>
+            </div>
+          </a>
+
+          <a class="portfolio-card" href="https://www.inline5autoinc.ca/" target="_blank" rel="noopener">
+            <div class="portfolio-top">
+              <span class="portfolio-tag">Automotive Website</span>
+              <span class="portfolio-arrow">↗</span>
+            </div>
+            <div class="portfolio-content">
+              <h3>INLINE 5 AUTO INC</h3>
+              <p>A custom website for a Scarborough automotive shop specializing in European vehicles, with service pages, SEO structure, and lead capture.</p>
+              <div class="portfolio-meta">
+                <span>Completed Build</span>
+                <span>SEO Setup</span>
+                <span>Lead Form</span>
+              </div>
+            </div>
+          </a>
+
+          <a class="portfolio-card" href="LawnCareConcept_2.html">
             <div class="portfolio-top">
               <span class="portfolio-tag">Contractor Website</span>
               <span class="portfolio-arrow">↗</span>
@@ -797,15 +912,44 @@
               <p>A premium outdoor service concept focused on curb appeal, trust-building, mobile clarity, and quote inquiries.</p>
               <div class="portfolio-meta">
                 <span>Lead-focused</span>
-                <span>Service business</span>
-                <span>Responsive</span>
+                <span>Service Business</span>
               </div>
             </div>
           </a>
 
-          <a class="portfolio-card portfolio-tall" href="ChurchConcept_1.html">
+          <a class="portfolio-card" href="realEstate.html">
             <div class="portfolio-top">
-              <span class="portfolio-tag">Church Website</span>
+              <span class="portfolio-tag">Real Estate</span>
+              <span class="portfolio-arrow">↗</span>
+            </div>
+            <div class="portfolio-content">
+              <h3>GTA Nest Realty</h3>
+              <p>A refined real estate concept using stronger hierarchy, property-focused sections, and polished visual presentation.</p>
+              <div class="portfolio-meta">
+                <span>Listings</span>
+                <span>Luxury Feel</span>
+              </div>
+            </div>
+          </a>
+
+          <a class="portfolio-card" href="bakery-project.html">
+            <div class="portfolio-top">
+              <span class="portfolio-tag">Boutique Brand</span>
+              <span class="portfolio-arrow">↗</span>
+            </div>
+            <div class="portfolio-content">
+              <h3>Mint & Flour Bakery</h3>
+              <p>A soft local bakery concept built around product appeal, warmth, order inquiries, and brand personality.</p>
+              <div class="portfolio-meta">
+                <span>Local Brand</span>
+                <span>Editorial Feel</span>
+              </div>
+            </div>
+          </a>
+
+          <a class="portfolio-card" href="ChurchConcept_1.html">
+            <div class="portfolio-top">
+              <span class="portfolio-tag">Community Website</span>
               <span class="portfolio-arrow">↗</span>
             </div>
             <div class="portfolio-content">
@@ -817,53 +961,7 @@
               </div>
             </div>
           </a>
-
-          <a class="portfolio-card portfolio-half" href="realEstate.html">
-            <div class="portfolio-top">
-              <span class="portfolio-tag">Real Estate</span>
-              <span class="portfolio-arrow">↗</span>
-            </div>
-            <div class="portfolio-content">
-              <h3>GTA Nest Realty</h3>
-              <p>A refined real estate concept using stronger hierarchy, property-focused sections, and polished visual presentation.</p>
-              <div class="portfolio-meta">
-                <span>Listings</span>
-                <span>Luxury feel</span>
-              </div>
-            </div>
-          </a>
-
-          <a class="portfolio-card portfolio-half" href="bakery-project.html">
-            <div class="portfolio-top">
-              <span class="portfolio-tag">Boutique Brand</span>
-              <span class="portfolio-arrow">↗</span>
-            </div>
-            <div class="portfolio-content">
-              <h3>Mint & Flour Bakery</h3>
-              <p>A soft local bakery concept built around product appeal, warmth, order inquiries, and brand personality.</p>
-              <div class="portfolio-meta">
-                <span>Local brand</span>
-                <span>Soft editorial</span>
-              </div>
-            </div>
-          </a>
-
-          <a class="portfolio-card portfolio-large" href="LawnCareConcept_1.html">
-            <div class="portfolio-top">
-              <span class="portfolio-tag">Alternate Contractor Concept</span>
-              <span class="portfolio-arrow">↗</span>
-            </div>
-            <div class="portfolio-content">
-              <h3>Lawn Care Concept One</h3>
-              <p>An earlier outdoor service direction focused on clear service sections, approachable presentation, and simple customer contact flow.</p>
-              <div class="portfolio-meta">
-                <span>Service layout</span>
-                <span>Local contractor</span>
-                <span>Concept study</span>
-              </div>
-            </div>
-          </a>
-        </div>
+        </div>        </div>
       </div>
     </section>
 

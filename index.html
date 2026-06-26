@@ -593,6 +593,157 @@
         linear-gradient(180deg, rgba(255,255,255,.82), rgba(240,235,226,.82));
     }
 
+
+
+    .custom-build-section {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 8% 14%, rgba(255,255,255,.70), transparent 28%),
+        linear-gradient(180deg, rgba(255,253,250,.58), rgba(238,232,221,.30));
+    }
+
+    .custom-build-grid {
+      display: grid;
+      grid-template-columns: .85fr 1.15fr;
+      gap: 58px;
+      align-items: start;
+    }
+
+    .custom-build-copy p {
+      color: var(--muted);
+      max-width: 520px;
+      margin-top: 20px;
+    }
+
+    .comparison-panel {
+      display: grid;
+      gap: 18px;
+    }
+
+    .comparison-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .comparison-card {
+      border: 1px solid rgba(21,21,17,.08);
+      border-radius: 24px;
+      padding: 24px;
+      background: rgba(255,255,255,.58);
+      box-shadow: 0 18px 48px rgba(21,21,17,.06);
+    }
+
+    .comparison-card.dark {
+      background:
+        radial-gradient(circle at top right, rgba(217,216,200,.14), transparent 36%),
+        linear-gradient(135deg, #10130f, #171b15);
+      color: #fff;
+    }
+
+    .comparison-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 18px;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      font-weight: 900;
+      color: var(--muted);
+    }
+
+    .comparison-card.dark .comparison-label {
+      color: rgba(232,199,164,.86);
+    }
+
+    .comparison-card h3 {
+      font-family: "Inter", sans-serif;
+      letter-spacing: -.02em;
+      font-size: 18px;
+      margin-bottom: 12px;
+    }
+
+    .comparison-card p {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.75;
+    }
+
+    .comparison-card.dark p {
+      color: rgba(255,255,255,.68);
+    }
+
+    .mobile-first-section {
+      background: rgba(255,255,255,.36);
+      border-top: 1px solid rgba(21,21,17,.07);
+      border-bottom: 1px solid rgba(21,21,17,.07);
+    }
+
+    .mobile-first-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+      align-items: center;
+    }
+
+    .mobile-first-copy p {
+      color: var(--muted);
+      margin-top: 20px;
+      max-width: 560px;
+    }
+
+    .device-card {
+      border-radius: 34px;
+      padding: 32px;
+      background:
+        radial-gradient(circle at top right, rgba(101,102,77,.13), transparent 34%),
+        rgba(255,255,255,.62);
+      border: 1px solid rgba(21,21,17,.08);
+      box-shadow: 0 24px 70px rgba(21,21,17,.08);
+    }
+
+    .device-list {
+      display: grid;
+      gap: 16px;
+    }
+
+    .device-item {
+      display: grid;
+      grid-template-columns: 44px 1fr;
+      gap: 14px;
+      align-items: start;
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(255,253,250,.72);
+      border: 1px solid var(--line-soft);
+    }
+
+    .device-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      background: var(--olive-soft);
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      color: var(--olive-dark);
+    }
+
+    .device-item strong {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 14px;
+    }
+
+    .device-item span {
+      display: block;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.55;
+    }
+
     .process {
       background: rgba(255,255,255,.36);
       border-top: 1px solid rgba(21,21,17,.07);
@@ -1004,6 +1155,8 @@
       .hero-grid,
       .service-row,
       .section-heading,
+      .custom-build-grid,
+      .mobile-first-grid,
       .process-grid,
       .trust-grid,
       .footer-grid,
@@ -1036,7 +1189,8 @@
       }
 
       .trust-points,
-      .industry-grid {
+      .industry-grid,
+      .comparison-row {
         grid-template-columns: 1fr;
       }
 
@@ -1226,8 +1380,8 @@
   Book a Free Consultation →
 </a>
 
-            <a class="btn btn-light" href="#work">
-              View Client Work
+            <a class="btn btn-light" href="work.html">
+              View Portfolio
             </a>
           </div>
 
@@ -1372,105 +1526,93 @@
       </div>
     </section>
 
-    <section id="work" class="work-section reveal">
-      <div class="container">
-        <div class="section-heading">
-          <div>
-            <div class="kicker">Selected work</div>
+    <section class="custom-build-section reveal">
+      <div class="container custom-build-grid">
+        <div class="custom-build-copy">
+          <div class="kicker">Why custom-built matters</div>
 
-            <h2>
-              Websites and concepts with a
-              <span class="italic">clear conversion purpose.</span>
-            </h2>
-          </div>
+          <h2>
+            A website should not feel like a template with your logo added.
+          </h2>
 
           <p>
-            Each project is positioned around credibility, customer trust, mobile experience,
-            lead capture, and the next step a visitor should take.
+            Website builders like Wix, GoDaddy, and basic templates can get a business online, but they often leave the business with generic layouts, weak mobile flow, slower pages, and limited strategy behind the design. Northfolk Studio builds around how people actually decide to trust and contact a local business.
+          </p>
+
+          <div class="hero-actions" style="margin:30px 0 0;">
+            <a class="btn btn-primary" href="contact.html#project-form">Start a Project →</a>
+            <a class="btn btn-light" href="work.html">View Portfolio</a>
+          </div>
+        </div>
+
+        <div class="comparison-panel">
+          <div class="comparison-row">
+            <article class="comparison-card">
+              <span class="comparison-label">Template builder</span>
+              <h3>Generic layouts</h3>
+              <p>Many builder sites look similar because the structure is based on pre-made sections, not the business, audience, or sales path.</p>
+            </article>
+
+            <article class="comparison-card dark">
+              <span class="comparison-label">Northfolk approach</span>
+              <h3>Custom presentation</h3>
+              <p>Each section is planned around credibility, trust, service clarity, and the next action a visitor should take.</p>
+            </article>
+          </div>
+
+          <div class="comparison-row">
+            <article class="comparison-card">
+              <span class="comparison-label">Common issue</span>
+              <h3>Looks okay on desktop</h3>
+              <p>A site can look acceptable on a laptop but feel cramped, confusing, or hard to use on a phone.</p>
+            </article>
+
+            <article class="comparison-card dark">
+              <span class="comparison-label">Built properly</span>
+              <h3>Mobile-first experience</h3>
+              <p>The mobile layout is treated as a priority because most local customers check businesses from their phone.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mobile-first-section reveal">
+      <div class="container mobile-first-grid">
+        <div class="mobile-first-copy">
+          <div class="kicker">Mobile-first and lead-focused</div>
+
+          <h2>
+            The phone view is where most local businesses win or lose the inquiry.
+          </h2>
+
+          <p>
+            A polished website is not just about looking good. It needs clear service sections, fast contact paths, trust signals, and forms that make it easy for customers to reach out without thinking too much.
           </p>
         </div>
 
-        <div class="concept-grid">
-      <a class="concept-card concept-large" href="https://www.inline5autoinc.ca/" target="_blank" rel="noopener">
-            <div class="concept-top">
-              <span class="concept-tag">Automotive Website</span>
-              <span class="concept-arrow">↗</span>
+        <div class="device-card">
+          <div class="device-list">
+            <div class="device-item">
+              <div class="device-icon">01</div>
+              <div><strong>Clear mobile navigation</strong><span>Visitors should find services, pricing direction, contact options, and proof quickly.</span></div>
             </div>
 
-            <div class="concept-content">
-              <h3>INLINE 5 AUTO INC</h3>
-
-              <p>
-                Custom website built for a Scarborough-based automotive service business specializing
-                in European vehicles including Audi, Volkswagen, Porsche and BMW. Includes website design,
-                mobile optimization, lead capture form, and SEO setup.
-              </p>
-            </div>
-          </a>
-
-          <a class="concept-card concept-tall" href="realEstate.html">
-            <div class="concept-top">
-              <span class="concept-tag">Real Estate Lead Funnel</span>
-              <span class="concept-arrow">↗</span>
+            <div class="device-item">
+              <div class="device-icon">02</div>
+              <div><strong>Fast contact flow</strong><span>Calls, forms, WhatsApp, and booking actions are placed where they make sense.</span></div>
             </div>
 
-            <div class="concept-content">
-              <h3>GTA Nest Realty</h3>
-
-              <p>
-                A real estate concept built around trust, listings, home value inquiries,
-                and lead capture for future realtor campaigns.
-              </p>
-            </div>
-          </a>
-
-          <a class="concept-card" href="LawnCareConcept_2.html">
-            <div class="concept-top">
-              <span class="concept-tag">Landscaping Website</span>
-              <span class="concept-arrow">↗</span>
+            <div class="device-item">
+              <div class="device-icon">03</div>
+              <div><strong>Lead system behind the site</strong><span>Forms, CRM tracking, alerts, and follow-up workflows help reduce missed opportunities.</span></div>
             </div>
 
-            <div class="concept-content">
-              <h3>Premier Landscaping</h3>
-
-              <p>
-                A premium landscaping concept focused on quote requests, seasonal services,
-                project presentation, and local trust-building.
-              </p>
+            <div class="device-item">
+              <div class="device-icon">04</div>
+              <div><strong>Designed for credibility</strong><span>Typography, spacing, copy, reviews, visuals, and layout all work together to build trust.</span></div>
             </div>
-          </a>
-
-          <a class="concept-card concept-minimal" href="bakery-project.html">
-            <div class="concept-top">
-              <span class="concept-tag">Boutique Brand</span>
-              <span class="concept-arrow">↗</span>
-            </div>
-
-            <div class="concept-content">
-              <h3>Mint & Flour</h3>
-
-              <p>
-                A warm bakery concept balancing visual storytelling, product presentation,
-                and simple customer action.
-              </p>
-            </div>
-          </a>
-
-          <a class="concept-card concept-minimal" href="ChurchConcept_1.html">
-            <div class="concept-top">
-              <span class="concept-tag">Community Website</span>
-              <span class="concept-arrow">↗</span>
-            </div>
-
-            <div class="concept-content">
-              <h3>Toronto Harvest Missionary Church</h3>
-
-              <p>
-                A welcoming church concept designed around clarity, visitor engagement,
-                community trust, and easy navigation.
-              </p>
-            </div>
-          </a>
+          </div>
         </div>
       </div>
     </section>

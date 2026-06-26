@@ -4,8 +4,21 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Services | Northfolk Studio</title>
-  <meta name="description" content="Northfolk Studio provides modern website design, custom development, WordPress builds, landing pages, redesigns, and launch support for local businesses across the GTA." />
-
+  <meta name="description" content="Northfolk Studio builds custom websites, redesigns, landing pages, lead capture forms, local SEO setup, and website care for small businesses across the GTA." />
+  <link rel="canonical" href="https://www.northfolkstudio.com/services.html" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Services | Northfolk Studio" />
+  <meta property="og:description" content="Custom websites, redesigns, landing pages, lead capture systems, SEO setup, and website care for GTA businesses." />
+  <meta property="og:url" content="https://www.northfolkstudio.com/services.html" />
+  <meta property="og:image" content="https://www.northfolkstudio.com/assets/imgs/NorthFolk/hero-showcase.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Services | Northfolk Studio" />
+  <meta name="twitter:description" content="Website design, lead capture, local SEO setup, and support for local businesses." />
+  <meta name="twitter:image" content="https://www.northfolkstudio.com/assets/imgs/NorthFolk/hero-showcase.png" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&display=swap" rel="stylesheet">
@@ -23,24 +36,13 @@
       --olive-dark: #3f4230;
       --olive-soft: #d9d8c8;
       --bronze: #9a7655;
-      --cream: #fbf8f0;
       --dark: #10130f;
-      --dark-2: #171b15;
       --shadow: 0 30px 90px rgba(21, 21, 17, 0.13);
       --max: 1220px;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-      overflow-x: hidden;
-    }
-
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; overflow-x: hidden; }
     body {
       font-family: "Inter", sans-serif;
       color: var(--ink);
@@ -51,7 +53,6 @@
         radial-gradient(circle at 82% 8%, rgba(101,102,77,.13), transparent 34%),
         linear-gradient(180deg, #f8f5ef 0%, #f4efe7 100%);
     }
-
     body::before {
       content: "";
       position: fixed;
@@ -61,21 +62,9 @@
       opacity: .035;
       background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 250 250' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
     }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    img {
-      width: 100%;
-      display: block;
-    }
-
-    .container {
-      width: min(var(--max), calc(100% - 48px));
-      margin: 0 auto;
-    }
+    a { color: inherit; text-decoration: none; }
+    img { width: 100%; display: block; }
+    .container { width: min(var(--max), calc(100% - 48px)); margin: 0 auto; }
 
     header {
       position: fixed;
@@ -87,32 +76,9 @@
       backdrop-filter: blur(22px);
       border-bottom: 1px solid rgba(21,21,17,.065);
     }
-
-    .navbar {
-      height: 82px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 28px;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-weight: 900;
-      letter-spacing: -.045em;
-      font-size: 22px;
-    }
-
-    .brand-mark {
-      width: 24px;
-      height: 24px;
-      position: relative;
-      display: inline-block;
-      flex: 0 0 auto;
-    }
-
+    .navbar { height: 82px; display: flex; align-items: center; justify-content: space-between; gap: 28px; }
+    .brand { display: flex; align-items: center; gap: 12px; font-weight: 900; letter-spacing: -.045em; font-size: 22px; }
+    .brand-mark { width: 24px; height: 24px; position: relative; display: inline-block; flex: 0 0 auto; }
     .brand-mark::before,
     .brand-mark::after {
       content: "";
@@ -124,33 +90,11 @@
       background: linear-gradient(145deg, var(--olive-dark), #b9b4a5);
       transform: skewX(-18deg);
     }
-
-    .brand-mark::before {
-      left: 2px;
-    }
-
-    .brand-mark::after {
-      right: 2px;
-      transform: skewX(18deg);
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 36px;
-      font-size: 13px;
-      font-weight: 800;
-    }
-
-    .nav-links a {
-      position: relative;
-      color: rgba(21,21,17,.72);
-    }
-
-    .nav-links a:hover {
-      color: var(--ink);
-    }
-
+    .brand-mark::before { left: 2px; }
+    .brand-mark::after { right: 2px; transform: skewX(18deg); }
+    .nav-links { display: flex; align-items: center; gap: 36px; font-size: 13px; font-weight: 800; }
+    .nav-links a { position: relative; color: rgba(21,21,17,.72); }
+    .nav-links a:hover { color: var(--ink); }
     .nav-links a.active::after {
       content: "";
       width: 5px;
@@ -162,6 +106,9 @@
       transform: translateX(-50%);
       bottom: -15px;
     }
+    .mobile-toggle { display: none; width: 46px; height: 46px; border: 1px solid var(--line); border-radius: 12px; background: rgba(255,255,255,.58); cursor: pointer; }
+    .mobile-toggle span { display: block; width: 19px; height: 2px; background: var(--ink); margin: 5px auto; border-radius: 99px; }
+    .mobile-menu { display: none; }
 
     .btn {
       display: inline-flex;
@@ -179,102 +126,21 @@
       cursor: pointer;
       white-space: nowrap;
     }
+    .btn:hover { transform: translateY(-3px); }
+    .btn-primary { background: var(--olive-dark); color: #fff; box-shadow: 0 18px 42px rgba(63,66,48,.22); }
+    .btn-primary:hover { background: #303326; }
+    .btn-light { background: rgba(255,253,250,.78); color: var(--ink); border-color: var(--line); }
+    .btn-light:hover { background: #fff; box-shadow: 0 14px 34px rgba(21,21,17,.08); }
 
-    .btn:hover {
-      transform: translateY(-3px);
-    }
+    h1, h2, h3 { font-family: "Playfair Display", serif; letter-spacing: -.048em; line-height: 1.04; font-weight: 700; }
+    h1 { font-size: clamp(48px, 6.7vw, 88px); max-width: 920px; }
+    h2 { font-size: clamp(34px, 4.3vw, 58px); }
+    h3 { font-size: 25px; }
+    .italic { font-style: italic; color: var(--olive); font-weight: 600; }
+    .kicker { font-size: 12px; text-transform: uppercase; letter-spacing: .16em; font-weight: 900; color: var(--muted); margin-bottom: 24px; }
+    section { padding: 96px 0; }
 
-    .btn-primary {
-      background: var(--olive-dark);
-      color: #fff;
-      box-shadow: 0 18px 42px rgba(63,66,48,.22);
-    }
-
-    .btn-primary:hover {
-      background: #303326;
-    }
-
-    .btn-light {
-      background: rgba(255,253,250,.78);
-      color: var(--ink);
-      border-color: var(--line);
-    }
-
-    .btn-light:hover {
-      background: #fff;
-      box-shadow: 0 14px 34px rgba(21,21,17,.08);
-    }
-
-    .mobile-toggle {
-      display: none;
-      width: 46px;
-      height: 46px;
-      border: 1px solid var(--line);
-      border-radius: 12px;
-      background: rgba(255,255,255,.58);
-      cursor: pointer;
-    }
-
-    .mobile-toggle span {
-      display: block;
-      width: 19px;
-      height: 2px;
-      background: var(--ink);
-      margin: 5px auto;
-      border-radius: 99px;
-    }
-
-    .mobile-menu {
-      display: none;
-    }
-
-    h1,
-    h2,
-    h3 {
-      font-family: "Playfair Display", serif;
-      letter-spacing: -.048em;
-      line-height: 1.04;
-      font-weight: 700;
-    }
-
-    h1 {
-      font-size: clamp(48px, 6.7vw, 88px);
-      max-width: 900px;
-    }
-
-    h2 {
-      font-size: clamp(34px, 4.3vw, 58px);
-    }
-
-    h3 {
-      font-size: 25px;
-    }
-
-    .italic {
-      font-style: italic;
-      color: var(--olive);
-      font-weight: 600;
-    }
-
-    .kicker {
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: .16em;
-      font-weight: 900;
-      color: var(--muted);
-      margin-bottom: 24px;
-    }
-
-    section {
-      padding: 96px 0;
-    }
-
-    .hero {
-      padding: 166px 0 104px;
-      position: relative;
-      overflow: hidden;
-    }
-
+    .hero { padding: 166px 0 104px; position: relative; overflow: hidden; }
     .hero::after {
       content: "";
       position: absolute;
@@ -286,34 +152,11 @@
       top: 120px;
       pointer-events: none;
     }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: .95fr 1.05fr;
-      gap: 70px;
-      align-items: end;
-      position: relative;
-      z-index: 2;
-    }
-
-    .hero-copy {
-      max-width: 620px;
-      color: var(--muted);
-      margin: 26px 0 34px;
-      font-size: 17px;
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 16px;
-      align-items: center;
-    }
-
+    .hero-grid { display: grid; grid-template-columns: .96fr 1.04fr; gap: 70px; align-items: end; position: relative; z-index: 2; }
+    .hero-copy { max-width: 640px; color: var(--muted); margin: 26px 0 34px; font-size: 17px; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; }
     .hero-panel {
-      background:
-        radial-gradient(circle at top right, rgba(101,102,77,.10), transparent 34%),
-        rgba(255,255,255,.58);
+      background: radial-gradient(circle at top right, rgba(101,102,77,.10), transparent 34%), rgba(255,255,255,.58);
       border: 1px solid rgba(21,21,17,.08);
       border-radius: 32px;
       padding: 34px;
@@ -322,7 +165,6 @@
       position: relative;
       overflow: hidden;
     }
-
     .hero-panel::after {
       content: "";
       position: absolute;
@@ -334,643 +176,154 @@
       background: radial-gradient(circle, rgba(101,102,77,.09), transparent 72%);
       pointer-events: none;
     }
+    .hero-panel-inner { position: relative; z-index: 2; }
+    .hero-panel-title { font-family: "Inter", sans-serif; font-size: 14px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-bottom: 24px; font-weight: 900; }
+    .service-preview-list { display: grid; gap: 16px; }
+    .preview-item { display: grid; grid-template-columns: 42px 1fr; gap: 16px; padding: 18px 0; border-bottom: 1px solid var(--line-soft); }
+    .preview-item:last-child { border-bottom: 0; }
+    .preview-number { width: 42px; height: 42px; border-radius: 50%; display: grid; place-items: center; background: rgba(101,102,77,.08); color: var(--olive-dark); font-weight: 900; font-size: 12px; }
+    .preview-item strong { display: block; line-height: 1.2; margin-bottom: 4px; }
+    .preview-item span { display: block; color: var(--muted); font-size: 13px; font-weight: 600; }
 
-    .hero-panel-inner {
-      position: relative;
-      z-index: 2;
-    }
+    .section-heading { display: grid; grid-template-columns: .58fr 1fr; gap: 50px; align-items: end; margin-bottom: 54px; }
+    .section-heading p { color: var(--muted); max-width: 545px; justify-self: end; }
 
-    .hero-panel-title {
-      font-family: "Inter", sans-serif;
-      font-size: 14px;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 24px;
-      font-weight: 900;
-    }
-
-    .service-preview-list {
-      display: grid;
-      gap: 16px;
-    }
-
-    .preview-item {
-      display: grid;
-      grid-template-columns: 42px 1fr;
-      gap: 16px;
-      padding: 18px 0;
-      border-bottom: 1px solid var(--line-soft);
-    }
-
-    .preview-item:last-child {
-      border-bottom: 0;
-    }
-
-    .preview-number {
-      width: 42px;
-      height: 42px;
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-      background: rgba(101,102,77,.08);
-      color: var(--olive-dark);
-      font-weight: 900;
-      font-size: 12px;
-    }
-
-    .preview-item strong {
-      display: block;
-      line-height: 1.2;
-      margin-bottom: 4px;
-    }
-
-    .preview-item span {
-      display: block;
-      color: var(--muted);
-      font-size: 13px;
-      font-weight: 600;
-    }
-
-    .section-heading {
-      display: grid;
-      grid-template-columns: .58fr 1fr;
-      gap: 50px;
-      align-items: end;
-      margin-bottom: 54px;
-    }
-
-    .section-heading p {
-      color: var(--muted);
-      max-width: 545px;
-      justify-self: end;
-    }
-
-    .service-list {
-      display: grid;
-      gap: 18px;
-      border-top: 1px solid var(--line);
-    }
-
+    .service-list { display: grid; gap: 0; border-top: 1px solid var(--line); }
     .service-row-item {
       display: grid;
-      grid-template-columns: 92px .85fr 1.15fr 120px;
+      grid-template-columns: 88px .85fr 1.15fr 120px;
       gap: 28px;
       align-items: start;
       padding: 34px 0;
       border-bottom: 1px solid var(--line);
-      transition: padding .28s ease, border-color .28s ease;
+      transition: border-color .28s ease;
     }
+    .service-row-item:hover { border-color: rgba(101,102,77,.28); }
+    .service-number { width: 54px; height: 54px; border-radius: 50%; display: grid; place-items: center; background: rgba(101,102,77,.08); color: var(--olive-dark); font-weight: 900; font-size: 13px; }
+    .service-row-item h3 { font-size: clamp(27px, 3vw, 42px); margin-top: 2px; }
+    .service-row-item p { color: var(--muted); font-size: 15px; max-width: 580px; }
+    .service-details { list-style: none; display: grid; gap: 8px; margin-top: 18px; color: rgba(21,21,17,.68); font-size: 13px; font-weight: 800; }
+    .service-details li::before { content: "✓"; margin-right: 8px; color: var(--olive-dark); font-weight: 900; }
+    .service-link { justify-self: end; width: 42px; height: 42px; border-radius: 50%; background: rgba(101,102,77,.08); color: var(--olive-dark); display: grid; place-items: center; font-weight: 900; transition: transform .28s ease, background .28s ease; }
+    .service-row-item:hover .service-link { transform: translate(4px, -4px); background: rgba(101,102,77,.16); }
 
-    .service-row-item:hover {
-      border-color: rgba(101,102,77,.28);
-    }
+    .dark-section { background: radial-gradient(circle at 83% -10%, rgba(217,216,200,.20), transparent 30%), linear-gradient(135deg, #10130f, #171b15 64%, #0c0e0c); color: #fff; position: relative; overflow: hidden; }
+    .dark-section::after { content: ""; position: absolute; width: 520px; height: 520px; right: -230px; bottom: -280px; border: 1px solid rgba(255,255,255,.10); border-radius: 50%; pointer-events: none; }
+    .audience-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; position: relative; z-index: 2; }
+    .audience-card { min-height: 218px; padding: 26px; border-radius: 24px; border: 1px solid rgba(255,255,255,.12); background: rgba(255,255,255,.06); transition: transform .28s ease, background .28s ease; }
+    .audience-card:hover { transform: translateY(-6px); background: rgba(255,255,255,.09); }
+    .audience-card span { display: block; color: rgba(232,199,164,.84); font-size: 12px; font-weight: 900; letter-spacing: .14em; text-transform: uppercase; margin-bottom: 22px; }
+    .audience-card h3 { font-family: "Inter", sans-serif; letter-spacing: -.02em; font-size: 18px; margin-bottom: 12px; }
+    .audience-card p { color: rgba(255,255,255,.66); font-size: 14px; }
 
-    .service-number {
-      width: 54px;
-      height: 54px;
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-      background: rgba(101,102,77,.08);
-      color: var(--olive-dark);
-      font-weight: 900;
-      font-size: 13px;
-    }
+    .compare-section { background: radial-gradient(circle at 8% 12%, rgba(255,255,255,.62), transparent 28%), linear-gradient(180deg, rgba(255,253,250,.38), rgba(238,232,221,.24)); }
+    .compare-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 28px; align-items: stretch; }
+    .compare-card { border-radius: 30px; padding: 34px; border: 1px solid rgba(21,21,17,.08); background: rgba(255,255,255,.56); }
+    .compare-card.featured { background: linear-gradient(135deg, #10130f, #171b15 64%, #0c0e0c); color: #fff; }
+    .compare-card h3 { font-size: clamp(30px, 3.4vw, 48px); margin-bottom: 18px; }
+    .compare-card p { color: var(--muted); margin-bottom: 24px; }
+    .compare-card.featured p { color: rgba(255,255,255,.66); }
+    .compare-list { list-style: none; display: grid; gap: 12px; font-size: 14px; font-weight: 800; color: rgba(21,21,17,.70); }
+    .compare-card.featured .compare-list { color: rgba(255,255,255,.72); }
+    .compare-list li::before { content: "✓"; color: var(--olive-dark); margin-right: 9px; font-weight: 900; }
+    .compare-card.featured .compare-list li::before { color: #e8c7a4; }
 
-    .service-row-item h3 {
-      font-size: clamp(27px, 3vw, 42px);
-      margin-top: 2px;
-    }
+    .include-grid { display: grid; grid-template-columns: .75fr 1.25fr; gap: 56px; align-items: start; }
+    .include-copy p { color: var(--muted); margin-top: 20px; max-width: 430px; font-size: 15px; }
+    .include-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    .include-item { display: grid; grid-template-columns: 64px 1fr; gap: 20px; padding: 26px; border-radius: 24px; background: rgba(255,255,255,.50); border: 1px solid var(--line-soft); transition: transform .28s ease, background .28s ease; }
+    .include-item:hover { transform: translateY(-4px); background: rgba(255,255,255,.76); }
+    .include-icon { width: 54px; height: 54px; border-radius: 50%; display: grid; place-items: center; background: rgba(101,102,77,.09); color: var(--olive-dark); font-size: 12px; font-weight: 900; letter-spacing: .04em; }
+    .include-item h3 { font-family: "Inter", sans-serif; letter-spacing: -.02em; font-size: 17px; margin-bottom: 7px; }
+    .include-item p { color: var(--muted); font-size: 14px; }
 
-    .service-row-item p {
-      color: var(--muted);
-      font-size: 15px;
-      max-width: 560px;
-    }
+    .process { background: rgba(255,255,255,.36); border-top: 1px solid rgba(21,21,17,.07); border-bottom: 1px solid rgba(21,21,17,.07); }
+    .process-grid { display: grid; grid-template-columns: 285px 1fr; gap: 50px; }
+    .process-grid > div:first-child p { margin-top: 18px; color: var(--muted); font-size: 14px; }
+    .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; position: relative; }
+    .steps::before { content: ""; position: absolute; left: 34px; right: 34px; top: 25px; height: 1px; background: rgba(21,21,17,.16); }
+    .step { position: relative; z-index: 2; }
+    .step-icon { width: 54px; height: 54px; border-radius: 50%; background: var(--olive-soft); display: grid; place-items: center; margin-bottom: 22px; font-size: 18px; }
+    .step-no { font-size: 12px; font-weight: 900; color: var(--muted); }
+    .step h3 { font-family: "Inter", sans-serif; letter-spacing: 0; font-size: 16px; margin: 6px 0 10px; }
+    .step p { color: var(--muted); font-size: 13px; }
 
-    .service-details {
-      list-style: none;
-      display: grid;
-      gap: 8px;
-      margin-top: 18px;
-      color: rgba(21,21,17,.68);
-      font-size: 13px;
-      font-weight: 800;
-    }
+    .cta-section { padding-bottom: 0; }
+    .cta-card { position: relative; overflow: hidden; border-radius: 34px; padding: 52px; background: radial-gradient(circle at top right, rgba(101,102,77,.13), transparent 34%), rgba(255,255,255,.58); border: 1px solid rgba(21,21,17,.08); box-shadow: 0 24px 70px rgba(21,21,17,.08); display: grid; grid-template-columns: 1.2fr .8fr; gap: 40px; align-items: center; }
+    .cta-card h2 { max-width: 720px; }
+    .cta-card p { color: var(--muted); margin-top: 18px; max-width: 600px; }
+    .cta-actions { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 28px; }
+    .cta-panel { background: rgba(255,253,250,.72); border: 1px solid var(--line-soft); border-radius: 24px; padding: 24px; }
+    .cta-row { display: flex; justify-content: space-between; gap: 20px; padding: 14px 0; border-bottom: 1px solid var(--line-soft); }
+    .cta-row:last-child { border-bottom: 0; }
+    .cta-row span { color: var(--muted); font-size: 13px; font-weight: 700; }
+    .cta-row strong { text-align: right; font-size: 13px; }
 
-    .service-details li::before {
-      content: "✓";
-      margin-right: 8px;
-      color: var(--olive-dark);
-      font-weight: 900;
-    }
+    footer { background: radial-gradient(circle at 8% 78%, rgba(101,102,77,.28), transparent 24%), linear-gradient(135deg, #0c0f0d, #171b15 68%, #0d100e); color: #fff; padding: 82px 0 30px; position: relative; overflow: hidden; margin-top: 96px; }
+    footer::before { content: ""; position: absolute; width: 360px; height: 760px; left: 34%; top: -210px; border: 1px solid rgba(255,255,255,.14); border-radius: 50%; transform: rotate(34deg); }
+    .footer-grid { display: grid; grid-template-columns: 1.45fr 1.1fr .8fr .8fr; gap: 56px; position: relative; z-index: 2; }
+    .footer-cta h2 { max-width: 500px; margin-bottom: 22px; }
+    .footer-cta p { color: rgba(255,255,255,.66); max-width: 400px; }
+    .footer-brand p { color: rgba(255,255,255,.62); margin: 18px 0 24px; max-width: 340px; }
+    .socials { display: flex; gap: 14px; color: rgba(255,255,255,.82); font-weight: 900; }
+    .social-icon { width: 38px; height: 38px; border-radius: 50%; border: 1px solid rgba(255,255,255,.18); display: grid; place-items: center; color: rgba(255,255,255,.84); background: rgba(255,255,255,.06); transition: transform .25s ease, background .25s ease, color .25s ease; }
+    .social-icon:hover { transform: translateY(-3px); background: rgba(255,255,255,.12); color: #fff; }
+    .footer-col h4 { font-size: 12px; text-transform: uppercase; letter-spacing: .12em; margin-bottom: 22px; color: rgba(255,255,255,.88); }
+    .footer-col a { display: block; color: rgba(255,255,255,.62); margin-bottom: 12px; font-size: 14px; }
+    .footer-col a:hover { color: #fff; }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,.10); margin-top: 60px; padding-top: 24px; display: flex; justify-content: space-between; gap: 20px; color: rgba(255,255,255,.50); font-size: 13px; position: relative; z-index: 2; }
 
-    .service-link {
-      justify-self: end;
-      width: 42px;
-      height: 42px;
-      border-radius: 50%;
-      background: rgba(101,102,77,.08);
-      color: var(--olive-dark);
-      display: grid;
-      place-items: center;
-      font-weight: 900;
-      transition: transform .28s ease, background .28s ease;
-    }
-
-    .service-row-item:hover .service-link {
-      transform: translate(4px, -4px);
-      background: rgba(101,102,77,.16);
-    }
-
-    .dark-section {
-      background:
-        radial-gradient(circle at 83% -10%, rgba(217,216,200,.20), transparent 30%),
-        linear-gradient(135deg, #10130f, #171b15 64%, #0c0e0c);
-      color: #fff;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .dark-section::after {
-      content: "";
-      position: absolute;
-      width: 520px;
-      height: 520px;
-      right: -230px;
-      bottom: -280px;
-      border: 1px solid rgba(255,255,255,.10);
-      border-radius: 50%;
-      pointer-events: none;
-    }
-
-    .audience-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 18px;
-      position: relative;
-      z-index: 2;
-    }
-
-    .audience-card {
-      min-height: 218px;
-      padding: 26px;
-      border-radius: 24px;
-      border: 1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.06);
-      transition: transform .28s ease, background .28s ease;
-    }
-
-    .audience-card:hover {
-      transform: translateY(-6px);
-      background: rgba(255,255,255,.09);
-    }
-
-    .audience-card span {
-      display: block;
-      color: rgba(232,199,164,.84);
-      font-size: 12px;
-      font-weight: 900;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-      margin-bottom: 22px;
-    }
-
-    .audience-card h3 {
-      font-family: "Inter", sans-serif;
-      letter-spacing: -.02em;
-      font-size: 18px;
-      margin-bottom: 12px;
-    }
-
-    .audience-card p {
-      color: rgba(255,255,255,.66);
-      font-size: 14px;
-    }
-
-    .include-grid {
-      display: grid;
-      grid-template-columns: .75fr 1.25fr;
-      gap: 56px;
-      align-items: start;
-    }
-
-    .include-copy p {
-      color: var(--muted);
-      margin-top: 20px;
-      max-width: 430px;
-      font-size: 15px;
-    }
-
-    .include-list {
-      display: grid;
-      gap: 18px;
-    }
-
-    .include-item {
-      display: grid;
-      grid-template-columns: 64px 1fr;
-      gap: 20px;
-      padding: 26px;
-      border-radius: 24px;
-      background: rgba(255,255,255,.50);
-      border: 1px solid var(--line-soft);
-      transition: transform .28s ease, background .28s ease;
-    }
-
-    .include-item:hover {
-      transform: translateY(-4px);
-      background: rgba(255,255,255,.76);
-    }
-
-    .include-icon {
-      width: 54px;
-      height: 54px;
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-      background: rgba(101,102,77,.09);
-      color: var(--olive-dark);
-      font-size: 12px;
-      font-weight: 900;
-      letter-spacing: .04em;
-    }
-
-    .include-item h3 {
-      font-family: "Inter", sans-serif;
-      letter-spacing: -.02em;
-      font-size: 17px;
-      margin-bottom: 7px;
-    }
-
-    .include-item p {
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .build-options {
-      background:
-        radial-gradient(circle at 8% 12%, rgba(255,255,255,.62), transparent 28%),
-        linear-gradient(180deg, rgba(255,253,250,.38), rgba(238,232,221,.24));
-    }
-
-    .option-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 24px;
-    }
-
-    .option-card {
-      position: relative;
-      overflow: hidden;
-      border-radius: 30px;
-      padding: 34px;
-      background: rgba(255,255,255,.56);
-      border: 1px solid rgba(21,21,17,.08);
-      min-height: 430px;
-    }
-
-    .option-card.featured {
-      background:
-        radial-gradient(circle at top right, rgba(217,216,200,.18), transparent 34%),
-        linear-gradient(135deg, #10130f, #171b15 64%, #0c0e0c);
-      color: #fff;
-    }
-
-    .option-card h3 {
-      font-size: clamp(32px, 3.4vw, 50px);
-      margin-bottom: 18px;
-    }
-
-    .option-card p {
-      color: var(--muted);
-      margin-bottom: 26px;
-      max-width: 460px;
-    }
-
-    .option-card.featured p {
-      color: rgba(255,255,255,.66);
-    }
-
-    .option-list {
-      list-style: none;
-      display: grid;
-      gap: 12px;
-      font-size: 14px;
-      font-weight: 800;
-      color: rgba(21,21,17,.70);
-    }
-
-    .option-card.featured .option-list {
-      color: rgba(255,255,255,.72);
-    }
-
-    .option-list li::before {
-      content: "✓";
-      color: var(--olive-dark);
-      margin-right: 9px;
-      font-weight: 900;
-    }
-
-    .option-card.featured .option-list li::before {
-      color: #e8c7a4;
-    }
-
-    .cta-section {
-      padding-bottom: 0;
-    }
-
-    .cta-card {
-      position: relative;
-      overflow: hidden;
-      border-radius: 34px;
-      padding: 52px;
-      background:
-        radial-gradient(circle at top right, rgba(101,102,77,.13), transparent 34%),
-        rgba(255,255,255,.58);
-      border: 1px solid rgba(21,21,17,.08);
-      box-shadow: 0 24px 70px rgba(21,21,17,.08);
-      display: grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap: 40px;
-      align-items: center;
-    }
-
-    .cta-card h2 {
-      max-width: 720px;
-    }
-
-    .cta-card p {
-      color: var(--muted);
-      margin-top: 18px;
-      max-width: 600px;
-    }
-
-    .cta-actions {
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
-      margin-top: 28px;
-    }
-
-    .cta-panel {
-      background: rgba(255,253,250,.72);
-      border: 1px solid var(--line-soft);
-      border-radius: 24px;
-      padding: 24px;
-    }
-
-    .cta-row {
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-      padding: 14px 0;
-      border-bottom: 1px solid var(--line-soft);
-    }
-
-    .cta-row:last-child {
-      border-bottom: 0;
-    }
-
-    .cta-row span {
-      color: var(--muted);
-      font-size: 13px;
-      font-weight: 700;
-    }
-
-    .cta-row strong {
-      text-align: right;
-      font-size: 13px;
-    }
-
-    footer {
-      background:
-        radial-gradient(circle at 8% 78%, rgba(101,102,77,.28), transparent 24%),
-        linear-gradient(135deg, #0c0f0d, #171b15 68%, #0d100e);
-      color: #fff;
-      padding: 82px 0 30px;
-      position: relative;
-      overflow: hidden;
-      margin-top: 96px;
-    }
-
-    footer::before {
-      content: "";
-      position: absolute;
-      width: 360px;
-      height: 760px;
-      left: 34%;
-      top: -210px;
-      border: 1px solid rgba(255,255,255,.14);
-      border-radius: 50%;
-      transform: rotate(34deg);
-    }
-
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 1.45fr 1.1fr .8fr .8fr;
-      gap: 56px;
-      position: relative;
-      z-index: 2;
-    }
-
-    .footer-cta h2 {
-      max-width: 500px;
-      margin-bottom: 22px;
-    }
-
-    .footer-cta p {
-      color: rgba(255,255,255,.66);
-      max-width: 400px;
-    }
-
-    .footer-brand p {
-      color: rgba(255,255,255,.62);
-      margin: 18px 0 24px;
-      max-width: 340px;
-    }
-
-    .footer-col h4 {
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: .12em;
-      margin-bottom: 22px;
-      color: rgba(255,255,255,.88);
-    }
-
-    .footer-col a {
-      display: block;
-      color: rgba(255,255,255,.62);
-      margin-bottom: 12px;
-      font-size: 14px;
-    }
-
-    .footer-col a:hover {
-      color: #fff;
-    }
-
-    .footer-bottom {
-      border-top: 1px solid rgba(255,255,255,.10);
-      margin-top: 60px;
-      padding-top: 24px;
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-      color: rgba(255,255,255,.50);
-      font-size: 13px;
-      position: relative;
-      z-index: 2;
-    }
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(22px);
-      transition: opacity .8s ease, transform .8s ease;
-    }
-
-    .reveal.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    .reveal { opacity: 0; transform: translateY(22px); transition: opacity .8s ease, transform .8s ease; }
+    .reveal.show { opacity: 1; transform: translateY(0); }
 
     @media (max-width: 1050px) {
-      .nav-links,
-      .nav-actions {
-        display: none;
-      }
-
-      .mobile-toggle {
-        display: block;
-      }
-
-      .mobile-menu {
-        display: none;
-        padding: 18px 24px 28px;
-        border-top: 1px solid var(--line);
-        background: rgba(247,244,239,.96);
-      }
-
-      .mobile-menu.open {
-        display: grid;
-        gap: 16px;
-      }
-
-      .mobile-menu a {
-        font-weight: 800;
-      }
-
-      .hero-grid,
-      .section-heading,
-      .include-grid,
-      .cta-card,
-      .footer-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .section-heading p {
-        justify-self: start;
-      }
-
-      .service-row-item {
-        grid-template-columns: 70px 1fr;
-      }
-
-      .service-row-item p,
-      .service-link {
-        grid-column: 2;
-      }
-
-      .service-link {
-        justify-self: start;
-      }
-
-      .audience-grid,
-      .option-grid {
-        grid-template-columns: 1fr 1fr;
-      }
+      .nav-links { display: none; }
+      .mobile-toggle { display: block; }
+      .mobile-menu { display: none; padding: 18px 24px 28px; border-top: 1px solid var(--line); background: rgba(247,244,239,.96); }
+      .mobile-menu.open { display: grid; gap: 16px; }
+      .mobile-menu a { font-weight: 800; }
+      .hero-grid, .section-heading, .include-grid, .compare-grid, .process-grid, .cta-card, .footer-grid { grid-template-columns: 1fr; }
+      .section-heading p { justify-self: start; }
+      .service-row-item { grid-template-columns: 70px 1fr; }
+      .service-row-item p, .service-link { grid-column: 2; }
+      .service-link { justify-self: start; }
+      .audience-grid, .include-list { grid-template-columns: 1fr 1fr; }
+      .steps { grid-template-columns: 1fr 1fr; }
+      .steps::before { display: none; }
     }
 
     @media (max-width: 680px) {
-      .container {
-        width: calc(100% - 30px);
-      }
-
-      .navbar {
-        height: 74px;
-      }
-
-      .brand {
-        font-size: 19px;
-      }
-
-      .hero {
-        padding-top: 126px;
-        padding-bottom: 74px;
-      }
-
-      h1 {
-        font-size: 46px;
-      }
-
-      h2 {
-        font-size: 36px;
-      }
-
-      section {
-        padding: 74px 0;
-      }
-
-      .hero-actions,
-      .cta-actions {
-        flex-direction: column;
-      }
-
-      .btn {
-        width: 100%;
-      }
-
-      .hero-panel,
-      .cta-card {
-        padding: 26px;
-        border-radius: 24px;
-      }
-
-      .service-row-item {
-        grid-template-columns: 1fr;
-        gap: 18px;
-        padding: 30px 0;
-      }
-
-      .service-row-item p,
-      .service-link {
-        grid-column: auto;
-      }
-
-      .audience-grid,
-      .option-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .include-item {
-        grid-template-columns: 1fr;
-      }
-
-      .cta-row {
-        display: block;
-      }
-
-      .cta-row strong {
-        display: block;
-        text-align: left;
-        margin-top: 6px;
-      }
-
-      .footer-bottom {
-        flex-direction: column;
-      }
+      .container { width: calc(100% - 30px); }
+      .navbar { height: 74px; }
+      .brand { font-size: 19px; }
+      .hero { padding-top: 126px; padding-bottom: 74px; }
+      h1 { font-size: 46px; }
+      h2 { font-size: 36px; }
+      section { padding: 74px 0; }
+      .hero-actions, .cta-actions { flex-direction: column; }
+      .btn { width: 100%; }
+      .hero-panel, .cta-card { padding: 26px; border-radius: 24px; }
+      .service-row-item { grid-template-columns: 1fr; gap: 18px; padding: 30px 0; }
+      .service-row-item p, .service-link { grid-column: auto; }
+      .audience-grid, .include-list, .steps { grid-template-columns: 1fr; }
+      .include-item { grid-template-columns: 1fr; }
+      .cta-row { display: block; }
+      .cta-row strong { display: block; text-align: left; margin-top: 6px; }
+      .footer-bottom { flex-direction: column; }
     }
   </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Northfolk Studio",
+    "url": "https://www.northfolkstudio.com/services.html",
+    "description": "Northfolk Studio provides custom website design, redesigns, landing pages, lead capture setup, local SEO setup, and website care for local businesses across the GTA.",
+    "areaServed": ["Greater Toronto Area", "Toronto", "Scarborough", "Markham", "Pickering", "Ajax", "Whitby", "Mississauga", "Brampton", "Vaughan", "Richmond Hill"],
+    "serviceType": ["Custom Website Design", "Website Redesign", "Landing Page Design", "Lead Capture Setup", "Local SEO Setup", "Website Care"]
+  }
+  </script>
 </head>
 
 <body>
@@ -983,7 +336,7 @@
 
     <nav class="nav-links" aria-label="Main navigation">
       <a href="index.html">Home</a>
-      <a href="services.html">Services</a>
+      <a class="active" href="services.html">Services</a>
       <a href="work.html">Portfolio</a>
       <a href="packages.html">Packages</a>
       <a href="contact.html">Contact</a>
@@ -1003,348 +356,301 @@
   </nav>
 </header>
 
-  <main>
-    <section class="hero">
-      <div class="container hero-grid">
-        <div class="reveal">
-          <div class="kicker">Services for local businesses</div>
-          <h1>Clear website services for businesses that need to look <span class="italic">credible online.</span></h1>
-          <p class="hero-copy">We help local businesses plan, design, build, launch, and maintain polished websites without making the process confusing.</p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="#services">Explore Services →</a>
-            <a class="btn btn-light" href="contact.html">Get a Website Plan</a>
+<main>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="reveal">
+        <div class="kicker">Website services for local businesses</div>
+        <h1>Websites built to make your business look <span class="italic">credible, clear, and easy to contact.</span></h1>
+        <p class="hero-copy">Northfolk Studio helps small businesses move beyond basic template sites with custom websites, redesigns, landing pages, lead capture forms, local SEO setup, and ongoing support.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#services">Explore Services →</a>
+          <a class="btn btn-light" href="contact.html#project-form">Request a Website Plan</a>
+        </div>
+      </div>
+
+      <aside class="hero-panel reveal" aria-label="Most requested services">
+        <div class="hero-panel-inner">
+          <div class="hero-panel-title">Most requested</div>
+          <div class="service-preview-list">
+            <div class="preview-item"><div class="preview-number">01</div><div><strong>Custom business websites</strong><span>For local businesses that need trust, clarity, and inquiries.</span></div></div>
+            <div class="preview-item"><div class="preview-number">02</div><div><strong>Website redesigns</strong><span>Modern refreshes for outdated or template-looking websites.</span></div></div>
+            <div class="preview-item"><div class="preview-number">03</div><div><strong>Landing pages</strong><span>Focused pages for ads, offers, services, and campaigns.</span></div></div>
+            <div class="preview-item"><div class="preview-number">04</div><div><strong>Lead capture setup</strong><span>Forms, WhatsApp requests, email alerts, and simple follow-up flow.</span></div></div>
           </div>
         </div>
+      </aside>
+    </div>
+  </section>
 
-        <aside class="hero-panel reveal" aria-label="Most requested services">
-          <div class="hero-panel-inner">
-            <div class="hero-panel-title">Most requested</div>
-            <div class="service-preview-list">
-              <div class="preview-item">
-                <div class="preview-number">01</div>
-                <div>
-                  <strong>Business website</strong>
-                  <span>A polished website for trust, clarity, and inquiries.</span>
-                </div>
-              </div>
-              <div class="preview-item">
-                <div class="preview-number">02</div>
-                <div>
-                  <strong>Website redesign</strong>
-                  <span>A cleaner, more modern version of an existing site.</span>
-                </div>
-              </div>
-              <div class="preview-item">
-                <div class="preview-number">03</div>
-                <div>
-                  <strong>Landing page</strong>
-                  <span>A focused page for one offer, campaign, or service.</span>
-                </div>
-              </div>
-              <div class="preview-item">
-                <div class="preview-number">04</div>
-                <div>
-                  <strong>Launch support</strong>
-                  <span>Domain, hosting, forms, basic SEO, and testing.</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </aside>
+  <section id="services">
+    <div class="container">
+      <div class="section-heading reveal">
+        <div>
+          <div class="kicker">Core services</div>
+          <h2>Simple services with a clear business purpose.</h2>
+        </div>
+        <p>The goal is not just to make a website look nice. The goal is to help customers understand the business faster, trust what they see, and take the next step.</p>
       </div>
-    </section>
 
-    <section id="services">
-      <div class="container">
-        <div class="section-heading reveal">
+      <div class="service-list reveal">
+        <a class="service-row-item" href="contact.html#project-form">
+          <div class="service-number">01</div>
+          <h3>Custom Business Websites</h3>
           <div>
-            <div class="kicker">Core services</div>
-            <h2>Straightforward services with a clear purpose.</h2>
-          </div>
-          <p>Each service is built around one goal: helping your business look more trustworthy and making it easier for customers to contact you.</p>
-        </div>
-
-        <div class="service-list reveal">
-          <a class="service-row-item" href="contact.html">
-            <div class="service-number">01</div>
-            <h3>Business Websites</h3>
-            <div>
-              <p>Complete websites for local businesses that need a professional online presence, clear messaging, and a simple way for customers to get in touch.</p>
-              <ul class="service-details">
-                <li>Home, About, Services, and Contact pages</li>
-                <li>Mobile responsive design</li>
-                <li>Clear calls-to-action and inquiry flow</li>
-              </ul>
-            </div>
-            <span class="service-link">↗</span>
-          </a>
-
-          <a class="service-row-item" href="contact.html">
-            <div class="service-number">02</div>
-            <h3>Website Redesigns</h3>
-            <div>
-              <p>A modern refresh for businesses with outdated websites that need stronger visuals, cleaner spacing, better mobile layouts, and improved trust.</p>
-              <ul class="service-details">
-                <li>Updated visual direction</li>
-                <li>Improved page structure and readability</li>
-                <li>Better mobile experience</li>
-              </ul>
-            </div>
-            <span class="service-link">↗</span>
-          </a>
-
-          <a class="service-row-item" href="contact.html">
-            <div class="service-number">03</div>
-            <h3>Landing Pages</h3>
-            <div>
-              <p>Focused single-page websites for promotions, campaigns, seasonal offers, consultations, or service-specific lead generation.</p>
-              <ul class="service-details">
-                <li>One clear offer or objective</li>
-                <li>Lead capture section or contact form</li>
-                <li>Fast launch timeline</li>
-              </ul>
-            </div>
-            <span class="service-link">↗</span>
-          </a>
-
-          <a class="service-row-item" href="contact.html">
-            <div class="service-number">04</div>
-            <h3>WordPress Builds</h3>
-            <div>
-              <p>Flexible websites for businesses that want to update content, manage pages, publish posts, or grow their site over time.</p>
-              <ul class="service-details">
-                <li>Editable pages and content areas</li>
-                <li>Plugin setup and basic configuration</li>
-                <li>Simple handoff guidance</li>
-              </ul>
-            </div>
-            <span class="service-link">↗</span>
-          </a>
-
-          <a class="service-row-item" href="contact.html">
-            <div class="service-number">05</div>
-            <h3>Website Care</h3>
-            <div>
-              <p>Ongoing support after launch for businesses that want help with small edits, updates, maintenance, and basic site checks.</p>
-              <ul class="service-details">
-                <li>Small content updates</li>
-                <li>Basic monitoring and support</li>
-                <li>Post-launch improvements</li>
-              </ul>
-            </div>
-            <span class="service-link">↗</span>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <section class="dark-section reveal">
-      <div class="container">
-        <div class="section-heading">
-          <div>
-            <div class="kicker" style="color:#e8c7a4;">Who we help</div>
-            <h2>Built for practical local businesses, not complicated tech teams.</h2>
-          </div>
-          <p style="color:rgba(255,255,255,.68);">The focus is simple: help people understand your business quickly, trust what they see, and take the next step.</p>
-        </div>
-
-        <div class="audience-grid">
-          <article class="audience-card">
-            <span>01</span>
-            <h3>Contractors & Trades</h3>
-            <p>Service pages, project galleries, quote requests, service areas, and trust-building sections.</p>
-          </article>
-
-          <article class="audience-card">
-            <span>02</span>
-            <h3>Churches & Community Groups</h3>
-            <p>Welcoming pages for visitors, service times, events, ministries, and contact information.</p>
-          </article>
-
-          <article class="audience-card">
-            <span>03</span>
-            <h3>Real Estate & Local Services</h3>
-            <p>Professional presentation, property or service highlights, lead capture, and credibility signals.</p>
-          </article>
-
-          <article class="audience-card">
-            <span>04</span>
-            <h3>Studios, Tutors & Small Brands</h3>
-            <p>Clear offers, booking direction, service explanations, portfolios, and customer inquiry paths.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="container include-grid">
-        <div class="include-copy reveal">
-          <div class="kicker">What is included</div>
-          <h2>A good website needs more than nice sections.</h2>
-          <p>Every site should be clear, responsive, easy to navigate, and ready for real customers. These are the basics we focus on before launch.</p>
-        </div>
-
-        <div class="include-list reveal">
-          <div class="include-item">
-            <div class="include-icon">UX</div>
-            <div>
-              <h3>Responsive layout</h3>
-              <p>Your pages are structured to work across desktop, tablet, and mobile screens.</p>
-            </div>
-          </div>
-
-          <div class="include-item">
-            <div class="include-icon">CTA</div>
-            <div>
-              <h3>Clear contact path</h3>
-              <p>Visitors should know exactly how to call, request a quote, book, or submit an inquiry.</p>
-            </div>
-          </div>
-
-          <div class="include-item">
-            <div class="include-icon">SEO</div>
-            <div>
-              <h3>Basic SEO setup</h3>
-              <p>Page titles, descriptions, headings, image alt text, and clean content structure.</p>
-            </div>
-          </div>
-
-          <div class="include-item">
-            <div class="include-icon">QA</div>
-            <div>
-              <h3>Pre-launch testing</h3>
-              <p>Links, forms, responsiveness, browser behavior, spacing, and page flow are reviewed before launch.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="build-options reveal">
-      <div class="container">
-        <div class="section-heading">
-          <div>
-            <div class="kicker">Build options</div>
-            <h2>Custom code or WordPress? We choose based on the business.</h2>
-          </div>
-          <p>Not every business needs the same setup. The right option depends on how often the site changes, how much control is needed, and the client’s comfort level.</p>
-        </div>
-
-        <div class="option-grid">
-          <article class="option-card">
-            <h3>WordPress</h3>
-            <p>Best when the client wants editable content, pages, posts, plugins, or long-term content flexibility.</p>
-            <ul class="option-list">
-              <li>Editable pages</li>
-              <li>Good for blogs and growing service pages</li>
-              <li>Plugin and CMS flexibility</li>
-              <li>Useful for clients who want content control</li>
+            <p>Custom websites for businesses that need a professional online presence, clear service sections, strong mobile layout, and a better way for customers to contact them.</p>
+            <ul class="service-details">
+              <li>Home, About, Services, Gallery, FAQ, and Contact pages</li>
+              <li>Mobile-first responsive layout</li>
+              <li>Custom-coded design instead of generic template structure</li>
             </ul>
-          </article>
+          </div>
+          <span class="service-link">↗</span>
+        </a>
 
-          <article class="option-card featured">
-            <h3>Custom Build</h3>
-            <p>Best when the priority is polished presentation, speed, lightweight structure, and design control.</p>
-            <ul class="option-list">
-              <li>Fast and lightweight</li>
-              <li>Strong design control</li>
-              <li>Good for landing pages and business sites</li>
-              <li>Less plugin dependency</li>
-            </ul>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="cta-section reveal">
-      <div class="container">
-        <div class="cta-card">
+        <a class="service-row-item" href="contact.html#project-form">
+          <div class="service-number">02</div>
+          <h3>Website Redesigns</h3>
           <div>
-            <div class="kicker">Next step</div>
-            <h2>Tell us what kind of website you need.</h2>
-            <p>We’ll help you decide the right page structure, platform, launch setup, and next steps based on your business goals.</p>
-            <div class="cta-actions">
-              <a class="btn btn-primary" href="contact.html">Request a Website Plan →</a>
-              <a class="btn btn-light" href="packages.html">View Packages</a>
-            </div>
+            <p>A complete refresh for businesses with outdated, cluttered, slow, or basic-looking websites that do not reflect the quality of the business.</p>
+            <ul class="service-details">
+              <li>Cleaner layout, spacing, typography, and visuals</li>
+              <li>Improved trust sections and calls-to-action</li>
+              <li>Better mobile experience and page flow</li>
+            </ul>
           </div>
+          <span class="service-link">↗</span>
+        </a>
 
-          <div class="cta-panel">
-            <div class="cta-row">
-              <span>Starter option</span>
-              <strong>Business Website</strong>
-            </div>
-            <div class="cta-row">
-              <span>Fastest option</span>
-              <strong>Landing Page</strong>
-            </div>
-            <div class="cta-row">
-              <span>Flexible option</span>
-              <strong>WordPress Build</strong>
-            </div>
-            <div class="cta-row">
-              <span>After launch</span>
-              <strong>Website Care</strong>
-            </div>
+        <a class="service-row-item" href="contact.html#project-form">
+          <div class="service-number">03</div>
+          <h3>Landing Pages</h3>
+          <div>
+            <p>Focused single-page websites for one service, promotion, event, campaign, quote request, consultation, or local offer.</p>
+            <ul class="service-details">
+              <li>One clear offer and conversion path</li>
+              <li>Lead capture form, call button, or WhatsApp request</li>
+              <li>Fast-launch option for ads or campaigns</li>
+            </ul>
+          </div>
+          <span class="service-link">↗</span>
+        </a>
+
+        <a class="service-row-item" href="contact.html#project-form">
+          <div class="service-number">04</div>
+          <h3>Lead Capture Setup</h3>
+          <div>
+            <p>Forms and inquiry flows that make it easier for customers to request quotes, book services, ask questions, or send event details without friction.</p>
+            <ul class="service-details">
+              <li>Contact forms and quote request forms</li>
+              <li>WhatsApp request forms and click-to-call buttons</li>
+              <li>Email notifications and simple lead tracking flow</li>
+            </ul>
+          </div>
+          <span class="service-link">↗</span>
+        </a>
+
+        <a class="service-row-item" href="contact.html#project-form">
+          <div class="service-number">05</div>
+          <h3>SEO & Local Setup</h3>
+          <div>
+            <p>Basic launch-ready SEO structure so the website is set up properly for Google, local keywords, page clarity, and search visibility.</p>
+            <ul class="service-details">
+              <li>Titles, meta descriptions, headings, and alt text</li>
+              <li>Sitemap, robots.txt, favicon, and basic technical setup</li>
+              <li>Local service and location keyword structure</li>
+            </ul>
+          </div>
+          <span class="service-link">↗</span>
+        </a>
+
+        <a class="service-row-item" href="contact.html#project-form">
+          <div class="service-number">06</div>
+          <h3>Website Care & Updates</h3>
+          <div>
+            <p>Ongoing support for businesses that want help with small edits, image swaps, text updates, seasonal changes, new sections, or post-launch improvements.</p>
+            <ul class="service-details">
+              <li>Small content updates and image changes</li>
+              <li>New sections, menu updates, and service edits</li>
+              <li>Basic website checks and improvement support</li>
+            </ul>
+          </div>
+          <span class="service-link">↗</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="dark-section reveal">
+    <div class="container">
+      <div class="section-heading">
+        <div>
+          <div class="kicker" style="color:#e8c7a4;">Who we help</div>
+          <h2>Built for local businesses that need trust quickly.</h2>
+        </div>
+        <p style="color:rgba(255,255,255,.68);">Most customers decide quickly whether a business feels professional. The website needs to make the business feel credible from the first visit, especially on mobile.</p>
+      </div>
+
+      <div class="audience-grid">
+        <article class="audience-card"><span>01</span><h3>Mechanics & Trades</h3><p>Service pages, quote requests, trust sections, galleries, and local search structure.</p></article>
+        <article class="audience-card"><span>02</span><h3>Cafés & Local Brands</h3><p>Menu sections, product visuals, event inquiries, WhatsApp orders, and brand presentation.</p></article>
+        <article class="audience-card"><span>03</span><h3>Realtors & Services</h3><p>Lead capture pages, consultation forms, service positioning, and credibility sections.</p></article>
+        <article class="audience-card"><span>04</span><h3>Churches & Community</h3><p>Welcoming layouts, event details, service times, ministries, and easy contact paths.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="compare-section reveal">
+    <div class="container">
+      <div class="section-heading">
+        <div>
+          <div class="kicker">Why custom matters</div>
+          <h2>Template builders can launch a page. Custom work shapes the experience.</h2>
+        </div>
+        <p>Wix, GoDaddy, and basic templates can be useful starting points, but many small businesses outgrow them when they need stronger branding, cleaner mobile layouts, better structure, and a more professional first impression.</p>
+      </div>
+
+      <div class="compare-grid">
+        <article class="compare-card">
+          <h3>Basic template site</h3>
+          <p>Often works as a quick placeholder, but can feel generic, crowded, or disconnected from how the business actually needs to sell.</p>
+          <ul class="compare-list">
+            <li>Limited layout flexibility</li>
+            <li>Can look similar to other businesses</li>
+            <li>Mobile sections may feel squeezed</li>
+            <li>Lead flow is often an afterthought</li>
+          </ul>
+        </article>
+
+        <article class="compare-card featured">
+          <h3>Northfolk custom build</h3>
+          <p>Designed around the business, the customer journey, the mobile experience, and the action you want visitors to take.</p>
+          <ul class="compare-list">
+            <li>Custom page structure and stronger visual direction</li>
+            <li>Mobile-first sections built for real phone users</li>
+            <li>Lead capture, WhatsApp, forms, and contact paths planned upfront</li>
+            <li>Cleaner code, lighter structure, and stronger launch setup</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container include-grid">
+      <div class="include-copy reveal">
+        <div class="kicker">What is included</div>
+        <h2>A good website needs more than nice sections.</h2>
+        <p>Every website should be clear, responsive, easy to navigate, properly linked, and ready for real customers before it launches.</p>
+      </div>
+
+      <div class="include-list reveal">
+        <div class="include-item"><div class="include-icon">UX</div><div><h3>Mobile-first layout</h3><p>Pages are structured to work cleanly across phones, tablets, and desktop screens.</p></div></div>
+        <div class="include-item"><div class="include-icon">CTA</div><div><h3>Clear customer action</h3><p>Visitors know how to call, message, request a quote, book, or send an inquiry.</p></div></div>
+        <div class="include-item"><div class="include-icon">SEO</div><div><h3>Basic SEO foundation</h3><p>Page titles, descriptions, headings, alt text, sitemap, and local keyword structure.</p></div></div>
+        <div class="include-item"><div class="include-icon">QA</div><div><h3>Pre-launch testing</h3><p>Links, forms, spacing, mobile views, browser behavior, and page flow are reviewed.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="process reveal">
+    <div class="container process-grid">
+      <div>
+        <div class="kicker">Our process</div>
+        <h2>From idea to launch.</h2>
+        <p>A simple process that keeps the project clear, practical, and focused on the business goal.</p>
+      </div>
+
+      <div class="steps">
+        <article class="step"><div class="step-icon">⌕</div><span class="step-no">01</span><h3>Discover</h3><p>We understand the business, audience, services, style, and what kind of inquiries matter.</p></article>
+        <article class="step"><div class="step-icon">✄</div><span class="step-no">02</span><h3>Plan</h3><p>We shape the page structure, content direction, mobile flow, and calls-to-action.</p></article>
+        <article class="step"><div class="step-icon">&lt;/&gt;</div><span class="step-no">03</span><h3>Build</h3><p>We design and build the responsive website, connect forms, and prepare launch assets.</p></article>
+        <article class="step"><div class="step-icon">↗</div><span class="step-no">04</span><h3>Launch</h3><p>We test the site, connect the basics, and support improvements after launch.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section reveal">
+    <div class="container">
+      <div class="cta-card">
+        <div>
+          <div class="kicker">Next step</div>
+          <h2>Tell us what kind of website your business needs.</h2>
+          <p>We’ll help you decide the right page structure, lead flow, launch setup, and next steps based on your business goal.</p>
+          <div class="cta-actions">
+            <a class="btn btn-primary" href="contact.html#project-form">Request a Website Plan →</a>
+            <a class="btn btn-light" href="work.html">View Portfolio</a>
           </div>
         </div>
-      </div>
-    </section>
-  </main>
 
-  <footer>
-    <div class="container footer-grid">
-      <div class="footer-cta">
-        <h2>Ready to build something <span class="italic">credible and polished?</span></h2>
-        <p>Let’s create a website that elevates your business and helps customers trust you faster.</p>
+        <div class="cta-panel">
+          <div class="cta-row"><span>Best for</span><strong>Local businesses</strong></div>
+          <div class="cta-row"><span>Main focus</span><strong>Trust + inquiries</strong></div>
+          <div class="cta-row"><span>Common build</span><strong>Custom HTML/CSS</strong></div>
+          <div class="cta-row"><span>After launch</span><strong>Care + updates</strong></div>
+        </div>
       </div>
+    </div>
+  </section>
+</main>
 
-      <div class="footer-brand">
-        <a href="index.html" class="brand"><span class="brand-mark"></span><span>Northfolk Studio</span></a>
-        <p>A modern web studio crafting clean, high-performing websites for local businesses across the GTA.</p>
-      </div>
+<footer>
+  <div class="container footer-grid">
+    <div class="footer-cta">
+      <h2>Ready to build something <span class="italic">credible and polished?</span></h2>
+      <p>Let’s create a website that elevates your business and helps customers trust you faster.</p>
+    </div>
 
-      <div class="footer-col">
-        <h4>Quick Links</h4>
-        <a href="index.html">Home</a>
-        <a href="services.html">Services</a>
-        <a href="work.html">Portfolio</a>
-        <a href="packages.html">Packages</a>
-        <a href="contact.html">Contact</a>
-      </div>
-
-      <div class="footer-col">
-        <h4>Services</h4>
-        <a href="services.html">Business Websites</a>
-        <a href="services.html">Website Redesigns</a>
-        <a href="services.html">Landing Pages</a>
-        <a href="services.html">Launch Support</a>
+    <div class="footer-brand">
+      <a href="index.html" class="brand"><span class="brand-mark"></span><span>Northfolk Studio</span></a>
+      <p>A GTA-based studio helping local businesses turn attention into inquiries through websites, lead capture, content, and automation.</p>
+      <div class="socials">
+        <a href="https://www.instagram.com/northfolk.studio/" target="_blank" rel="noopener" aria-label="Northfolk Studio Instagram" class="social-icon">◎</a>
       </div>
     </div>
 
-    <div class="container footer-bottom">
-      <span>© 2026 Northfolk Studio. All rights reserved.</span>
-      <span>Made with care for local businesses.</span>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="work.html">Portfolio</a>
+      <a href="packages.html">Packages</a>
+      <a href="contact.html">Contact</a>
     </div>
-  </footer>
 
-  <script>
-    const toggle = document.querySelector('.mobile-toggle');
-    const menu = document.querySelector('#mobileMenu');
+    <div class="footer-col">
+      <h4>Services</h4>
+      <a href="services.html">Custom Websites</a>
+      <a href="services.html">Website Redesigns</a>
+      <a href="services.html">Landing Pages</a>
+      <a href="services.html">Lead Capture Setup</a>
+      <a href="services.html">Website Care</a>
+    </div>
+  </div>
 
-    toggle.addEventListener('click', () => {
-      const isOpen = menu.classList.toggle('open');
-      toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  <div class="container footer-bottom">
+    <span>© 2026 Northfolk Studio. All rights reserved.</span>
+    <span>Websites, lead generation, content, and automation for local businesses.</span>
+  </div>
+</footer>
+
+<script>
+  const toggle = document.querySelector('.mobile-toggle');
+  const menu = document.querySelector('#mobileMenu');
+
+  toggle.addEventListener('click', () => {
+    const isOpen = menu.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+
+  const revealEls = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('show');
     });
+  }, { threshold: 0.14 });
 
-    const revealEls = document.querySelectorAll('.reveal');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add('show');
-      });
-    }, { threshold: 0.14 });
-
-    revealEls.forEach(el => observer.observe(el));
-  </script>
+  revealEls.forEach(el => observer.observe(el));
+</script>
 </body>
 </html>

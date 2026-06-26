@@ -1,0 +1,1 @@
+Golden Scoop image-focused rebuild v2. Open index.html after extracting the zip.
